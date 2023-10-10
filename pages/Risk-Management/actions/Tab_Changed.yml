@@ -1,13 +1,17 @@
-id: '16968620270650.3481200969916718'
-name: Page_Load
+id: '16969423514190.8996528966037205'
+name: Tab_Changed
 nameConfigured: true
 steps:
-  - id: '16968620343390.75953759440923'
+  - id: '16969423759290.6940838639679567'
     type: customAsyncCode
     name: code
     params:
       - type: asyncCode
-        value: '{{state.user_Id}} = ''3e038d87-a744-47f6-a302-e6d431d4cd73'''
+        value: |-
+          if ({{ui.tbl_Risks.selectedRow.data != null}}){
+            {{state.Selected_Risk_ID = ui.tbl_Risks.selectedRow.data.pk_risk_id}} 
+            {{actions.Load_Risk_Progress_Notes.trigger()}}
+          }
         valueType: interpolatedValue
         interpolationType: code
     level: 0
@@ -20,13 +24,13 @@ parentPageId: '1'
 folder: false
 config:
   shouldConfirm: false
-  confirmMessage: Are you sure you'd like to proceed with "{{actions.Page_Load.name}}"?
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.Tab_Changed.name}}"?
   showSuccessToast: false
-  successToast: Action "{{actions.Page_Load.name}}" successfully executed
+  successToast: Action "{{actions.Tab_Changed.name}}" successfully executed
   successToastDuration: '3000'
   successToastHideByClick: false
   showErrorToast: true
-  errorToast: Action "{{actions.Page_Load.name}}" has failed
+  errorToast: Action "{{actions.Tab_Changed.name}}" has failed
   errorToastDuration: '3000'
   errorToastHideByClick: false
   delay: '0'
@@ -35,4 +39,4 @@ config:
 assigned: true
 selected: true
 configured: false
-index: 16
+index: 21

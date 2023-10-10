@@ -20,6 +20,7 @@ steps:
           rm_risks.control_measure,
           rm_risks.status as risk_status,
           rm_risks.created_at,
+          rm_risks.last_review_date,
           ro.name risk_owner_name, 
           rc.name risk_creator_name,
           substring(description,1,60) as TinyDesc,
@@ -51,6 +52,7 @@ steps:
           rm_risks.control_measure,
           rm_risks.status as risk_status,
           rm_risks.created_at,
+          rm_risks.last_review_date,
           ro.name risk_owner_name, 
           rc.name risk_creator_name,
           substring(description,1,60) as TinyDesc,
@@ -107,4 +109,4 @@ config:
 assigned: true
 selected: true
 configured: false
-index: 6
+index: 7

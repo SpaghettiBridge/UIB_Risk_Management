@@ -36,6 +36,26 @@ properties:
     dataValue: '{{actions.Load_Risk_Data.loading}}'
     value: false
   rowVariation: dense
+  rowBackgroundColor: |-
+    {{switch (row.risk_rating) {
+      case '1':
+      case '2':
+      case '3':
+        return '#96d4df';
+      case '4':
+      case '5':
+      case '6':
+        return '#ffe8b7';
+      case '7':
+      case '8':
+        return '#f3c379';
+      case '9':
+      case '10':
+        return '#c6572a';
+      default:
+        // Handle the default case here, if needed
+        break;
+    }}}
 actions:
   smartTableRowClick:
     - action: '16968520159240.7357300507703233'
@@ -51,7 +71,10 @@ actions:
   smartTableEdit: []
   smartTableBulkEdit: []
   smartTableDelete: []
-  smartTableRowSelect: []
+  smartTableRowSelect:
+    - action: '16969400265810.7198078406620261'
+      paramCode: ''
+      index: 2
   smartTablePageSelect: []
   smartTableFilterChange: []
   smartTableSortChange: []
@@ -76,7 +99,7 @@ slots:
             - xs
           width: 120
           filter: true
-        index: 8
+        index: 9
         slots: []
       - id: '16968555036740.10925508740388712'
         definitionId: atomicString
@@ -93,7 +116,7 @@ slots:
             - xs
           width: 120
           filter: true
-        index: 9
+        index: 10
         slots: []
       - id: '16968555036740.8969587175500133'
         definitionId: atomicString
@@ -110,7 +133,7 @@ slots:
             - xs
           width: 120
           filter: true
-        index: 10
+        index: 11
         slots: []
       - id: '16968555036740.5941989899040565'
         definitionId: atomicString
@@ -127,7 +150,7 @@ slots:
             - xs
           width: 120
           filter: true
-        index: 11
+        index: 12
         slots: []
       - id: '16968555036750.05147737254245266'
         definitionId: atomicText
@@ -222,7 +245,7 @@ slots:
             - xs
           width: 120
           filter: true
-        index: 12
+        index: 13
         slots: []
       - id: '16968555036750.45186124627056024'
         definitionId: atomicString
@@ -239,7 +262,7 @@ slots:
             - xs
           width: 120
           filter: true
-        index: 13
+        index: 14
         slots: []
       - id: '16968555036750.8881247952336295'
         definitionId: atomicText
@@ -256,7 +279,7 @@ slots:
             - xs
           width: 200
           filter: true
-        index: 14
+        index: 15
         slots: []
       - id: '16968555036750.6721071288892944'
         definitionId: atomicText
@@ -273,7 +296,7 @@ slots:
             - xs
           width: 200
           filter: true
-        index: 15
+        index: 16
         slots: []
       - id: '16968555036750.18794614044242408'
         definitionId: atomicString
@@ -290,7 +313,7 @@ slots:
             - xs
           width: 120
           filter: true
-        index: 16
+        index: 17
         slots: []
       - id: '16968555036750.10097867520375936'
         definitionId: atomicString
@@ -428,23 +451,43 @@ slots:
           options:
             value:
               - value: '1'
-                color: danger
+                color: primary-dark
                 __UIBAKERY__SYSTEM_ID__: '16968653245260.8211144097122185'
               - value: '2'
-                color: danger-light
+                color: primary-dark
                 __UIBAKERY__SYSTEM_ID__: '16968653272410.6760699626743947'
                 title: '2'
               - value: '3'
-                color: warning
+                color: primary-dark
                 __UIBAKERY__SYSTEM_ID__: '16968653245260.3917570235602572'
               - value: '4'
-                color: warning-light
+                color: primary-dark
                 __UIBAKERY__SYSTEM_ID__: '16968653310520.46552156882857054'
                 title: '4'
               - value: '5'
                 color: warning-dark
                 __UIBAKERY__SYSTEM_ID__: '16968653353010.4210738076386915'
                 title: '5'
+              - value: '6'
+                color: primary-dark
+                __UIBAKERY__SYSTEM_ID__: '16969394258570.6398789878927376'
+                title: '6'
+              - value: '7'
+                color: primary-dark
+                __UIBAKERY__SYSTEM_ID__: '16969394358820.4825450422192521'
+                title: '7'
+              - value: '8'
+                color: primary-dark
+                __UIBAKERY__SYSTEM_ID__: '16969394409050.29809394656891164'
+                title: '8'
+              - value: '9'
+                color: primary-dark
+                __UIBAKERY__SYSTEM_ID__: '16969394460580.3100049770430311'
+                title: '9'
+              - value: '10'
+                color: primary-dark
+                __UIBAKERY__SYSTEM_ID__: '16969394498950.04882803679619441'
+                title: '10'
             dataValue: |-
               [
                 {
@@ -505,4 +548,51 @@ slots:
             withData: false
           title: Control
         index: 6
+        slots: []
+      - id: '16969430293800.15386008318151534'
+        definitionId: atomicString
+        parentSlotId: '16968526520460.12079022901158187'
+        styles:
+          xl:
+            visible: false
+        properties:
+          name: atomicString5
+          prop: fk_service_id
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+        index: 18
+        slots: []
+      - id: '16969431447220.8504667915750339'
+        definitionId: atomicString
+        parentSlotId: '16968526520460.12079022901158187'
+        styles:
+          xl:
+            visible: false
+        properties:
+          name: atomicString6
+          prop: fk_created_by
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+        index: 19
+        slots: []
+      - id: '16969431469050.6174946457312751'
+        definitionId: atomicDateTime
+        parentSlotId: '16968526520460.12079022901158187'
+        styles:
+          xl:
+            visible: false
+        properties:
+          name: atomicDateTime
+          prop: last_review_date
+          primaryKey: false
+          timeFormat:
+            value: ''
+            dataValue: HH:mm
+            withData: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+        index: 8
         slots: []

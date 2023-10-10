@@ -5,8 +5,8 @@ styles:
   xl:
     gridItem:
       x: 8
-      y: 10
-      w: 15
+      y: 11
+      w: 16
       h: 127
   xs:
     gridItem:
@@ -81,7 +81,7 @@ actions:
   smartTableFilterChange: []
   smartTableSortChange: []
   smartTableReload: []
-index: 6
+index: 7
 slots:
   - id: '16968532737040.037852872871457555'
     name: columns

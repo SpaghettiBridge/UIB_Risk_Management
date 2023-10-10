@@ -1,18 +1,18 @@
-id: '16968526059350.3279016808704689'
+id: '16969397054350.9895286590126264'
 definitionId: contextMenuButton
-parentSlotId: '16968520326600.6317433755868269'
+parentSlotId: '2'
 styles:
   xl:
     gridItem:
       x: 23
-      y: 0
+      y: 1
       w: 1
       h: 10
     iconPlacement: center
   xs:
     gridItem:
       x: 23
-      y: 578
+      y: 313
       w: 1
       h: 10
 properties:
@@ -46,7 +46,7 @@ properties:
 
 
     withData: true
-  name: cst_Profile
+  name: cst_Risks
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
     - xl
     - xs
@@ -80,5 +80,5 @@ actions:
       paramCode: ''
       index: 0
   init: []
-index: 8
+index: 1
 slots: []

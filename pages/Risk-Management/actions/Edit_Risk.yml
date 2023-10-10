@@ -78,46 +78,9 @@ steps:
                 name: Create_Change_Notes1
                 params:
                   - type: asyncCode
-                    value: >-
-                      // THe changes_Made object is passed in..
-
-                      //changes_Made = {Rating: ratingBool, Area: areaBool,
-                      Type: typeBool, Control: controlBool, Assigned:
-                      assignedBool, Status: statusBool, Closed: true}
-
-                      if ({{data.Rating}}){  
-                        From = {{ui.tbl_Risks.selectedRow.data.risk_rating}}
-                        To = {{ui.inpRating.value}}
-                        {{actions.Add_Note.trigger({Type: 'Note', Description: 'Rating has been changed from ' + From + ' to ' + To})}}   
-                      }
-
-                      if ({{data.Area}}){
-                        From = {{ui.tbl_Risks.selectedRow.data.area}}
-                        To = {{ui.inpArea.value}}
-                        {{actions.Add_Note.trigger({Type: 'Note', Description: 'Area has been changed from ' + From + ' to ' + To}) }}
-                      }
-
-                      if ({{data.Type}}){
-                        From = {{ui.tbl_Risks.selectedRow.data.risk_type}}
-                        To = {{ui.inpType.value}}  
-                        {{actions.Add_Note.trigger({Type: 'Note', Description: 'Type has been changed from ' + From + ' to ' + To}) }}
-                      }
-
-                      if ({{data.Control}}){
-                        From = {{ui.tbl_Risks.selectedRow.data.control_measure}}
-                        To = {{ui.inpControl.value}}
-                        {{actions.Add_Note.trigger({Type: 'Note', Description: 'Control measure has been changed from ' + From + ' to ' + To}) }}
-                      }
-
-                      if ({{data.Assigned}}){
-                        From = {{ui.tbl_Risks.selectedRow.data.risk_owner}}
-                        To = {{ui.inpOwner.value}}
-                        {{actions.Add_Note.trigger({Type: 'Note', Description: 'Assignation has been changed from ' + From + ' to ' + To}) }}
-                      }
-
-                      if ({{data.Closed}}){
-                        {{actions.Add_Note.trigger({Type: 'Action', Description: 'Risk status has been set to closed'}) }}
-                      }
+                    value: >
+                      {{actions.Add_Note.trigger({Type: 'Note', Description:
+                      'Risk status has been set to closed'}) }}
                     valueType: interpolatedValue
                     interpolationType: code
                 level: 1
@@ -213,7 +176,7 @@ steps:
                       {{ui.inpControl.value}}){
                         controlBool = true;  
                           }
-                      if ({{ui.tbl_Risks.selectedRow.data.risk_owner}} !=
+                      if ({{ui.tbl_Risks.selectedRow.data.fk_risk_owner}} !=
                       {{ui.inpOwner.value}}){
                         assignedBool = true;  
                           }
@@ -276,15 +239,16 @@ steps:
                       }
 
                       if ({{data.Assigned}}){
-                        From = {{ui.tbl_Risks.selectedRow.data.risk_owner}}
-                        To = {{ui.inpOwner.value}}
+                        From = {{ui.tbl_Risks.selectedRow.data.risk_owner_name}}
+                        To = await {{actions.Get_Account_Name.trigger(ui.inpOwner.value)}};
+                        console.log('from: ' + From + '  To: ' + To)
                         {{actions.Add_Note.trigger({Type: 'Note', Description: 'Assignation has been changed from ' + From + ' to ' + To}) }}
                       }
 
                       if ({{data.Status}}){
                         From = {{ui.tbl_Risks.selectedRow.data.risk_status}}
                         To = {{ui.inpStatus.value}}
-                        {{actions.Add_Note.trigger({Type: 'Action', Description: 'Status has been changed from ' + From + ' to ' + To}) }}
+                        {{actions.Add_Note.trigger({Type: 'Note', Description: 'Status has been changed from ' + From + ' to ' + To}) }}
                       }
                     valueType: interpolatedValue
                     interpolationType: code
@@ -408,4 +372,4 @@ config:
 assigned: true
 selected: true
 configured: false
-index: 9
+index: 10

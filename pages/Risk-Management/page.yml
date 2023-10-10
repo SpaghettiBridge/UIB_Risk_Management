@@ -34,3 +34,4 @@ slots:
               - components/inpDetails2.yml
               - components/card/card.yml
               - components/mdl_Help_Risks/mdl_Help_Risks.yml
+              - components/cst_Risks.yml
