@@ -1,0 +1,37 @@
+id: '16968574781710.09775458489055588'
+definitionId: textArea
+parentSlotId: '2'
+styles:
+  xl:
+    gridItem:
+      x: 4
+      y: 309
+      w: 10
+      h: 42
+  xs:
+    gridItem:
+      x: 4
+      y: 271
+      w: 10
+      h: 42
+properties:
+  name: inpDetails2
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  labelConfig:
+    text: Progress note description
+    position: vertical
+    align: left
+  placeholder: >-
+    There is an ongoing issue with this person who keeps telling people what to
+    do and people are not liking it, especially when they are being to told to
+    go outside and to dance in the rain.
+  disabled:
+    value: false
+    dataValue: 'false'
+    withData: false
+  value: '{{ui.tbl_Progress_Notes.selectedRow.data.details}}'
+actions: {}
+index: 11
+slots: []

@@ -1,0 +1,16 @@
+id: '16968520326600.36280974818188994'
+definitionId: tab
+styles: {}
+properties:
+  name: tab
+  title: Risk Register
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+parentSlotId: '16968520326600.669215539587811'
+index: 0
+slots:
+  - id: '16968520326600.9060417850556657'
+    name: content
+    children:
+      - tbl_Risks.yml

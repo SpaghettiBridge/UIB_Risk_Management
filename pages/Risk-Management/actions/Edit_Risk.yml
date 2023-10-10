@@ -1,0 +1,411 @@
+id: '16968537131650.4582187971438638'
+name: Edit_Risk
+nameConfigured: true
+steps:
+  - id: '16968658459000.23207629122553142'
+    type: condition
+    name: Close_Or_Edit
+    params:
+      - type: code
+        value: return {{params.Closing}}
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: steps
+        value:
+          - condition: true
+            steps:
+              - id: '16968685431150.5894293202563281'
+                type: customAsyncCode
+                name: Check_Changes_Close
+                params:
+                  - type: asyncCode
+                    value: >-
+                      // we are going to check the tbl values against the select
+                      values 
+
+                      let changes_Made = {}
+
+                      let ratingBool = false;
+
+                      let areaBool = false;
+
+                      let typeBool = false;
+
+                      let controlBool = false;
+
+                      let assignedBool = false;
+
+                      let statusBool = false;
+
+
+                      if ({{ui.tbl_Risks.selectedRow.data.risk_rating}} !=
+                      {{ui.inpRating.value}}){
+                        ratingBool = true}
+                      if ({{ui.tbl_Risks.selectedRow.data.area}} !=
+                      {{ui.inpArea.value}}){
+                        areaBool = true}
+                      if ({{ui.tbl_Risks.selectedRow.data.risk_type}} !=
+                      {{ui.inpType.value}}){
+                        typeBool = true;  
+                          }
+                      if ({{ui.tbl_Risks.selectedRow.data.control_measure}} !=
+                      {{ui.inpControl.value}}){
+                        controlBool = true;  
+                          }
+                      if ({{ui.tbl_Risks.selectedRow.data.risk_owner}} !=
+                      {{ui.inpOwner.value}}){
+                        assignedBool = true;  
+                          }
+                      if ({{ui.tbl_Risks.selectedRow.data.risk_status}} !=
+                      {{ui.inpStatus.value}}){
+                        statusBool = true;  
+                          }
+
+                      changes_Made = {Rating: ratingBool, Area: areaBool, Type:
+                      typeBool, Control: controlBool, Assigned: assignedBool,
+                      Status: statusBool, Closed: true}
+
+
+                      return changes_Made;
+                    valueType: interpolatedValue
+                    interpolationType: code
+                level: 1
+                fallthroughError: false
+                isChanged: true
+                nameConfigured: true
+              - id: '16968686230540.7016727864578125'
+                type: customAsyncCode
+                name: Create_Change_Notes1
+                params:
+                  - type: asyncCode
+                    value: >-
+                      // THe changes_Made object is passed in..
+
+                      //changes_Made = {Rating: ratingBool, Area: areaBool,
+                      Type: typeBool, Control: controlBool, Assigned:
+                      assignedBool, Status: statusBool, Closed: true}
+
+                      if ({{data.Rating}}){  
+                        From = {{ui.tbl_Risks.selectedRow.data.risk_rating}}
+                        To = {{ui.inpRating.value}}
+                        {{actions.Add_Note.trigger({Type: 'Note', Description: 'Rating has been changed from ' + From + ' to ' + To})}}   
+                      }
+
+                      if ({{data.Area}}){
+                        From = {{ui.tbl_Risks.selectedRow.data.area}}
+                        To = {{ui.inpArea.value}}
+                        {{actions.Add_Note.trigger({Type: 'Note', Description: 'Area has been changed from ' + From + ' to ' + To}) }}
+                      }
+
+                      if ({{data.Type}}){
+                        From = {{ui.tbl_Risks.selectedRow.data.risk_type}}
+                        To = {{ui.inpType.value}}  
+                        {{actions.Add_Note.trigger({Type: 'Note', Description: 'Type has been changed from ' + From + ' to ' + To}) }}
+                      }
+
+                      if ({{data.Control}}){
+                        From = {{ui.tbl_Risks.selectedRow.data.control_measure}}
+                        To = {{ui.inpControl.value}}
+                        {{actions.Add_Note.trigger({Type: 'Note', Description: 'Control measure has been changed from ' + From + ' to ' + To}) }}
+                      }
+
+                      if ({{data.Assigned}}){
+                        From = {{ui.tbl_Risks.selectedRow.data.risk_owner}}
+                        To = {{ui.inpOwner.value}}
+                        {{actions.Add_Note.trigger({Type: 'Note', Description: 'Assignation has been changed from ' + From + ' to ' + To}) }}
+                      }
+
+                      if ({{data.Closed}}){
+                        {{actions.Add_Note.trigger({Type: 'Action', Description: 'Risk status has been set to closed'}) }}
+                      }
+                    valueType: interpolatedValue
+                    interpolationType: code
+                level: 1
+                fallthroughError: false
+                isChanged: true
+                nameConfigured: true
+              - id: '16968658757320.7774423570936033'
+                type: UPDATE_ENTITY
+                name: Closing
+                params:
+                  - type: datasourceId
+                    value: Supabase Bridgelink Apps Database
+                    valueType: string
+                  - type: resourceId
+                    value: public.rm_risks
+                    valueType: string
+                  - type: filter
+                    value:
+                      - column: pk_risk_id
+                        operation: '='
+                        value:
+                          value: '{{ui.tbl_Risks.selectedRow.data.pk_risk_id}}'
+                    valueType: custom
+                  - type: entity
+                    value:
+                      mode: structured
+                      valueByMode:
+                        structured:
+                          status:
+                            value: Closed
+                        custom: ''
+                    valueType: custom
+                  - type: replace
+                    value: false
+                    valueType: string
+                  - type: bulk
+                    value: false
+                    valueType: string
+                  - type: customDatabaseName
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: successMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: failureMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: mapperEnabled
+                    value: false
+                    valueType: custom
+                level: 1
+                fallthroughError: false
+                isChanged: true
+                nameConfigured: true
+                paused: false
+          - condition: false
+            steps:
+              - id: '16968685624440.8222439671860913'
+                type: customAsyncCode
+                name: Check_Changes_NoClose
+                params:
+                  - type: asyncCode
+                    value: >-
+                      // we are going to check the tbl values against the select
+                      values 
+
+                      let ChangesMade = {}
+
+                      let ratingBool = false;
+
+                      let areaBool = false;
+
+                      let typeBool = false;
+
+                      let controlBool = false;
+
+                      let assignedBool = false;
+
+                      let statusBool = false;
+
+
+                      if ({{ui.tbl_Risks.selectedRow.data.risk_rating}} !=
+                      {{ui.inpRating.value}}){
+                        ratingBool = true}
+                      if ({{ui.tbl_Risks.selectedRow.data.area}} !=
+                      {{ui.inpArea.value}}){
+                        areaBool = true}
+                      if ({{ui.tbl_Risks.selectedRow.data.risk_type}} !=
+                      {{ui.inpType.value}}){
+                        typeBool = true;  
+                          }
+                      if ({{ui.tbl_Risks.selectedRow.data.control_measure}} !=
+                      {{ui.inpControl.value}}){
+                        controlBool = true;  
+                          }
+                      if ({{ui.tbl_Risks.selectedRow.data.risk_owner}} !=
+                      {{ui.inpOwner.value}}){
+                        assignedBool = true;  
+                          }
+                      if ({{ui.tbl_Risks.selectedRow.data.risk_status}} !=
+                      {{ui.inpStatus.value}}){
+                        statusBool = true;  
+                          }
+
+                      ChangesMade = {Rating: ratingBool, Area: areaBool, Type:
+                      typeBool, Control: controlBool, Assigned: assignedBool,
+                      Status: statusBool, Closed: false}
+
+
+                      return ChangesMade;
+                    valueType: interpolatedValue
+                    interpolationType: code
+                level: 1
+                fallthroughError: false
+                isChanged: true
+                nameConfigured: true
+              - id: '16968688326430.15316368192778151'
+                type: customAsyncCode
+                name: Create_Change_Notes2
+                params:
+                  - type: asyncCode
+                    value: >-
+                      // THe changes_Made object is passed in..
+
+                      //changes_Made = {Rating: ratingBool, Area: areaBool,
+                      Type: typeBool, Control: controlBool, Assigned:
+                      assignedBool, Status: statusBool, Closed: true}
+
+                      let From = '';
+
+                      let To= '';
+
+
+                      if ({{data.Rating}}){  
+                        From = {{ui.tbl_Risks.selectedRow.data.risk_rating}}
+                        To = {{ui.inpRating.value}}
+                        {{actions.Add_Note.trigger({Type: 'Note', Description: 'Rating has been changed from ' + From + ' to ' + To})}}   
+                      }
+
+                      if ({{data.Area}}){
+                        From = {{ui.tbl_Risks.selectedRow.data.area}}
+                        To = {{ui.inpArea.value}}
+                        {{actions.Add_Note.trigger({Type: 'Note', Description: 'Area has been changed from ' + From + ' to ' + To}) }}
+                      }
+
+                      if ({{data.Type}}){
+                        From = {{ui.tbl_Risks.selectedRow.data.risk_type}}
+                        To = {{ui.inpType.value}}  
+                        {{actions.Add_Note.trigger({Type: 'Note', Description: 'Type has been changed from ' + From + ' to ' + To}) }}
+                      }
+
+                      if ({{data.Control}}){
+                        From = {{ui.tbl_Risks.selectedRow.data.control_measure}}
+                        To = {{ui.inpControl.value}}
+                        {{actions.Add_Note.trigger({Type: 'Note', Description: 'Control measure has been changed from ' + From + ' to ' + To}) }}
+                      }
+
+                      if ({{data.Assigned}}){
+                        From = {{ui.tbl_Risks.selectedRow.data.risk_owner}}
+                        To = {{ui.inpOwner.value}}
+                        {{actions.Add_Note.trigger({Type: 'Note', Description: 'Assignation has been changed from ' + From + ' to ' + To}) }}
+                      }
+
+                      if ({{data.Status}}){
+                        From = {{ui.tbl_Risks.selectedRow.data.risk_status}}
+                        To = {{ui.inpStatus.value}}
+                        {{actions.Add_Note.trigger({Type: 'Action', Description: 'Status has been changed from ' + From + ' to ' + To}) }}
+                      }
+                    valueType: interpolatedValue
+                    interpolationType: code
+                level: 1
+                fallthroughError: false
+                isChanged: true
+                nameConfigured: true
+              - id: '16968638470750.7125722386210251'
+                type: UPDATE_ENTITY
+                name: Editing
+                params:
+                  - type: datasourceId
+                    value: Supabase Bridgelink Apps Database
+                    valueType: string
+                  - type: resourceId
+                    value: public.rm_risks
+                    valueType: string
+                  - type: filter
+                    value:
+                      - column: pk_risk_id
+                        operation: '='
+                        value:
+                          value: '{{ui.tbl_Risks.selectedRow.data.pk_risk_id}}'
+                    valueType: custom
+                  - type: entity
+                    value:
+                      mode: structured
+                      valueByMode:
+                        structured:
+                          created_by:
+                            value: '{{ui.inpCreatedBy.value}}'
+                          risk_owner:
+                            value: '{{ui.inpOwner.value}}'
+                          area:
+                            value: '{{ui.inpArea.value}}'
+                          description:
+                            value: '{{ui.inpDetails.value}}'
+                          risk_type:
+                            value: '{{ui.inpType.value}}'
+                          risk_rating:
+                            value: '{{ui.inpRating.value}}'
+                          control_measure:
+                            value: '{{ui.inpControl.value}}'
+                          status:
+                            value: '{{ui.inpStatus.value}}'
+                        custom: ''
+                    valueType: custom
+                  - type: replace
+                    value: false
+                    valueType: string
+                  - type: bulk
+                    value: false
+                    valueType: string
+                  - type: customDatabaseName
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: successMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: failureMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: mapperEnabled
+                    value: false
+                    valueType: custom
+                level: 1
+                fallthroughError: false
+                isChanged: true
+                nameConfigured: true
+                paused: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+  - id: '16968671785200.5325504754798069'
+    type: executeAction
+    name: execute
+    params:
+      - type: action
+        value: '16968635410790.6648237389472313'
+        valueType: string
+      - type: isActionsLibraryCall
+        value: false
+        valueType: string
+      - type: customParams
+        value: return {{data}};
+        valueType: string
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 1
+    fallthroughError: false
+    isChanged: true
+singleStep: false
+mode: manual
+modeConfigured: false
+parentPageId: '1'
+folder: false
+parentId: null
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.Edit_Risk.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.Edit_Risk.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.Edit_Risk.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+assigned: true
+selected: true
+configured: false
+index: 9

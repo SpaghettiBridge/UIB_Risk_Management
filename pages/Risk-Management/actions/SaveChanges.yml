@@ -1,0 +1,132 @@
+id: '16968635178490.49955484775472647'
+name: SaveChanges
+nameConfigured: true
+steps:
+  - id: '16968636644020.8621650768194935'
+    type: condition
+    name: Add_Or_Edit_Mode
+    params:
+      - type: code
+        value: |-
+          if ({{state.PageMode}} == 'pmAdd') {
+            //we are in add mode 
+            return true
+          }
+          else {
+            // we are in edit mode
+            return false
+          }
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: steps
+        value:
+          - condition: true
+            steps:
+              - id: '16968637595330.6684534944056375'
+                type: executeAction
+                name: Add_New_Risk
+                params:
+                  - type: action
+                    value: '16968537042570.9695396239916811'
+                    valueType: string
+                  - type: isActionsLibraryCall
+                    value: false
+                    valueType: string
+                  - type: customParams
+                    value: return {{data}};
+                    valueType: string
+                  - type: successMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: failureMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: mapperEnabled
+                    value: false
+                    valueType: custom
+                level: 1
+                fallthroughError: false
+                isChanged: true
+                nameConfigured: true
+          - condition: false
+            steps:
+              - id: '16968637863210.4279319598042468'
+                type: executeAction
+                name: Edit_Risk
+                params:
+                  - type: action
+                    value: '16968537131650.4582187971438638'
+                    valueType: string
+                  - type: isActionsLibraryCall
+                    value: false
+                    valueType: string
+                  - type: customParams
+                    value: 'return {Closing: false}'
+                    valueType: string
+                  - type: successMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: failureMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: mapperEnabled
+                    value: false
+                    valueType: custom
+                level: 1
+                fallthroughError: false
+                isChanged: true
+                nameConfigured: true
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+  - id: '16968635640870.639256021099345'
+    type: executeAction
+    name: SetEditFalse
+    params:
+      - type: action
+        value: '16968635410790.6648237389472313'
+        valueType: string
+      - type: isActionsLibraryCall
+        value: false
+        valueType: string
+      - type: customParams
+        value: return {{data}};
+        valueType: string
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 1
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+singleStep: true
+mode: manual
+modeConfigured: true
+folder: false
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.SaveChanges.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.SaveChanges.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.SaveChanges.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+assigned: true
+selected: true
+configured: false
+parentPageId: '1'
+index: 3

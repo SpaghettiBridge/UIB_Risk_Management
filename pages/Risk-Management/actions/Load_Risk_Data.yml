@@ -1,0 +1,110 @@
+id: '16968517651850.7367747537503266'
+name: Load_Risk_Data
+nameConfigured: true
+steps:
+  - id: '16968519874320.23501418393565188'
+    type: customSQLQuery
+    name: GetData
+    params:
+      - type: query
+        value: |
+          select 
+          rm_risks.pk_risk_id,
+          rm_risks.fk_service_id,
+          rm_risks.fk_created_by,
+          rm_risks.fk_risk_owner,
+          rm_risks.area,
+          rm_risks.description, 
+          rm_risks.risk_type, 
+          rm_risks.risk_rating,
+          rm_risks.control_measure,
+          rm_risks.status as risk_status,
+          rm_risks.created_at,
+          ro.name risk_owner_name, 
+          rc.name risk_creator_name,
+          substring(description,1,60) as TinyDesc,
+          substring(description,1,200) as ShortDesc,
+          substring(control_measure,1,200) as ShortControl,
+          services.service_name
+          from rm_risks
+          inner join accounts RO on RO.id = rm_risks.fk_risk_owner
+          inner join accounts RC on RC.id = rm_risks.fk_created_by
+          inner join services on services.id = rm_risks.fk_service_id
+          order by rm_risks.created_at
+        valueType: interpolatedValue
+        interpolationType: string
+      - type: datasourceId
+        value: Supabase Bridgelink Apps Database
+        valueType: custom
+        mustSelectFirst: true
+      - type: preparedQuery
+        value: |
+          select 
+          rm_risks.pk_risk_id,
+          rm_risks.fk_service_id,
+          rm_risks.fk_created_by,
+          rm_risks.fk_risk_owner,
+          rm_risks.area,
+          rm_risks.description, 
+          rm_risks.risk_type, 
+          rm_risks.risk_rating,
+          rm_risks.control_measure,
+          rm_risks.status as risk_status,
+          rm_risks.created_at,
+          ro.name risk_owner_name, 
+          rc.name risk_creator_name,
+          substring(description,1,60) as TinyDesc,
+          substring(description,1,200) as ShortDesc,
+          substring(control_measure,1,200) as ShortControl,
+          services.service_name
+          from rm_risks
+          inner join accounts RO on RO.id = rm_risks.fk_risk_owner
+          inner join accounts RC on RC.id = rm_risks.fk_created_by
+          inner join services on services.id = rm_risks.fk_service_id
+          order by rm_risks.created_at
+        valueType: interpolatedValue
+      - type: preparedQueryParams
+        value: []
+        valueType: custom
+      - type: customDatabaseName
+        value: ''
+        valueType: interpolatedValue
+      - type: stepVersion
+        value: 2
+        valueType: custom
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+singleStep: false
+mode: manual
+modeConfigured: false
+parentPageId: '1'
+folder: false
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.Load_Risk_Data.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.Load_Risk_Data.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.Load_Risk_Data.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+assigned: true
+selected: true
+configured: false
+index: 6

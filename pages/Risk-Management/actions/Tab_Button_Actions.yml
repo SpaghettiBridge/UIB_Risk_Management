@@ -1,0 +1,52 @@
+id: '16968576687710.9596333746278372'
+name: Tab_Button_Actions
+nameConfigured: true
+steps:
+  - id: '16968630984620.8515465991624798'
+    type: customAsyncCode
+    name: code
+    params:
+      - type: asyncCode
+        value: |
+          //The context button passes in a value that is params.id
+
+          if ({{params.id}} == 1){
+            //Add a record
+            {{state.RiskDisabled}} = false
+            {{state.PageMode}} = 'pmAdd'
+          }
+          else if ({{params.id}} == 2){
+            //Edit the record
+            {{state.RiskDisabled}} = false
+            {{state.PageMode}} = 'pmEdit'
+          }
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
+singleStep: true
+mode: manual
+modeConfigured: true
+parentPageId: '1'
+folder: false
+config:
+  shouldConfirm: false
+  confirmMessage: >-
+    Are you sure you'd like to proceed with
+    "{{actions.Tab_Button_Actions.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.Tab_Button_Actions.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.Tab_Button_Actions.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+assigned: true
+selected: true
+configured: false
+index: 14

@@ -1,0 +1,79 @@
+id: '16968520159240.7357300507703233'
+name: Load_Risk_Progress_Notes
+nameConfigured: true
+steps:
+  - id: '16968520194000.9504476977960603'
+    type: customSQLQuery
+    name: query
+    params:
+      - type: query
+        value: |-
+          select *,
+          rc.name as note_creator,
+          substring(details,1,100) as shortdesc
+           from rm_progress_notes
+          inner join accounts RC on RC.id = rm_progress_notes.created_by
+          where risk_id = {{ui.tbl_Risks.selectedRow.data.risk_id}}
+        valueType: interpolatedValue
+        interpolationType: string
+      - type: datasourceId
+        value: Supabase Bridgelink Apps Database
+        valueType: custom
+        mustSelectFirst: true
+      - type: preparedQuery
+        value: |-
+          select *,
+          rc.name as note_creator,
+          substring(details,1,100) as shortdesc
+           from rm_progress_notes
+          inner join accounts RC on RC.id = rm_progress_notes.created_by
+          where risk_id = ?
+        valueType: interpolatedValue
+      - type: preparedQueryParams
+        value:
+          - __UI_BAKERY__FORMAT_IF_DATE__(ui.tbl_Risks.selectedRow.data.risk_id)
+        valueType: custom
+      - type: customDatabaseName
+        value: ''
+        valueType: interpolatedValue
+      - type: stepVersion
+        value: 2
+        valueType: custom
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+singleStep: false
+mode: manual
+modeConfigured: false
+parentPageId: '1'
+folder: false
+parentId: null
+config:
+  shouldConfirm: false
+  confirmMessage: >-
+    Are you sure you'd like to proceed with
+    "{{actions.Load_Risk_Progress_Notes.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.Load_Risk_Progress_Notes.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.Load_Risk_Progress_Notes.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+assigned: true
+selected: true
+configured: true
+index: 7

@@ -1,0 +1,22 @@
+id: '16968527397430.20806530131619105'
+name: content
+children:
+  - id: '16968527397430.8610366167682026'
+    definitionId: layoutHeader
+    parentSlotId: '16968527397430.20806530131619105'
+    styles: {}
+    properties:
+      name: layoutHeader
+      __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+        - xl
+        - xs
+    index: 0
+    slots:
+      - id: '16968527397430.3124061488024241'
+        name: content
+        children:
+          - components/mnu_Profiles2.yml
+          - components/btn_Cancel.yml
+          - components/AppMenu2.yml
+          - components/btn_Submit.yml
+          - components/slctService.yml

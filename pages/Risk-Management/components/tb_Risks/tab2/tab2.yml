@@ -1,0 +1,19 @@
+id: '16968520326600.3217667879847652'
+definitionId: tab
+styles: {}
+properties:
+  name: tab2
+  title: Risk Details
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+parentSlotId: '16968520326600.669215539587811'
+index: 1
+slots:
+  - id: '16968520326600.6317433755868269'
+    name: content
+    children:
+      - cst_Profile.yml
+      - text17.yml
+      - tbl_Progress_Notes.yml
+      - card2/card2.yml

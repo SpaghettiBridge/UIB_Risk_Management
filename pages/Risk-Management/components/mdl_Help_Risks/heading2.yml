@@ -1,0 +1,21 @@
+id: '16968645055170.4362254266940877'
+definitionId: heading
+styles:
+  xl:
+    fontSize:
+      customValue: 14
+      customUnit: px
+      themeDefaultOverridePropertyKey: baseTextFontSize
+    gridItem:
+      h: 10
+      w: 6
+properties:
+  name: heading2
+  text: Guide to Risks
+  verticalAlignment: middle
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+parentSlotId: '16968645055170.5441825225672554'
+index: 0
+slots: []

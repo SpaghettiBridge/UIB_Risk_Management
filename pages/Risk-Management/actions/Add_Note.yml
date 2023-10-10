@@ -1,0 +1,194 @@
+id: '16968537200240.35960634730493646'
+name: Add_Note
+nameConfigured: true
+steps:
+  - id: '16968690836580.8425285391121613'
+    type: customSQLQuery
+    name: Get_New_Id
+    params:
+      - type: query
+        value: |
+          select uuid_generate_v4() as risk_progress_id
+        valueType: interpolatedValue
+        interpolationType: string
+      - type: datasourceId
+        value: Supabase Bridgelink Apps Database
+        valueType: custom
+        mustSelectFirst: true
+      - type: preparedQuery
+        value: |
+          select uuid_generate_v4() as risk_progress_id
+        valueType: interpolatedValue
+      - type: preparedQueryParams
+        value: []
+        valueType: custom
+      - type: customDatabaseName
+        value: ''
+        valueType: interpolatedValue
+      - type: stepVersion
+        value: 2
+        valueType: custom
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+  - id: '16968696002820.007603841232759034'
+    type: customSQLQuery
+    name: Get_Date
+    params:
+      - type: query
+        value: select CURRENT_DATE as Todays_Date
+        valueType: interpolatedValue
+        interpolationType: string
+      - type: datasourceId
+        value: Supabase Bridgelink Apps Database
+        valueType: custom
+        mustSelectFirst: true
+      - type: preparedQuery
+        value: select CURRENT_DATE as Todays_Date
+        valueType: interpolatedValue
+      - type: preparedQueryParams
+        value: []
+        valueType: custom
+      - type: customDatabaseName
+        value: ''
+        valueType: interpolatedValue
+      - type: stepVersion
+        value: 2
+        valueType: custom
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+  - id: '16969260405930.928904040905087'
+    type: customAsyncCode
+    name: Get_Type
+    params:
+      - type: asyncCode
+        value: |-
+          let return_Type = ''
+          if ({{params.Type}} == undefined){
+            return_Type = {{ui.tbl_Progress_Notes.selectedRow.data.type}}
+          }
+          else if ({{params.Type}} == null){
+            return_Type = {{ui.tbl_Progress_Notes.selectedRow.data.type}}
+          }  
+          else {
+            return_Type = {{params.Type}}  
+          }
+          return {{return_Type}};
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+  - id: '16969264320460.023406603705087736'
+    type: customAsyncCode
+    name: Get_Desc
+    params:
+      - type: asyncCode
+        value: |-
+          let return_Type = ''
+          if ({{params.Description}} == undefined){
+            return_Type = {{ui.tbl_Progress_Notes.selectedRow.data.details}}
+          }
+          else if ({{params.Description}} == null){
+            return_Type = {{ui.tbl_Progress_Notes.selectedRow.data.details}}
+          }  
+            else {
+            return_Type = {{params.Description}}  
+          }
+          return {{return_Type}};
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+  - id: '16968690350350.9631261672560434'
+    type: CREATE_ENTITY
+    name: create
+    params:
+      - type: datasourceId
+        value: Supabase Bridgelink Apps Database
+        valueType: string
+      - type: resourceId
+        value: public.rm_progress_notes
+        valueType: string
+      - type: entity
+        value:
+          mode: structured
+          valueByMode:
+            structured:
+              rm_progressnote_id:
+                value: '{{steps.Get_New_Id.data[0].risk_progress_id}}'
+              type:
+                value: '{{steps.Get_Type.data}}'
+              details:
+                value: '{{steps.Get_Desc.data}}'
+              created_by:
+                value: '{{state.username}}'
+              risk_id:
+                value: '{{ui.tbl_Risks.selectedRow.data.risk_id}}'
+              created_at:
+                value: '{{steps.Get_Date.data[0].todays_date}}'
+            custom: ''
+        valueType: custom
+      - type: customDatabaseName
+        value: ''
+        valueType: interpolatedValue
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+singleStep: false
+mode: manual
+modeConfigured: false
+parentPageId: '1'
+folder: false
+parentId: null
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.Add_Note.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.Add_Note.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.Add_Note.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+assigned: true
+selected: true
+configured: false
+index: 10

@@ -1,0 +1,170 @@
+id: '16968537042570.9695396239916811'
+name: Add_Risk
+nameConfigured: true
+steps:
+  - id: '16968560094740.577541757634974'
+    type: customSQLQuery
+    name: Get_New_ID
+    params:
+      - type: query
+        value: select uuid_generate_v4() as risk_id
+        valueType: interpolatedValue
+        interpolationType: string
+      - type: datasourceId
+        value: Supabase Bridgelink Apps Database
+        valueType: custom
+        mustSelectFirst: true
+      - type: preparedQuery
+        value: select uuid_generate_v4() as risk_id
+        valueType: interpolatedValue
+      - type: preparedQueryParams
+        value: []
+        valueType: custom
+      - type: customDatabaseName
+        value: ''
+        valueType: interpolatedValue
+      - type: stepVersion
+        value: 2
+        valueType: custom
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+  - id: '16968578518270.5169348291096587'
+    type: customSQLQuery
+    name: Get_Todays_Date
+    params:
+      - type: query
+        value: select current_date as today_date
+        valueType: interpolatedValue
+        interpolationType: string
+      - type: datasourceId
+        value: Supabase Bridgelink Apps Database
+        valueType: custom
+        mustSelectFirst: true
+      - type: preparedQuery
+        value: select current_date as today_date
+        valueType: interpolatedValue
+      - type: preparedQueryParams
+        value: []
+        valueType: custom
+      - type: customDatabaseName
+        value: ''
+        valueType: interpolatedValue
+      - type: stepVersion
+        value: 2
+        valueType: custom
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+  - id: '16968558440920.21175062039538695'
+    type: CREATE_ENTITY
+    name: Create_Record
+    params:
+      - type: datasourceId
+        value: Supabase Bridgelink Apps Database
+        valueType: string
+      - type: resourceId
+        value: public.rm_risks
+        valueType: string
+      - type: entity
+        value:
+          mode: structured
+          valueByMode:
+            structured:
+              area:
+                value: '{{ui.inpArea.value}}'
+              description:
+                value: '{{ui.inpDetails.value}}'
+              risk_type:
+                value: '{{ui.inpType.value}}'
+              risk_rating:
+                value: '{{ui.inpRating.value}}'
+              control_measure:
+                value: '{{ui.inpControl.value}}'
+              status:
+                value: '{{ui.inpStatus.value}}'
+              created_at:
+                value: '{{steps.Get_Todays_Date.data[0].today_date}}'
+              fk_service_id:
+                value: ''
+              pk_risk_id:
+                value: ''
+              fk_risk_owner:
+                value: ''
+              fk_created_by:
+                value: ''
+            custom: ''
+        valueType: custom
+      - type: customDatabaseName
+        value: ''
+        valueType: interpolatedValue
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+  - id: '16969252757010.8881005592844773'
+    type: customAsyncCode
+    name: Add_Note
+    params:
+      - type: asyncCode
+        value: >-
+          {{actions.Add_Note.trigger({Type: 'Action', Description: 'Risk record
+          created'}) }}
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+singleStep: false
+mode: manual
+modeConfigured: false
+parentPageId: '1'
+folder: false
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.Add_Risk.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.Add_Risk.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.Add_Risk.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+assigned: false
+selected: true
+configured: false
+index: 8

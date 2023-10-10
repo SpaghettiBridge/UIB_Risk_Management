@@ -1,0 +1,36 @@
+id: '1'
+name: Risk Management
+url: Risk-Management
+roleIds: []
+disableInMenu: false
+index: 0
+slots:
+  - id: '1'
+    name: content
+    bindings: {}
+    children:
+      - id: '1'
+        definitionId: grid
+        parentSlotId: '1'
+        index: 0
+        styles: {}
+        properties:
+          name: grid
+          pageTitle: '{{app.name}} - {{activeRoute.name}}'
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+        actions:
+          pageLoad:
+            - action: '16968620270650.3481200969916718'
+              paramCode: ''
+              index: 0
+        slots:
+          - id: '2'
+            name: content
+            bindings: {}
+            children:
+              - components/tb_Risks/tb_Risks.yml
+              - components/inpDetails2.yml
+              - components/card/card.yml
+              - components/mdl_Help_Risks/mdl_Help_Risks.yml

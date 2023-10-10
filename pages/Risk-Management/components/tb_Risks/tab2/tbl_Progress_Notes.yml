@@ -1,0 +1,349 @@
+id: '16968532737040.5307103845396433'
+definitionId: smartTable
+parentSlotId: '16968520326600.6317433755868269'
+styles:
+  xl:
+    gridItem:
+      x: 8
+      y: 10
+      w: 15
+      h: 127
+  xs:
+    gridItem:
+      x: 0
+      y: 243
+      w: 24
+      h: 137
+properties:
+  dynamicColumns:
+    value: []
+    dataValue: |-
+      [
+        { prop: 'id', type: 'number', primaryKey: true },
+       'full_name',
+        { prop: 'avatar', type: 'image' },
+        { prop: 'email', type: 'link' },
+      ]
+    withData: false
+  data: '{{actions.Load_Risk_Progress_Notes.data}}'
+  name: tbl_Progress_Notes
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  title: ''
+  showLoading:
+    withData: true
+    dataValue: '{{actions.Load_Risk_Progress_Notes.loading}}'
+    value: false
+  rowVariation: dense
+  showAddAction:
+    value: true
+    dataValue: 'false'
+    withData: false
+  showEditAction:
+    value: false
+    dataValue: 'false'
+    withData: false
+  showDeleteAction:
+    value: true
+    dataValue: 'false'
+    withData: false
+  showClearSelection:
+    value: false
+    dataValue: 'true'
+    withData: false
+  sortable:
+    value: false
+    dataValue: 'true'
+    withData: false
+  putEmptyValuesAtTheEnd: false
+  showExportAction:
+    value: false
+    dataValue: 'true'
+    withData: false
+actions:
+  smartTableCreate:
+    - action: '16968537200240.35960634730493646'
+      paramCode: ''
+      blockPageLoad: false
+      index: 0
+  init: []
+  smartTableEdit: []
+  smartTableBulkEdit: []
+  smartTableDelete:
+    - action: '16968537421740.6078120900760855'
+      paramCode: ''
+      blockPageLoad: false
+      index: 1
+  smartTableRowSelect: []
+  smartTableRowClick: []
+  smartTablePageSelect: []
+  smartTableFilterChange: []
+  smartTableSortChange: []
+  smartTableReload: []
+index: 6
+slots:
+  - id: '16968532737040.037852872871457555'
+    name: columns
+    children:
+      - id: '16968534100940.10715389518574048'
+        definitionId: atomicString
+        parentSlotId: '16968532737040.037852872871457555'
+        styles:
+          xl:
+            visible: false
+        properties:
+          name: atomicString16
+          prop: rm_progressnote_id
+          primaryKey: true
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 120
+          filter: true
+        index: 4
+        slots: []
+      - id: '16968534100940.4624128148132405'
+        definitionId: atomicString
+        parentSlotId: '16968532737040.037852872871457555'
+        styles:
+          xl:
+            visible: false
+        properties:
+          name: atomicString17
+          prop: risk_id
+          primaryKey: true
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 120
+          filter: true
+        index: 5
+        slots: []
+      - id: '16968534100940.6221066676223301'
+        definitionId: atomicString
+        parentSlotId: '16968532737040.037852872871457555'
+        styles:
+          xl:
+            visible: false
+        properties:
+          name: atomicString18
+          prop: id
+          primaryKey: true
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 120
+          filter: true
+        index: 6
+        slots: []
+      - id: '16968534100940.29309918266953217'
+        definitionId: atomicString
+        parentSlotId: '16968532737040.037852872871457555'
+        styles:
+          xl:
+            visible: false
+        properties:
+          name: atomicString19
+          prop: created_by
+          primaryKey: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 120
+          filter: true
+        index: 7
+        slots: []
+      - id: '16968534100940.8728604039528884'
+        definitionId: atomicString
+        parentSlotId: '16968532737040.037852872871457555'
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicString21
+          prop: details
+          primaryKey: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: '300'
+          filter: true
+          title: Description
+        index: 2
+        slots: []
+      - id: '16968534100940.7692584859217231'
+        definitionId: atomicString
+        parentSlotId: '16968532737040.037852872871457555'
+        styles:
+          xl:
+            visible: false
+        properties:
+          name: atomicString22
+          prop: name
+          primaryKey: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 120
+          filter: true
+        index: 8
+        slots: []
+      - id: '16968534100950.39679887808017367'
+        definitionId: atomicString
+        parentSlotId: '16968532737040.037852872871457555'
+        styles:
+          xl:
+            visible: false
+        properties:
+          name: atomicString23
+          prop: name_first
+          primaryKey: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 120
+          filter: true
+        index: 9
+        slots: []
+      - id: '16968534100950.2037189702318627'
+        definitionId: atomicString
+        parentSlotId: '16968532737040.037852872871457555'
+        styles:
+          xl:
+            visible: false
+        properties:
+          name: atomicString24
+          prop: name_last
+          primaryKey: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 120
+          filter: true
+        index: 10
+        slots: []
+      - id: '16968534100950.8248303544720308'
+        definitionId: atomicString
+        parentSlotId: '16968532737040.037852872871457555'
+        styles:
+          xl:
+            visible: false
+        properties:
+          name: atomicString25
+          prop: email
+          primaryKey: false
+          inputType: email
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 120
+          filter: true
+        index: 11
+        slots: []
+      - id: '16968534100950.366256735648111'
+        definitionId: atomicSelect
+        parentSlotId: '16968532737040.037852872871457555'
+        styles:
+          xl:
+            visible: false
+        properties:
+          name: atomicSelect3
+          prop: user_status
+          primaryKey: false
+          options:
+            value:
+              - value: Active
+                color: primary
+                __UIBAKERY__SYSTEM_ID__: '16968534100950.6256883475645556'
+            dataValue: |-
+              [
+                {
+                  value: 'Active',
+                  color: 'primary'
+                }
+              ]
+            withData: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 120
+          filter: true
+        index: 12
+        slots: []
+      - id: '16968534100940.31254558889987716'
+        definitionId: atomicSelect
+        parentSlotId: '16968532737040.037852872871457555'
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicSelect8
+          prop: type
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          primaryKey: false
+          filter: true
+          width: '40'
+          options:
+            value:
+              - value: Action
+                color: primary
+                __UIBAKERY__SYSTEM_ID__: '16969253398770.06868270546342625'
+                title: Action
+              - value: Note
+                color: primary
+                __UIBAKERY__SYSTEM_ID__: '16969253577850.928911622368291'
+                title: Note
+            dataValue: '[]'
+            withData: false
+          title: ''
+        index: 0
+        slots: []
+      - id: '16968534100950.15511189138313952'
+        definitionId: atomicSelect
+        parentSlotId: '16968532737040.037852872871457555'
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicSelect9
+          prop: note_creator
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          primaryKey: false
+          filter: true
+          width: '80'
+          options:
+            value: []
+            dataValue: >
+              {{var output = actions.LU_Account.data.map(x=>{return
+              {title:x.name, value:x.id} })
+
+              return output}}
+            withData: true
+        index: 3
+        slots: []
+      - id: '16968534100940.7195782918846922'
+        definitionId: atomicDate
+        parentSlotId: '16968532737040.037852872871457555'
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicDate
+          prop: created_at
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          dateFormat:
+            value: MMM dd, yyyy
+            dataValue: dd/MM/yyyy
+            withData: true
+          primaryKey: false
+          filter: true
+          width: '60'
+        index: 1
+        slots: []

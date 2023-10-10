@@ -1,0 +1,115 @@
+id: '16968523249820.9407075630644433'
+definitionId: customComponentUnsafe
+parentSlotId: '16968527397430.3124061488024241'
+styles:
+  xl:
+    gridItem:
+      x: 23
+      y: 15
+      w: 1
+      h: 5
+  xs:
+    gridItem:
+      x: 23
+      y: 35
+      w: 1
+      h: 5
+properties:
+  data: '{ title: ''Custom Component'' }'
+  template: |
+    <!DOCTYPE html>
+    <html>
+      <style>
+        .material-tooltip {
+          padding: 10px 8px;
+          font-size: 1rem;
+          z-index: 2000;
+          background-color: transparent;
+          border-radius: 2px;
+          color: #fff;
+          min-height: 36px;
+          line-height: 120%;
+          opacity: 0;
+          position: absolute;
+          text-align: center;
+          max-width: calc(100% - 4px);
+          overflow: hidden;
+          left: 0;
+          top: 0;
+          pointer-events: none;
+          visibility: hidden;
+          background-color: #323232;
+        }
+      </style>
+      <head>
+
+        <!--Let browser know website is optimized for mobile-->
+      </head>
+
+      <body>
+        <div class="fixed-action-btn" style="color: #DF6F2A; position: absolute !important">
+          <a class="btn-floating btn-large">
+            <i class="large material-icons">add</i>
+          </a>
+          <ul>
+    <!--        <li>
+              <button id="addNeed" class="btn-floating tooltipped" data-position="bottom" data-tooltip="Need/Outcome"><i class="material-icons">assignment_ind</i></button>
+            </li>
+            <li>
+              <button id="addLink" class="btn-floating tooltipped" style="color: #DF6F2A" data-position="bottom" data-tooltip="File Link"><i class="material-icons">link</i></button>
+            </li> -->
+            <li>
+              <button id="addILPs" class="btn-floating tooltipped" style="color: #DF6F2A" data-position="bottom" data-tooltip="ILP"><i class="material-icons">note_add</i></button>
+            </li>
+
+         
+            <!-- <li>
+              <a class="btn-floating "><i class="material-icons">attach_file</i></a>
+            </li> -->
+          </ul>
+        </div>
+
+        <script>
+          var elems = document.querySelectorAll(".fixed-action-btn");
+          var instances = M.FloatingActionButton.init(elems, {
+            direction: "left",
+          });
+          $(".tooltipped").tooltip({ delay: 50 });
+
+    //       function addNeedfunc() {
+    //         UB.updateValue(1);
+    //         UB.triggerEvent("Open_Modal");
+    //       }
+    //       var addNeed = document.getElementById("addNeed");
+    //       addNeed.addEventListener("click", addNeedfunc);
+
+    //       function addLinkfunc() {
+    //         UB.updateValue(2);
+    //         UB.triggerEvent("Open_Modal");
+    //       }
+    //       var addLink = document.getElementById("addLink");
+    //       addLink.addEventListener("click", addLinkfunc);
+
+          function addILPfunc() {
+            UB.updateValue(3);
+            UB.triggerEvent("Open_Modal");
+          }
+          var addILP = document.getElementById("addILPs");
+          addILP.addEventListener("click", addILPfunc);
+
+       
+        </script>
+      </body>
+    </html>
+  name: AppMenu2
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+actions:
+  triggerEvent:
+    - action: '16951137197410.1871009521731717'
+      paramCode: ''
+      blockPageLoad: false
+      index: 0
+index: 3
+slots: []

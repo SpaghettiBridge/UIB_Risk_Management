@@ -1,0 +1,84 @@
+id: '16968526059350.3279016808704689'
+definitionId: contextMenuButton
+parentSlotId: '16968520326600.6317433755868269'
+styles:
+  xl:
+    gridItem:
+      x: 23
+      y: 0
+      w: 1
+      h: 10
+    iconPlacement: center
+  xs:
+    gridItem:
+      x: 23
+      y: 578
+      w: 1
+      h: 10
+properties:
+  contextMenuItems:
+    value:
+      - id: '1'
+        title: Item 1
+        icon: edit
+        __UIBAKERY__SYSTEM_ID__: '1'
+        onlyIcon: true
+      - id: '4'
+        title: Item 2
+        icon: plus
+        __UIBAKERY__SYSTEM_ID__: '2'
+        onlyIcon: true
+    dataValue: |+
+      return [     
+        {
+          id: '1',
+          title: '1',
+          icon: 'plus',
+          onlyIcon: true
+        },
+        {
+          id: '2',
+          title: '2',
+          icon: 'edit',
+          onlyIcon: true
+        },  
+      ]
+
+
+    withData: true
+  name: cst_Profile
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  contextMenuTrigger:
+    value: hover
+    dataValue: click
+    withData: false
+  contextMenuPosition:
+    value: left
+    dataValue: bottom
+    withData: false
+  icon:
+    value: settings
+    dataValue: menu
+    withData: false
+  appearance:
+    value: filled
+    dataValue: filled
+    withData: false
+  cssClasses:
+    - ''
+  status:
+    value: primary
+    dataValue: basic
+    withData: false
+  __UIBAKERY__SHOW__CONDITION__CODE__: '{{state.RiskDisabled}}'
+actions:
+  buttonClick: []
+  menuItemClick:
+    - action: '16968576687710.9596333746278372'
+      paramCode: ''
+      index: 0
+  init: []
+index: 8
+slots: []

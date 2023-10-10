@@ -1,0 +1,94 @@
+id: '16968561249850.020773528203544833'
+name: Find_Account_Services_And_Roles
+nameConfigured: true
+steps:
+  - id: '16968561485620.5002125923073304'
+    type: condition
+    name: condition
+    params:
+      - type: code
+        value: '{{state.myServices != []}}'
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: steps
+        value:
+          - condition: true
+            steps:
+              - id: '16968562004750.4207452475882121'
+                type: customSQLQuery
+                name: query
+                params:
+                  - type: query
+                    value: |
+                      select * from GetServices
+                      WHERE email = {{state.User.email || user.email   }}
+                      order by service_name
+                    valueType: interpolatedValue
+                    interpolationType: string
+                  - type: datasourceId
+                    value: Supabase Bridgelink Apps Database
+                    valueType: custom
+                    mustSelectFirst: true
+                  - type: preparedQuery
+                    value: |
+                      select * from GetServices
+                      WHERE email = ?
+                      order by service_name
+                    valueType: interpolatedValue
+                  - type: preparedQueryParams
+                    value:
+                      - >-
+                        __UI_BAKERY__FORMAT_IF_DATE__(state.User.email ||
+                        user.email   )
+                    valueType: custom
+                  - type: customDatabaseName
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: stepVersion
+                    value: 2
+                    valueType: custom
+                  - type: successMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: failureMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: mapperEnabled
+                    value: false
+                    valueType: custom
+                level: 1
+                fallthroughError: false
+                isChanged: true
+          - condition: false
+            steps: []
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+singleStep: false
+mode: manual
+modeConfigured: false
+folder: false
+parentId: null
+config:
+  shouldConfirm: false
+  confirmMessage: >-
+    Are you sure you'd like to proceed with
+    "{{actions.Find_Account_Services_And_Roles.name}}"?
+  showSuccessToast: false
+  successToast: >-
+    Action "{{actions.Find_Account_Services_And_Roles.name}}" successfully
+    executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.Find_Account_Services_And_Roles.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: true
+assigned: false
+selected: true
+configured: false
+index: 0

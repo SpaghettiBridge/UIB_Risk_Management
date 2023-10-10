@@ -1,0 +1,52 @@
+id: '16968634524540.2709761187716042'
+name: CancelChanges
+nameConfigured: true
+steps:
+  - id: '16968635564020.8962821690328588'
+    type: executeAction
+    name: execute
+    params:
+      - type: action
+        value: '16968635410790.6648237389472313'
+        valueType: string
+      - type: isActionsLibraryCall
+        value: false
+        valueType: string
+      - type: customParams
+        value: return {{data}};
+        valueType: string
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+singleStep: true
+mode: manual
+modeConfigured: true
+folder: false
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.CancelChanges.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.CancelChanges.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.CancelChanges.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+assigned: true
+selected: true
+configured: false
+parentPageId: '1'
+index: 4

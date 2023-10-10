@@ -1,0 +1,38 @@
+id: '16968620270650.3481200969916718'
+name: Page_Load
+nameConfigured: true
+steps:
+  - id: '16968620343390.75953759440923'
+    type: customAsyncCode
+    name: code
+    params:
+      - type: asyncCode
+        value: '{{state.username}} = ''3e038d87-a744-47f6-a302-e6d431d4cd73'''
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
+singleStep: true
+mode: manual
+modeConfigured: true
+parentPageId: '1'
+folder: false
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.Page_Load.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.Page_Load.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.Page_Load.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+assigned: true
+selected: true
+configured: false
+index: 15

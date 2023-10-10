@@ -1,0 +1,44 @@
+id: '16968564093060.47677390951301524'
+name: SaveState
+nameConfigured: true
+steps:
+  - id: '16968564204760.22268931182613017'
+    type: putInStore
+    name: newStep
+    params:
+      - type: name
+        value: '16968564344620.1259745571949309'
+        valueType: string
+      - type: value
+        value: '{{ui.slctService.value}}'
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: producible
+        value: true
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+singleStep: true
+mode: manual
+modeConfigured: true
+folder: false
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.SaveState.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.SaveState.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.SaveState.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: true
+assigned: true
+selected: true
+configured: false
+index: 2

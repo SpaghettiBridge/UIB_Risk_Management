@@ -1,0 +1,38 @@
+id: '16968650217590.8831798604238024'
+name: Open_Help_Modal
+nameConfigured: true
+steps:
+  - id: '16968650324180.43556419629709286'
+    type: customAsyncCode
+    name: code
+    params:
+      - type: asyncCode
+        value: '{{ui.mdl_Help_Risks.open()}}'
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
+singleStep: true
+mode: manual
+modeConfigured: true
+parentPageId: '1'
+folder: false
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.Open_Help_Modal.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.Open_Help_Modal.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.Open_Help_Modal.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+assigned: true
+selected: true
+configured: false
+index: 17

@@ -1,0 +1,81 @@
+id: '16968537421740.6078120900760855'
+name: Delete_Note
+nameConfigured: true
+steps:
+  - id: '16969263271390.06354492591358785'
+    type: customAsyncCode
+    name: code
+    params:
+      - type: asyncCode
+        value: >-
+          console.log('Selected ID: ' +
+          {{ui.tbl_Progress_Notes.selectedRow.data.rm_progressnote_id}})            
+
+          console.log('Deleted ID: ' +
+          {{ui.tbl_Progress_Notes.deletedRow.data.rm_progressnote_id}})
+                      
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    paused: false
+  - id: '16969250729430.7486366981648511'
+    type: DELETE_ENTITY
+    name: delete
+    params:
+      - type: datasourceId
+        value: Supabase Bridgelink Apps Database
+        valueType: string
+      - type: resourceId
+        value: public.rm_progress_notes
+        valueType: string
+      - type: filter
+        value:
+          - column: rm_progressnote_id
+            operation: '='
+            value:
+              value: '{{ui.tbl_Progress_Notes.deletedRow.data.rm_progressnote_id}}'
+        valueType: custom
+      - type: bulk
+        value: false
+        valueType: string
+      - type: customDatabaseName
+        value: ''
+        valueType: interpolatedValue
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+singleStep: false
+mode: manual
+modeConfigured: false
+parentPageId: '1'
+folder: false
+parentId: null
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.Delete_Note.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.Delete_Note.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.Delete_Note.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+assigned: true
+selected: true
+configured: false
+index: 11
