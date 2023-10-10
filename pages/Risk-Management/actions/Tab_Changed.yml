@@ -7,7 +7,7 @@ steps:
     name: code
     params:
       - type: asyncCode
-        value: |-
+        value: |
           if ({{ui.tbl_Risks.selectedRow.data != null}}){
             {{state.Selected_Risk_ID = ui.tbl_Risks.selectedRow.data.pk_risk_id}} 
             {{actions.Load_Risk_Progress_Notes.trigger()}}

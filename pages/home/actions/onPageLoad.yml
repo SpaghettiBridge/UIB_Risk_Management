@@ -1,0 +1,63 @@
+id: '16969547768040.446214080004135'
+name: onPageLoad
+nameConfigured: true
+steps:
+  - id: '16969548612560.7635278505361012'
+    type: condition
+    name: condition
+    params:
+      - type: code
+        value: |
+          if (["SLT","GROUP"].includes(state.account.roles)){
+            return true}  
+          else{
+            return false}
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: steps
+        value:
+          - condition: true
+            steps:
+              - id: '16969548668960.24793995626218068'
+                type: navigation
+                name: navigate
+                params:
+                  - type: url
+                    value: Risk-Management
+                    valueType: interpolatedValue
+                    interpolationType: string
+                  - type: queryParams
+                    value:
+                      - name: ''
+                        value: ''
+                    valueType: custom
+                    interpolationType: string
+                level: 1
+                fallthroughError: false
+                isChanged: true
+          - condition: false
+            steps: []
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+singleStep: true
+mode: manual
+modeConfigured: true
+parentPageId: '16969546669330.8087211708204785'
+folder: false
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.onPageLoad.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.onPageLoad.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.onPageLoad.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+index: 23

@@ -4,8 +4,8 @@ parentSlotId: '16968520326600.6317433755868269'
 styles:
   xl:
     gridItem:
-      x: 18
-      y: 0
+      x: 17
+      y: 1
       w: 6
       h: 6
     color:
@@ -14,9 +14,8 @@ styles:
         {{ // we are going to check the dates of the last review and change the
         colour of the text if its too long ago
 
-        let review_Date = new Date()
-
-        review_date = ui.tbl_Risks.selectedRow.data.last_review_date
+        let review_Date = new
+        Date(ui.tbl_Risks.selectedRow.data.last_review_date)
 
         let todays_date = new Date()
 
@@ -24,19 +23,23 @@ styles:
         let days_Since_Review = todays_date.getTime() - review_Date.getTime()
 
 
-        if (days_Since_Review > 10) {
-          return '#e28743'
+        let dateDiff = new moment.duration(days_Since_Review)
+
+
+
+        if (dateDiff.asDays() > 10) {
           state.flag = 'Red'
+          return '#d1431d'  
         }
 
-        else if (days_Since_Review > 5) {
-          return '#e28743'
+        else if (dateDiff.asDays() >= 5) {
           state.flag = 'Orange'
+          return '#e28743'  
         }
 
-        else if (days_Since_Review < 5) {
-          return '#76b5c5'
+        else if (dateDiff.asDays() < 5) {
           state.flag = 'Green'
+          return '#76b5c5'
         }
 
 

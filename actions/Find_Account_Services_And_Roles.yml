@@ -2,6 +2,17 @@ id: '16968561249850.020773528203544833'
 name: Find_Account_Services_And_Roles
 nameConfigured: true
 steps:
+  - id: '16969497926620.7106051031806109'
+    type: customAsyncCode
+    name: code
+    params:
+      - type: asyncCode
+        value: console.log({{state.myServices}})
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 1
+    fallthroughError: false
+    isChanged: true
   - id: '16968561485620.5002125923073304'
     type: condition
     name: condition
@@ -100,13 +111,13 @@ steps:
                     value: ''
                     valueType: interpolatedValue
                   - type: successMapper
-                    value: ''
+                    value: return data[0]
                     valueType: interpolatedValue
                   - type: failureMapper
                     value: ''
                     valueType: interpolatedValue
                   - type: mapperEnabled
-                    value: false
+                    value: true
                     valueType: custom
                 level: 1
                 fallthroughError: false

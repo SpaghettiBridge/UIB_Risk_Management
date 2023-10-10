@@ -1,31 +1,32 @@
 id: '16969483294130.31862697544820207'
 definitionId: image
-parentSlotId: '2'
+parentSlotId: '16968520326600.6317433755868269'
 styles:
   xl:
     gridItem:
       x: 23
-      y: 14
+      y: 0
       w: 1
-      h: 15
+      h: 8
     src:
       url: >-
         https://bridgelink2.spaghettibridge.co.uk/wp-content/uploads/2023/10/Orange-Flag.jpg
       uploadUrl: ''
       name: ''
       active: url
+    fit: scale-down
   xs:
     gridItem:
-      x: 23
-      y: 323
+      x: 17
+      y: 688
       w: 1
-      h: 15
+      h: 6
 properties:
   name: img_Orgnge_Flag
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
     - xl
     - xs
-  __UIBAKERY__SHOW__CONDITION__CODE__: '{{state.flag == ''Orange''}}'
+  __UIBAKERY__SHOW__CONDITION__CODE__: state.flag == 'Orange'
 actions: {}
 index: 5
 slots: []

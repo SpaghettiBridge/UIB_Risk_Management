@@ -1,0 +1,27 @@
+id: '16969508765060.6769791914772436'
+definitionId: text
+parentSlotId: '16968520326600.9060417850556657'
+styles:
+  xl:
+    gridItem:
+      x: 0
+      y: 0
+      w: 24
+      h: 6
+  xs:
+    gridItem:
+      x: 0
+      y: 80
+      w: 24
+      h: 6
+properties:
+  name: msg_Risks
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  __UIBAKERY__SHOW__CONDITION__CODE__: ''
+  value: You do not have access to see risks
+  alignment: center
+actions: {}
+index: 1
+slots: []

@@ -17,3 +17,6 @@ slots:
       - tbl_Progress_Notes.yml
       - card2/card2.yml
       - text2.yml
+      - img_Red_Flag.yml
+      - img_Orgnge_Flag.yml
+      - img_Green_Flag.yml

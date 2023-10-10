@@ -4,8 +4,8 @@ parentSlotId: '2'
 styles:
   xl:
     gridItem:
-      x: 4
-      y: 309
+      x: 1
+      y: 461
       w: 10
       h: 42
   xs:
