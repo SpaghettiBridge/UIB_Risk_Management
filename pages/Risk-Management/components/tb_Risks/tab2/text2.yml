@@ -4,10 +4,40 @@ parentSlotId: '16968520326600.6317433755868269'
 styles:
   xl:
     gridItem:
-      x: 20
+      x: 18
       y: 3
-      w: 4
+      w: 6
       h: 6
+    color:
+      value: warning
+      dataValue: >-
+        {{ // we are going to check the dates of the last review and change the
+        colour of the text if its too long ago
+
+        let review_Date = new Date()
+
+        review_date = ui.tbl_Risks.selectedRow.data.last_review_date
+
+        let todays_date = new Date()
+
+
+        let days_Since_Review = todays_date.getTime() - review_Date.getTime()
+
+
+        if (days_Since_Review > 14) {return '#e28743'}
+
+        else if (days_Since_Review > 5) {return '#e28743'}
+
+        else if (days_Since_Review < 5) {return '#76b5c5'}
+
+
+
+        }}
+      withData: true
+    fontSize:
+      customValue: 20
+      customUnit: px
+      themeDefaultOverridePropertyKey: baseTextFontSize
   xs:
     gridItem:
       x: 0
