@@ -5,7 +5,7 @@ styles:
   xl:
     gridItem:
       x: 18
-      y: 3
+      y: 0
       w: 6
       h: 6
     color:
@@ -24,12 +24,20 @@ styles:
         let days_Since_Review = todays_date.getTime() - review_Date.getTime()
 
 
-        if (days_Since_Review > 14) {return '#e28743'}
+        if (days_Since_Review > 10) {
+          return '#e28743'
+          state.flag = 'Red'
+        }
 
-        else if (days_Since_Review > 5) {return '#e28743'}
+        else if (days_Since_Review > 5) {
+          return '#e28743'
+          state.flag = 'Orange'
+        }
 
-        else if (days_Since_Review < 5) {return '#76b5c5'}
-
+        else if (days_Since_Review < 5) {
+          return '#76b5c5'
+          state.flag = 'Green'
+        }
 
 
         }}

@@ -1,0 +1,31 @@
+id: '16969483322960.9642423577783086'
+definitionId: image
+parentSlotId: '2'
+styles:
+  xl:
+    gridItem:
+      x: 23
+      y: 88
+      w: 1
+      h: 16
+    src:
+      url: >-
+        https://bridgelink2.spaghettibridge.co.uk/wp-content/uploads/2023/10/Green-Flag.jpg
+      uploadUrl: ''
+      name: ''
+      active: url
+  xs:
+    gridItem:
+      x: 23
+      y: 338
+      w: 1
+      h: 12
+properties:
+  name: img_Green_Flag
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  __UIBAKERY__SHOW__CONDITION__CODE__: '{{state.flag == ''Green''}}'
+actions: {}
+index: 6
+slots: []

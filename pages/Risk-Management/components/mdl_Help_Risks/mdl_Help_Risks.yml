@@ -5,9 +5,22 @@ styles:
   xl:
     gridItem:
       x: 0
-      y: 274
+      y: 276
       w: 3
       h: 11
+    modalSize:
+      widthValue: '50'
+      widthUnit: '%'
+      heightValue: 60
+      heightUnit: '%'
+      minWidthValue: 0
+      minWidthUnit: px
+      minHeightValue: 0
+      minHeightUnit: px
+      maxWidthValue: none
+      maxWidthUnit: null
+      maxHeightValue: none
+      maxHeightUnit: null
   xs:
     gridItem:
       x: 0

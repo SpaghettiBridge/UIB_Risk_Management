@@ -1,0 +1,38 @@
+id: '16969477436300.8639758570444993'
+name: Help_Image_Click
+nameConfigured: true
+steps:
+  - id: '16969477925360.6347460288342766'
+    type: customAsyncCode
+    name: code
+    params:
+      - type: asyncCode
+        value: '{{ui.mdl_Help_Risks.close()}}'
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
+singleStep: true
+mode: manual
+modeConfigured: true
+parentPageId: '1'
+folder: false
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.Help_Image_Click.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.Help_Image_Click.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.Help_Image_Click.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+assigned: true
+selected: true
+configured: false
+index: 22

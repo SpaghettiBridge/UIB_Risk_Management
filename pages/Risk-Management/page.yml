@@ -35,3 +35,6 @@ slots:
               - components/card/card.yml
               - components/mdl_Help_Risks/mdl_Help_Risks.yml
               - components/cst_Risks.yml
+              - components/img_Red_Flag.yml
+              - components/img_Orgnge_Flag.yml
+              - components/img_Green_Flag.yml
