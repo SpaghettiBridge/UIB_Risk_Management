@@ -4,8 +4,8 @@ parentSlotId: '2'
 styles:
   xl:
     gridItem:
-      x: 15
-      y: 298
+      x: 17
+      y: 463
       w: 6
       h: 141
   xs:
@@ -30,7 +30,6 @@ slots:
   - id: '16968628905300.27452573328212826'
     name: body
     children:
-      - loadRiskDataTable2.yml
       - input.yml
   - id: '16968628905300.5293523705461392'
     name: footer

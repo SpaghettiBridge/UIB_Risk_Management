@@ -5,7 +5,7 @@ styles:
   xl:
     gridItem:
       x: 0
-      y: 0
+      y: 6
       w: 24
       h: 121
   xs:
@@ -56,6 +56,8 @@ properties:
         // Handle the default case here, if needed
         break;
     }}}
+  limit: '12'
+  selectedRowIndex: '0'
 actions:
   smartTableRowClick:
     - action: '16968520159240.7357300507703233'
@@ -361,7 +363,7 @@ slots:
                 color: primary
                 __UIBAKERY__SYSTEM_ID__: '16968651847490.3018490806652885'
                 title: HR
-              - value: New Dev
+              - value: New dev
                 color: primary
                 __UIBAKERY__SYSTEM_ID__: '16968651927680.7706979849020184'
                 title: New Dev

@@ -15,9 +15,9 @@ steps:
       - type: filters
         value:
           - column: id
-            operation: '='
+            operation: in
             value:
-              value: 7b096f39-3e4b-4392-8a95-63635443c3b4
+              value: '{{state.account.service_id}}'
         valueType: custom
       - type: ordering
         value:

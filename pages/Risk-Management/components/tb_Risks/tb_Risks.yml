@@ -5,7 +5,7 @@ styles:
   xl:
     gridItem:
       x: 0
-      y: 1
+      y: 0
       w: 23
       h: 274
   xs:
@@ -19,6 +19,7 @@ properties:
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
     - xl
     - xs
+  __UIBAKERY__SHOW__CONDITION__CODE__: ''
 actions:
   tabsChangeTab:
     - action: '16969423514190.8996528966037205'

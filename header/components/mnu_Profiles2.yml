@@ -20,27 +20,22 @@ properties:
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
     - xl
     - xs
-  items: |-
-    [
-       {
-        title: 'Dashboard',
-        link: '/Risk_Management'
-      },
-      
-      {
-        title: 'Risk Management',
-        link: '/Risk_Management'
-      },
-    //   {
-    //     title: 'Activity',
-    //     link: '/activity'
-    //   },
-    //   {
-    //     title: 'Student profiles',
-    //     link: '/student-profiles'
-    //   },
-     
-    ]
+  items: |
+    if ({{["SLT","GROUP"].includes(state.account.roles)}}){
+       return[
+        {
+          title: 'Dashboard',
+          link: '/Risk_Management'
+        },
+        { 
+          title: 'Risk Management',
+          link: '/Risk_Management'
+        },
+      ]
+    }  
+    else {
+      return[]
+    }
   cssClasses:
     - btnTitleBar
 actions: {}

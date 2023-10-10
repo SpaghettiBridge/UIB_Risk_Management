@@ -33,8 +33,6 @@ slots:
               - components/tb_Risks/tb_Risks.yml
               - components/inpDetails2.yml
               - components/card/card.yml
+              - components/loadRiskDataTable2.yml
               - components/mdl_Help_Risks/mdl_Help_Risks.yml
               - components/cst_Risks.yml
-              - components/img_Red_Flag.yml
-              - components/img_Orgnge_Flag.yml
-              - components/img_Green_Flag.yml

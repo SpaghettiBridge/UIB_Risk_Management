@@ -14,3 +14,4 @@ slots:
     name: content
     children:
       - tbl_Risks.yml
+      - msg_Risks.yml

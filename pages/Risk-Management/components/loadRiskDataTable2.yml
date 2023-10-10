@@ -1,18 +1,18 @@
 id: '16968628979810.15493022251376942'
 definitionId: smartTable
-parentSlotId: '16968628905300.27452573328212826'
+parentSlotId: '2'
 styles:
   xl:
     gridItem:
-      x: 0
-      y: 10
-      w: 24
+      x: 11
+      y: 461
+      w: 6
       h: 124
   xs:
     gridItem:
-      x: 0
-      y: 0
-      w: 24
+      x: 11
+      y: 367
+      w: 6
       h: 124
 properties:
   dynamicColumns:
