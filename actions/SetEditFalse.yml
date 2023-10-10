@@ -71,7 +71,6 @@ steps:
 singleStep: false
 mode: manual
 modeConfigured: false
-parentPageId: '1'
 folder: false
 config:
   shouldConfirm: false
@@ -86,8 +85,8 @@ config:
   errorToastHideByClick: false
   delay: '0'
   runWhenFirstReferenced: true
-  preserveStateOnPageChange: false
+  preserveStateOnPageChange: true
 assigned: true
 selected: true
 configured: false
-index: 5
+index: 4

@@ -2,6 +2,36 @@ id: '16968634524540.2709761187716042'
 name: CancelChanges
 nameConfigured: true
 steps:
+  - id: '16969349162290.006628258533745379'
+    type: customAsyncCode
+    name: Reset_Fields
+    params:
+      - type: asyncCode
+        value: >-
+          {{state.Selected_Risk_ID}} =
+          {{ui.tbl_Risks.selectedRow.data.pk_risk_id}}
+
+          {{ui.inpRating.setValue(ui.tbl_Risks.selectedRow.data.risk_rating)}}
+
+          {{ui.inpArea.setValue(ui.tbl_Risks.selectedRow.data.area)}}
+
+          {{ui.inpType.setValue(ui.tbl_Risks.selectedRow.data.risk_type)}}
+
+          {{ui.inpControl.setValue(ui.tbl_Risks.selectedRow.data.control_measure)}}
+
+          {{ui.inpCreatedBy.setValue(ui.tbl_Risks.selectedRow.data.fk_created_by)}}
+
+          {{ui.inpOwner.setValue(ui.tbl_Risks.selectedRow.data.fk_risk_owner)}}
+
+          {{ui.inpStatus.setValue(ui.tbl_Risks.selectedRow.data.risk_status)}}
+
+          {{ui.inpDetails.setValue(ui.tbl_Risks.selectedRow.data.description)}}
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
   - id: '16968635564020.8962821690328588'
     type: executeAction
     name: execute
@@ -47,6 +77,6 @@ config:
   preserveStateOnPageChange: false
 assigned: true
 selected: true
-configured: false
+configured: true
 parentPageId: '1'
-index: 4
+index: 6

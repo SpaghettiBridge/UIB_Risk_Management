@@ -1,13 +1,13 @@
-id: '16968620270650.3481200969916718'
-name: Page_Load
+id: '16969477436300.8639758570444993'
+name: Help_Image_Click
 nameConfigured: true
 steps:
-  - id: '16968620343390.75953759440923'
+  - id: '16969477925360.6347460288342766'
     type: customAsyncCode
     name: code
     params:
       - type: asyncCode
-        value: '{{state.user_Id}} = ''3e038d87-a744-47f6-a302-e6d431d4cd73'''
+        value: '{{ui.mdl_Help_Risks.close()}}'
         valueType: interpolatedValue
         interpolationType: code
     level: 0
@@ -20,13 +20,13 @@ parentPageId: '1'
 folder: false
 config:
   shouldConfirm: false
-  confirmMessage: Are you sure you'd like to proceed with "{{actions.Page_Load.name}}"?
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.Help_Image_Click.name}}"?
   showSuccessToast: false
-  successToast: Action "{{actions.Page_Load.name}}" successfully executed
+  successToast: Action "{{actions.Help_Image_Click.name}}" successfully executed
   successToastDuration: '3000'
   successToastHideByClick: false
   showErrorToast: true
-  errorToast: Action "{{actions.Page_Load.name}}" has failed
+  errorToast: Action "{{actions.Help_Image_Click.name}}" has failed
   errorToastDuration: '3000'
   errorToastHideByClick: false
   delay: '0'
@@ -35,4 +35,4 @@ config:
 assigned: true
 selected: true
 configured: false
-index: 16
+index: 22

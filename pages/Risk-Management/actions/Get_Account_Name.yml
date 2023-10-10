@@ -9,7 +9,7 @@ steps:
       - type: query
         value: |
           select id,name from public.accounts
-          where id = {{params.user_id}}
+          where id = {{params}}
           order by name asc
         valueType: interpolatedValue
         interpolationType: string
@@ -25,7 +25,7 @@ steps:
         valueType: interpolatedValue
       - type: preparedQueryParams
         value:
-          - __UI_BAKERY__FORMAT_IF_DATE__(params.user_id)
+          - __UI_BAKERY__FORMAT_IF_DATE__(params)
         valueType: custom
       - type: customDatabaseName
         value: ''
@@ -45,6 +45,17 @@ steps:
     level: 0
     fallthroughError: false
     isChanged: true
+  - id: '16969361963400.7748275274948686'
+    type: customAsyncCode
+    name: code
+    params:
+      - type: asyncCode
+        value: return {{data[0].name}};
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
 singleStep: false
 mode: manual
 modeConfigured: false
@@ -59,7 +70,7 @@ config:
   successToastDuration: '3000'
   successToastHideByClick: false
   showErrorToast: true
-  errorToast: Action "{{actions.LU_Account.name}}" has failed
+  errorToast: Action Get_Account_Name has failed
   errorToastDuration: '3000'
   errorToastHideByClick: false
   delay: '0'
@@ -68,4 +79,4 @@ config:
 assigned: false
 selected: true
 configured: true
-index: 13
+index: 14

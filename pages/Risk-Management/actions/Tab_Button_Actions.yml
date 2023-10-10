@@ -2,26 +2,211 @@ id: '16968576687710.9596333746278372'
 name: Tab_Button_Actions
 nameConfigured: true
 steps:
-  - id: '16968630984620.8515465991624798'
-    type: customAsyncCode
-    name: code
+  - id: '16969397913070.5496035348108363'
+    type: condition
+    name: condition2
     params:
-      - type: asyncCode
-        value: |
-          //The context button passes in a value that is params.id
-
-          if ({{params.id}} == 1){
-            //Add a record
-            {{state.RiskDisabled}} = false
-            {{state.PageMode}} = 'pmAdd'
-          }
-          else if ({{params.id}} == 2){
-            //Edit the record
-            {{state.RiskDisabled}} = false
-            {{state.PageMode}} = 'pmEdit'
-          }
+      - type: code
+        value: |-
+          if ({{ui.tbl_Risks.selectedRow.index}} > -1){
+            return true}
+          else {
+            return false}
+            
         valueType: interpolatedValue
         interpolationType: code
+      - type: steps
+        value:
+          - condition: true
+            steps:
+              - id: '16969397593950.7933246953908906'
+                type: customAsyncCode
+                name: Move_To_Tab
+                params:
+                  - type: asyncCode
+                    value: '{{ui.tb_Risks.selectTab(1)}}'
+                    valueType: interpolatedValue
+                    interpolationType: code
+                level: 1
+                fallthroughError: false
+                isChanged: true
+                nameConfigured: true
+              - id: '16968630984620.8515465991624798'
+                type: customAsyncCode
+                name: Set_Add_Or_Edit
+                params:
+                  - type: asyncCode
+                    value: |
+                      //The context button passes in a value that is params.id
+
+                      if ({{params.id}} == 1){
+                        //Add a record
+                        {{state.RiskDisabled}} = false
+                        {{state.PageMode}} = 'pmAdd'
+                      }
+                      else if ({{params.id}} == 2){
+                        //Edit the record
+                        {{state.RiskDisabled}} = false
+                        {{state.PageMode}} = 'pmEdit'
+                      }
+                    valueType: interpolatedValue
+                    interpolationType: code
+                level: 1
+                fallthroughError: false
+                isChanged: true
+                nameConfigured: true
+              - id: '16969346644470.814330820759491'
+                type: condition
+                name: Follow_Add_Or_Edit
+                params:
+                  - type: code
+                    value: |-
+                      if ({{state.PageMode}} == 'pmAdd') {
+                        //we are in add mode 
+                        return true
+                      }
+                      else {
+                        // we are in edit mode
+                        return false
+                      }
+                    valueType: interpolatedValue
+                    interpolationType: code
+                  - type: steps
+                    value:
+                      - condition: true
+                        steps:
+                          - id: '16969403279360.7678188664605599'
+                            type: customSQLQuery
+                            name: Get_Blank_ID
+                            params:
+                              - type: query
+                                value: select uuid_generate_v4() as risk_id
+                                valueType: interpolatedValue
+                                interpolationType: string
+                              - type: datasourceId
+                                value: Supabase Bridgelink Apps Database
+                                valueType: custom
+                                mustSelectFirst: true
+                              - type: preparedQuery
+                                value: select uuid_generate_v4() as risk_id
+                                valueType: interpolatedValue
+                              - type: preparedQueryParams
+                                value: []
+                                valueType: custom
+                              - type: customDatabaseName
+                                value: ''
+                                valueType: interpolatedValue
+                              - type: stepVersion
+                                value: 2
+                                valueType: custom
+                              - type: successMapper
+                                value: ''
+                                valueType: interpolatedValue
+                              - type: failureMapper
+                                value: ''
+                                valueType: interpolatedValue
+                              - type: mapperEnabled
+                                value: false
+                                valueType: custom
+                            level: 2
+                            fallthroughError: false
+                            isChanged: true
+                            nameConfigured: true
+                          - id: '16969346693530.2635280792401329'
+                            type: customAsyncCode
+                            name: Adding
+                            params:
+                              - type: asyncCode
+                                value: >-
+                                  {{state.Selected_Risk_ID}} =
+                                  {{steps.Get_Blank_ID.data[0].risk_id}}
+
+                                  {{actions.Load_Risk_Progress_Notes.trigger()}}
+
+                                  {{ui.inpRating.setValue('')}}
+
+                                  {{ui.inpArea.setValue('')}}
+
+                                  {{ui.inpType.setValue('')}}
+
+                                  {{ui.inpControl.setValue('')}}
+
+                                  {{ui.inpCreatedBy.setValue(state.user_Id)}}
+
+                                  {{ui.inpOwner.setValue('')}}
+
+                                  {{ui.inpStatus.setValue('')}}
+
+                                  {{ui.inpDetails.setValue('')}}
+                                valueType: interpolatedValue
+                                interpolationType: code
+                            level: 2
+                            fallthroughError: false
+                            isChanged: true
+                            nameConfigured: true
+                      - condition: false
+                        steps:
+                          - id: '16969346987070.8658092572196081'
+                            type: customAsyncCode
+                            name: Editing
+                            params:
+                              - type: asyncCode
+                                value: >-
+                                  {{ui.inpRating.setValue(ui.tbl_Risks.selectedRow.data.risk_rating)}}
+
+                                  {{ui.inpArea.setValue(ui.tbl_Risks.selectedRow.data.area)}}
+
+                                  {{ui.inpType.setValue(ui.tbl_Risks.selectedRow.data.risk_type)}}
+
+                                  {{ui.inpControl.setValue(ui.tbl_Risks.selectedRow.data.control_measure)}}
+
+                                  {{ui.inpCreatedBy.setValue(ui.tbl_Risks.selectedRow.data.fk_created_by)}}
+
+                                  {{ui.inpOwner.setValue(ui.tbl_Risks.selectedRow.data.fk_risk_owner)}}
+
+                                  {{ui.inpStatus.setValue(ui.tbl_Risks.selectedRow.data.risk_status)}}
+
+                                  {{ui.inpDetails.setValue(ui.tbl_Risks.selectedRow.data.description)}}
+                                valueType: interpolatedValue
+                                interpolationType: code
+                            level: 2
+                            fallthroughError: false
+                            isChanged: true
+                            nameConfigured: true
+                            paused: false
+                    valueType: custom
+                level: 1
+                fallthroughError: false
+                isChanged: true
+                nameConfigured: true
+          - condition: false
+            steps:
+              - id: '16969398385700.1732923939135147'
+                type: showToast
+                name: notification
+                params:
+                  - type: message
+                    value: Please select a risk to edit
+                    valueType: interpolatedValue
+                  - type: type
+                    value: warning
+                    valueType: string
+                  - type: icon
+                    value: alert-circle
+                    valueType: string
+                  - type: duration
+                    value: '3000'
+                    valueType: interpolatedValue
+                  - type: position
+                    value: top-end
+                    valueType: string
+                  - type: hideOnClick
+                    value: false
+                    valueType: custom
+                level: 1
+                fallthroughError: false
+                isChanged: true
+        valueType: custom
     level: 0
     fallthroughError: false
     isChanged: true
@@ -49,4 +234,4 @@ config:
 assigned: true
 selected: true
 configured: false
-index: 14
+index: 15

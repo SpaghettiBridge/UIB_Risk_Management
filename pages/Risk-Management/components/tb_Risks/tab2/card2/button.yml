@@ -28,6 +28,10 @@ properties:
     value: bulb
     dataValue: star-outline
     withData: false
+  linkInfo:
+    active: externalPath
+    internalPath: ''
+    externalPath: ''
 actions:
   buttonClick:
     - action: '16968650217590.8831798604238024'

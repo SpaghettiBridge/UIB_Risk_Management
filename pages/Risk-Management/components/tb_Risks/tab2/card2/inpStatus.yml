@@ -34,7 +34,7 @@ properties:
     text: Status
     position: horizontal
     align: left
-  labelWidth: 63
+  labelWidth: 62
   value: '{{ui.tbl_Risks.selectedRow.data.risk_status}}'
   disabled:
     value: false

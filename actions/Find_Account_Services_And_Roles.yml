@@ -59,6 +59,133 @@ steps:
                 level: 1
                 fallthroughError: false
                 isChanged: true
+              - id: '16969415604980.7630693141153428'
+                type: LOAD_COLLECTION
+                name: FindRole
+                params:
+                  - type: datasourceId
+                    value: Supabase Bridgelink Apps Database
+                    valueType: string
+                  - type: resourceId
+                    value: public.join_application_accounts
+                    valueType: string
+                  - type: filters
+                    value:
+                      - column: account_id
+                        operation: '='
+                        value:
+                          value: '{{steps.query.data[0].account_id}}'
+                      - column: app_id
+                        operation: '='
+                        value:
+                          value: 909b7402-f4ed-4213-b5cd-1a4fbc74d405
+                    valueType: custom
+                  - type: ordering
+                    value:
+                      limit:
+                        value: 1000
+                      offset:
+                        value: ''
+                      orderBy:
+                        value: ''
+                      orderDirection:
+                        value: asc
+                    valueType: custom
+                  - type: additionalParams
+                    value:
+                      - name: ''
+                        value: ''
+                    valueType: custom
+                  - type: customDatabaseName
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: successMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: failureMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: mapperEnabled
+                    value: false
+                    valueType: custom
+                level: 1
+                fallthroughError: false
+                isChanged: true
+                nameConfigured: true
+              - id: '16969416489000.28706433251983143'
+                type: putInStore
+                name: Save_Data_To_State
+                params:
+                  - type: name
+                    value: '16969342045600.6789485037141751'
+                    valueType: string
+                  - type: value
+                    value: "\nlet services =[],\n    roles = []\n\tsteps.query.data.map(item => {\n    services.push(item.service_id);\n\t})\n    steps.query.data[0].service_id = services;\n  if(steps.FindRole.data != undefined){\n    steps.query.data[0].roles= {{steps.FindRole.data.role }};\n  }else{\n  steps.query.data[0].roles= \"\";\n\n  }\n\nreturn steps.query.data[0]"
+                    valueType: interpolatedValue
+                    interpolationType: code
+                  - type: producible
+                    value: true
+                    valueType: custom
+                level: 1
+                fallthroughError: false
+                isChanged: true
+                nameConfigured: true
+              - id: '16969416871150.4349596101000368'
+                type: customAsyncCode
+                name: Set_Service
+                params:
+                  - type: asyncCode
+                    value: "if (Array.isArray(state.account.service_id)){\n\_ {{ui.slctService.setValue(state.account.service_id[0]) }};\n}\nelse{\n\_ {{ui.slctService.setValue(state.account.service_id) }};\n}"
+                    valueType: interpolatedValue
+                    interpolationType: code
+                level: 1
+                fallthroughError: false
+                isChanged: true
+                nameConfigured: true
+              - id: '16969417315890.07812942859729954'
+                type: putInStore
+                name: Save_Service
+                params:
+                  - type: name
+                    value: '16968564344620.1259745571949309'
+                    valueType: string
+                  - type: value
+                    value: "if(Array.isArray(state.account.service_id)){\n\_ return {{state.account.service_id[0] }};\n\n}\nelse{\n\_ return {{state.account.service_id }};\n\n}"
+                    valueType: interpolatedValue
+                    interpolationType: code
+                  - type: producible
+                    value: true
+                    valueType: custom
+                level: 1
+                fallthroughError: false
+                isChanged: true
+                nameConfigured: true
+              - id: '16969417841830.5429931260166425'
+                type: executeAction
+                name: SetEditFalse
+                params:
+                  - type: action
+                    value: '16968635410790.6648237389472313'
+                    valueType: string
+                  - type: isActionsLibraryCall
+                    value: false
+                    valueType: string
+                  - type: customParams
+                    value: return {{data}};
+                    valueType: string
+                  - type: successMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: failureMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: mapperEnabled
+                    value: false
+                    valueType: custom
+                level: 1
+                fallthroughError: false
+                isChanged: true
+                nameConfigured: true
           - condition: false
             steps: []
         valueType: custom

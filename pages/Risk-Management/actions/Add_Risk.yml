@@ -7,7 +7,8 @@ steps:
     name: Get_New_ID
     params:
       - type: query
-        value: select uuid_generate_v4() as risk_id
+        value: |
+          select uuid_generate_v4() as risk_id
         valueType: interpolatedValue
         interpolationType: string
       - type: datasourceId
@@ -15,7 +16,8 @@ steps:
         valueType: custom
         mustSelectFirst: true
       - type: preparedQuery
-        value: select uuid_generate_v4() as risk_id
+        value: |
+          select uuid_generate_v4() as risk_id
         valueType: interpolatedValue
       - type: preparedQueryParams
         value: []
@@ -39,6 +41,17 @@ steps:
     fallthroughError: false
     isChanged: true
     nameConfigured: true
+  - id: '16969399817890.7258899850049974'
+    type: customAsyncCode
+    name: code
+    params:
+      - type: asyncCode
+        value: '{{state.Selected_Risk_ID = steps.Get_New_ID.data[0].risk_id}}'
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
   - id: '16968578518270.5169348291096587'
     type: customSQLQuery
     name: Get_Todays_Date
@@ -106,13 +119,15 @@ steps:
               created_at:
                 value: '{{steps.Get_Todays_Date.data[0].today_date}}'
               fk_service_id:
-                value: ''
+                value: '{{state.SelectedServiceID}}'
               pk_risk_id:
-                value: ''
+                value: '{{steps.Get_New_ID.data.risk_id}}'
               fk_risk_owner:
-                value: ''
+                value: '{{ui.inpOwner.value}}'
               fk_created_by:
-                value: ''
+                value: '{{state.user_Id}}'
+              Last_Review_Date:
+                value: '{{steps.Get_Todays_Date.data[0].today_date}}'
             custom: ''
         valueType: custom
       - type: customDatabaseName
@@ -137,7 +152,7 @@ steps:
     params:
       - type: asyncCode
         value: >-
-          {{actions.Add_Note.trigger({Type: 'Action', Description: 'Risk record
+          {{actions.Add_Note.trigger({Type: 'Note', Description: 'Risk record
           created'}) }}
         valueType: interpolatedValue
         interpolationType: code
@@ -167,4 +182,4 @@ config:
 assigned: false
 selected: true
 configured: false
-index: 8
+index: 9

@@ -126,7 +126,7 @@ steps:
     nameConfigured: true
   - id: '16968690350350.9631261672560434'
     type: CREATE_ENTITY
-    name: create
+    name: Create_Note
     params:
       - type: datasourceId
         value: Supabase Bridgelink Apps Database
@@ -146,9 +146,9 @@ steps:
               details:
                 value: '{{steps.Get_Desc.data}}'
               created_by:
-                value: '{{state.username}}'
+                value: '{{state.user_Id}}'
               risk_id:
-                value: '{{ui.tbl_Risks.selectedRow.data.risk_id}}'
+                value: '{{state.Selected_Risk_ID}}'
               created_at:
                 value: '{{steps.Get_Date.data[0].todays_date}}'
             custom: ''
@@ -168,6 +168,55 @@ steps:
     level: 0
     fallthroughError: false
     isChanged: true
+    nameConfigured: true
+  - id: '16969428323440.8304001682661206'
+    type: UPDATE_ENTITY
+    name: Update_Risk_Review
+    params:
+      - type: datasourceId
+        value: Supabase Bridgelink Apps Database
+        valueType: string
+      - type: resourceId
+        value: public.rm_risks
+        valueType: string
+      - type: filter
+        value:
+          - column: pk_risk_id
+            operation: '='
+            value:
+              value: '{{state,state.Selected_Risk_ID}}'
+        valueType: custom
+      - type: entity
+        value:
+          mode: structured
+          valueByMode:
+            structured:
+              last_review_date:
+                value: '{{steps.Get_Date.data[0].todays_date}}'
+            custom: ''
+        valueType: custom
+      - type: replace
+        value: false
+        valueType: string
+      - type: bulk
+        value: false
+        valueType: string
+      - type: customDatabaseName
+        value: ''
+        valueType: interpolatedValue
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
 singleStep: false
 mode: manual
 modeConfigured: false
@@ -191,4 +240,4 @@ config:
 assigned: true
 selected: true
 configured: false
-index: 10
+index: 11
