@@ -8,15 +8,19 @@ steps:
     params:
       - type: asyncCode
         value: |
-          if ({{ui.tbl_Risks.selectedRow.data != null}}){
-            {{state.Selected_Risk_ID = ui.tbl_Risks.selectedRow.data.pk_risk_id}} 
-            {{actions.Load_Risk_Progress_Notes.trigger()}}
+          if ({{state.Selected_Risk_ID}} == undefined){
+            {{ui.tb_Risks.selectTab(0)}}
+          }
+            
+          else if ({{ui.tbl_Risks.selectedRow.data != null}}){
+            {{state.Selected_Risk_ID = ui.tbl_Risks.selectedRow.data.pk_risk_id}}   
           }
         valueType: interpolatedValue
         interpolationType: code
     level: 0
     fallthroughError: false
     isChanged: true
+    paused: false
 singleStep: true
 mode: manual
 modeConfigured: true
@@ -39,4 +43,4 @@ config:
 assigned: true
 selected: true
 configured: false
-index: 21
+index: 20

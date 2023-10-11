@@ -42,6 +42,12 @@ properties:
           icon: 'edit',
           onlyIcon: true
         },  
+        {
+          id: '3',
+          title: '3',
+          icon: 'eye',
+          onlyIcon: true
+        },  
       ]
 
 

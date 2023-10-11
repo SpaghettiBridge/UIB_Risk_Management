@@ -13,6 +13,7 @@ steps:
     level: 0
     fallthroughError: false
     isChanged: true
+    paused: false
 singleStep: true
 mode: manual
 modeConfigured: true

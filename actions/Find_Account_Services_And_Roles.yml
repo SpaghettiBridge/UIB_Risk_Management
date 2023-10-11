@@ -13,6 +13,7 @@ steps:
     level: 1
     fallthroughError: false
     isChanged: true
+    paused: true
   - id: '16968561485620.5002125923073304'
     type: condition
     name: condition
@@ -131,7 +132,7 @@ steps:
                     value: '16969342045600.6789485037141751'
                     valueType: string
                   - type: value
-                    value: "\nlet services =[],\n    roles = []\n\tsteps.query.data.map(item => {\n    services.push(item.service_id);\n\t})\n    steps.query.data[0].service_id = services;\n  if(steps.FindRole.data != undefined){\n    steps.query.data[0].roles= {{steps.FindRole.data.role }};\n  }else{\n  steps.query.data[0].roles= \"\";\n\n  }\n\nreturn steps.query.data[0]"
+                    value: "\nlet services =[],\n    roles = []\n\tsteps.query.data.map(item => {\n    services.push(item.service_id);\n\n\t})\n\n\n  steps.query.data[0].service_id = services;\n\n  if(steps.FindRole.data != undefined){\n    steps.query.data[0].roles= {{steps.FindRole.data.role }};\n  }else{\n  steps.query.data[0].roles= \"\";\n\n  }\n\nreturn steps.query.data[0]"
                     valueType: interpolatedValue
                     interpolationType: code
                   - type: producible
@@ -146,13 +147,14 @@ steps:
                 name: Set_Service
                 params:
                   - type: asyncCode
-                    value: "if (Array.isArray(state.account.service_id)){\n\_ {{ui.slctService.setValue(state.account.service_id[0]) }};\n}\nelse{\n\_ {{ui.slctService.setValue(state.account.service_id) }};\n}"
+                    value: "\_ {{ui.slctService.setValue('0')}};\n"
                     valueType: interpolatedValue
                     interpolationType: code
                 level: 1
                 fallthroughError: false
                 isChanged: true
                 nameConfigured: true
+                paused: false
               - id: '16969417315890.07812942859729954'
                 type: putInStore
                 name: Save_Service
@@ -161,7 +163,7 @@ steps:
                     value: '16968564344620.1259745571949309'
                     valueType: string
                   - type: value
-                    value: "if(Array.isArray(state.account.service_id)){\n\_ return {{state.account.service_id[0] }};\n\n}\nelse{\n\_ return {{state.account.service_id }};\n\n}"
+                    value: '{{state.SelectedServiceID = ''0''}}'
                     valueType: interpolatedValue
                     interpolationType: code
                   - type: producible

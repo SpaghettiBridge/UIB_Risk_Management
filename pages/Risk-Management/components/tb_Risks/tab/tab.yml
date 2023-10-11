@@ -15,3 +15,4 @@ slots:
     children:
       - tbl_Risks.yml
       - msg_Risks.yml
+      - tog_Hide_Closed.yml

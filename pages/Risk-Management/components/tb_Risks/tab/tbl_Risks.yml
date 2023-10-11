@@ -5,9 +5,9 @@ styles:
   xl:
     gridItem:
       x: 0
-      y: 6
+      y: 16
       w: 24
-      h: 121
+      h: 133
   xs:
     gridItem:
       x: 0
@@ -37,46 +37,45 @@ properties:
     value: false
   rowVariation: dense
   rowBackgroundColor: |-
-    {{switch (row.risk_rating) {
+    {{
+    if (row.risk_status == 'Closed') { return state.ColourGreen}
+    else if (row.risk_status != 'Closed') {
+      switch (row.risk_rating) {
       case '1':
       case '2':
       case '3':
-        return '#96d4df';
+        return state.ColourGreen;
       case '4':
       case '5':
       case '6':
-        return '#ffe8b7';
+        return state.ColourYellow;
       case '7':
       case '8':
-        return '#f3c379';
+        return state.ColourOrange;
       case '9':
       case '10':
-        return '#c6572a';
+        return state.ColourRed;
       default:
         // Handle the default case here, if needed
         break;
-    }}}
+      } 
+    }  
+    }}
   limit: '12'
   selectedRowIndex: '0'
+  emptyMessage: No risk data found
+  showFilter: false
 actions:
   smartTableRowClick:
-    - action: '16968520159240.7357300507703233'
+    - action: '16969400265810.7198078406620261'
       paramCode: ''
-      blockPageLoad: false
       index: 0
-    - action: '16968625536150.6089216859452218'
-      paramCode: ''
-      blockPageLoad: false
-      index: 1
   init: []
   smartTableCreate: []
   smartTableEdit: []
   smartTableBulkEdit: []
   smartTableDelete: []
-  smartTableRowSelect:
-    - action: '16969400265810.7198078406620261'
-      paramCode: ''
-      index: 2
+  smartTableRowSelect: []
   smartTablePageSelect: []
   smartTableFilterChange: []
   smartTableSortChange: []
@@ -202,7 +201,7 @@ slots:
           __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
             - xl
             - xs
-          width: '60'
+          width: '70'
           filter: true
           title: Status
         index: 7
@@ -225,7 +224,7 @@ slots:
             - xl
             - xs
           width: '80'
-          filter: true
+          filter: false
           dateFormat:
             value: MMM dd, yyyy
             dataValue: dd/MM/yyyy
@@ -330,8 +329,8 @@ slots:
           __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
             - xl
             - xs
-          width: 120
-          filter: true
+          width: '150'
+          filter: false
         index: 0
         slots: []
       - id: '16968555036750.917818974449653'
@@ -348,7 +347,7 @@ slots:
             - xs
           primaryKey: false
           filter: true
-          width: '90'
+          width: '100'
           options:
             value:
               - value: Estates, H&S
@@ -404,7 +403,7 @@ slots:
             - xs
           primaryKey: false
           filter: true
-          width: '80'
+          width: '100'
           options:
             value:
               - value: Strategic
@@ -449,7 +448,7 @@ slots:
             - xs
           primaryKey: false
           filter: true
-          width: '50'
+          width: '60'
           options:
             value:
               - value: '1'

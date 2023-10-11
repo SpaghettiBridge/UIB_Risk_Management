@@ -121,13 +121,11 @@ steps:
               fk_service_id:
                 value: '{{state.SelectedServiceID}}'
               pk_risk_id:
-                value: '{{steps.Get_New_ID.data.risk_id}}'
+                value: '{{steps.Get_New_ID.data[0].risk_id}}'
               fk_risk_owner:
                 value: '{{ui.inpOwner.value}}'
               fk_created_by:
-                value: '{{state.user_Id}}'
-              Last_Review_Date:
-                value: '{{steps.Get_Todays_Date.data[0].today_date}}'
+                value: '{{state.account.account_id}}'
             custom: ''
         valueType: custom
       - type: customDatabaseName
