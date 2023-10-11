@@ -1,0 +1,96 @@
+id: '16969400265810.7198078406620261'
+name: Select_Risk
+nameConfigured: true
+steps:
+  - id: '16969400300820.3350522649199217'
+    type: putInStore
+    name: save
+    params:
+      - type: name
+        value: '16969400102590.5245147857840291'
+        valueType: string
+      - type: value
+        value: '{{ui.tbl_Risks.selectedRow.data.pk_risk_id}}'
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: producible
+        value: true
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    paused: false
+  - id: '16970036406080.784323283417232'
+    type: executeAction
+    name: execute
+    params:
+      - type: action
+        value: '16968520159240.7357300507703233'
+        valueType: string
+      - type: isActionsLibraryCall
+        value: false
+        valueType: string
+      - type: customParams
+        value: return {{data}};
+        valueType: string
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    paused: false
+  - id: '16970036507590.4125156792875735'
+    type: executeAction
+    name: execute2
+    params:
+      - type: action
+        value: '16968625536150.6089216859452218'
+        valueType: string
+      - type: isActionsLibraryCall
+        value: false
+        valueType: string
+      - type: customParams
+        value: return {{data}};
+        valueType: string
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+singleStep: true
+mode: manual
+modeConfigured: true
+parentPageId: '1'
+folder: false
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.Select_Risk.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.Select_Risk.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.Select_Risk.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+assigned: true
+selected: true
+configured: true
+index: 19

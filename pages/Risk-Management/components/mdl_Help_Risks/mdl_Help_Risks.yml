@@ -9,9 +9,9 @@ styles:
       w: 3
       h: 11
     modalSize:
-      widthValue: '50'
+      widthValue: 55
       widthUnit: '%'
-      heightValue: 60
+      heightValue: 55
       heightUnit: '%'
       minWidthValue: 0
       minWidthUnit: px

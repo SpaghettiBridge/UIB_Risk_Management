@@ -147,6 +147,10 @@ steps:
                       // we are going to check the tbl values against the select
                       values 
 
+
+                      //if nothing else has chnaged and we arent closing then it
+                      will add a review flag to the risk
+
                       let ChangesMade = {}
 
                       let ratingBool = false;
@@ -161,34 +165,39 @@ steps:
 
                       let statusBool = false;
 
+                      let reviewBool = true;
+
 
                       if ({{ui.tbl_Risks.selectedRow.data.risk_rating}} !=
                       {{ui.inpRating.value}}){
-                        ratingBool = true}
+                        ratingBool = true
+                        reviewBool = false  }
                       if ({{ui.tbl_Risks.selectedRow.data.area}} !=
                       {{ui.inpArea.value}}){
-                        areaBool = true}
+                        areaBool = true
+                        reviewBool = false  }
                       if ({{ui.tbl_Risks.selectedRow.data.risk_type}} !=
                       {{ui.inpType.value}}){
                         typeBool = true;  
-                          }
+                        reviewBool = false  }
                       if ({{ui.tbl_Risks.selectedRow.data.control_measure}} !=
                       {{ui.inpControl.value}}){
                         controlBool = true;  
-                          }
+                        reviewBool = false  }
                       if ({{ui.tbl_Risks.selectedRow.data.fk_risk_owner}} !=
                       {{ui.inpOwner.value}}){
                         assignedBool = true;  
-                          }
+                        reviewBool = false  }
                       if ({{ui.tbl_Risks.selectedRow.data.risk_status}} !=
                       {{ui.inpStatus.value}}){
                         statusBool = true;  
-                          }
+                        reviewBool = false  }
 
                       ChangesMade = {Rating: ratingBool, Area: areaBool, Type:
                       typeBool, Control: controlBool, Assigned: assignedBool,
-                      Status: statusBool, Closed: false}
+                      Status: statusBool, Closed: false, Reviewing: reviewBool}
 
+                      console.log('Reviewing: ' + ChangesMade.Reviewing)
 
                       return ChangesMade;
                     valueType: interpolatedValue
@@ -249,6 +258,10 @@ steps:
                         From = {{ui.tbl_Risks.selectedRow.data.risk_status}}
                         To = {{ui.inpStatus.value}}
                         {{actions.Add_Note.trigger({Type: 'Note', Description: 'Status has been changed from ' + From + ' to ' + To}) }}
+                      }
+
+                      if ({{data.Reviewing}}){
+                        {{actions.Add_Note.trigger({Type: 'Note', Description: 'Risk marked as reviewed'}) }}
                       }
                     valueType: interpolatedValue
                     interpolationType: code

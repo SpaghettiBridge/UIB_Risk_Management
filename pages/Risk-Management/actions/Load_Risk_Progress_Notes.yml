@@ -24,16 +24,26 @@ steps:
                 params:
                   - type: query
                     value: >-
-                      select *,
+                      select 
 
-                      rc.name as note_creator,
+                      public.actions.id,
 
-                      substring(details,1,100) as shortdesc
-                       from rm_progress_notes
-                      inner join accounts RC on RC.id =
-                      rm_progress_notes.created_by
+                      public.actions.created_at,
 
-                      where risk_id = {{state.Selected_Risk_ID}}
+                      public.actions.details,
+
+                      public.actions.account_id,
+
+                      public.actions.type,
+
+                      public.actions.account_name
+
+                      from public.actions
+
+                      where public.actions.fk_rm_risk_id =
+                      {{state.Selected_Risk_ID}}
+
+                      order by public.actions.created_at desc
                     valueType: interpolatedValue
                     interpolationType: string
                   - type: datasourceId
@@ -41,17 +51,17 @@ steps:
                     valueType: custom
                     mustSelectFirst: true
                   - type: preparedQuery
-                    value: >-
-                      select *,
-
-                      rc.name as note_creator,
-
-                      substring(details,1,100) as shortdesc
-                       from rm_progress_notes
-                      inner join accounts RC on RC.id =
-                      rm_progress_notes.created_by
-
-                      where risk_id = ?
+                    value: |-
+                      select 
+                      public.actions.id,
+                      public.actions.created_at,
+                      public.actions.details,
+                      public.actions.account_id,
+                      public.actions.type,
+                      public.actions.account_name
+                      from public.actions
+                      where public.actions.fk_rm_risk_id = ?
+                      order by public.actions.created_at desc
                     valueType: interpolatedValue
                   - type: preparedQueryParams
                     value:

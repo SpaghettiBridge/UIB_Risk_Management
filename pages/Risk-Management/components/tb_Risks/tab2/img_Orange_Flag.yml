@@ -22,11 +22,20 @@ styles:
       w: 1
       h: 6
 properties:
-  name: img_Orgnge_Flag
+  name: img_Orange_Flag
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
     - xl
     - xs
   __UIBAKERY__SHOW__CONDITION__CODE__: state.flag == 'Orange'
-actions: {}
+actions:
+  imageClick:
+    - action: '16970211678470.6159918114959002'
+      paramCode: |-
+        {
+         Closing: false
+        }
+      blockPageLoad: false
+      index: 0
+  init: []
 index: 5
 slots: []

@@ -1,13 +1,15 @@
-id: '16968620270650.3481200969916718'
-name: Page_Load
+id: '16970211678470.6159918114959002'
+name: Quick_Review
 nameConfigured: true
 steps:
-  - id: '16968620343390.75953759440923'
+  - id: '16970211783700.9533239382196474'
     type: customAsyncCode
     name: code
     params:
       - type: asyncCode
-        value: '{{state.user_Id}} = ''3e038d87-a744-47f6-a302-e6d431d4cd73'''
+        value: >-
+          {{actions.Add_Note.trigger({Type: 'Note', Description: 'Risk has been
+          marked as reviewed'}) }}
         valueType: interpolatedValue
         interpolationType: code
     level: 0
@@ -20,13 +22,13 @@ parentPageId: '1'
 folder: false
 config:
   shouldConfirm: false
-  confirmMessage: Are you sure you'd like to proceed with "{{actions.Page_Load.name}}"?
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.Quick_Review.name}}"?
   showSuccessToast: false
-  successToast: Action "{{actions.Page_Load.name}}" successfully executed
+  successToast: Action "{{actions.Quick_Review.name}}" successfully executed
   successToastDuration: '3000'
   successToastHideByClick: false
   showErrorToast: true
-  errorToast: Action "{{actions.Page_Load.name}}" has failed
+  errorToast: Action "{{actions.Quick_Review.name}}" has failed
   errorToastDuration: '3000'
   errorToastHideByClick: false
   delay: '0'
@@ -35,4 +37,4 @@ config:
 assigned: true
 selected: true
 configured: false
-index: 16
+index: 22

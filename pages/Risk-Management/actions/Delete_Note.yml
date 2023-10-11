@@ -9,10 +9,10 @@ steps:
       - type: asyncCode
         value: >-
           console.log('Selected ID: ' +
-          {{ui.tbl_Progress_Notes.selectedRow.data.rm_progressnote_id}})            
+          {{ui.tbl_Progress_Notes.selectedRow.data.id}})            
 
           console.log('Deleted ID: ' +
-          {{ui.tbl_Progress_Notes.deletedRow.data.rm_progressnote_id}})
+          {{ui.tbl_Progress_Notes.deletedRow.data.id}})
                       
         valueType: interpolatedValue
         interpolationType: code
@@ -20,6 +20,7 @@ steps:
     fallthroughError: false
     isChanged: true
     paused: false
+    nameConfigured: true
   - id: '16969250729430.7486366981648511'
     type: DELETE_ENTITY
     name: delete
@@ -28,14 +29,14 @@ steps:
         value: Supabase Bridgelink Apps Database
         valueType: string
       - type: resourceId
-        value: public.rm_progress_notes
+        value: public.actions
         valueType: string
       - type: filter
         value:
-          - column: rm_progressnote_id
+          - column: id
             operation: '='
             value:
-              value: '{{ui.tbl_Progress_Notes.deletedRow.data.rm_progressnote_id}}'
+              value: '{{ui.tbl_Progress_Notes.deletedRow.data.id}}'
         valueType: custom
       - type: bulk
         value: false
@@ -55,6 +56,7 @@ steps:
     level: 0
     fallthroughError: false
     isChanged: true
+    paused: false
 singleStep: false
 mode: manual
 modeConfigured: false

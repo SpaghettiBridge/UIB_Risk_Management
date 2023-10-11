@@ -7,9 +7,8 @@ steps:
     name: condition
     params:
       - type: code
-        value: >-
-          if ({{state.SelectedServiceID ==
-          'e15d17a2-ebdf-4d86-b251-3ee078135aa1'}}){
+        value: |-
+          if ({{state.SelectedServiceID == "0"}}){
             return true}
           else {
             return false}
@@ -21,7 +20,52 @@ steps:
             steps:
               - id: '16968519874320.23501418393565188'
                 type: customSQLQuery
-                name: GetData
+                name: AllRisks
+                params:
+                  - type: query
+                    value: |
+                      select * from get_risk_data
+
+                      order by fk_service_id, created_at
+                    valueType: interpolatedValue
+                    interpolationType: string
+                  - type: datasourceId
+                    value: Supabase Bridgelink Apps Database
+                    valueType: custom
+                    mustSelectFirst: true
+                  - type: preparedQuery
+                    value: |
+                      select * from get_risk_data
+
+                      order by fk_service_id, created_at
+                    valueType: interpolatedValue
+                  - type: preparedQueryParams
+                    value: []
+                    valueType: custom
+                  - type: customDatabaseName
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: stepVersion
+                    value: 2
+                    valueType: custom
+                  - type: successMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: failureMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: mapperEnabled
+                    value: false
+                    valueType: custom
+                level: 2
+                fallthroughError: false
+                isChanged: true
+                nameConfigured: true
+          - condition: false
+            steps:
+              - id: '16969553381270.04940770984704601'
+                type: customSQLQuery
+                name: AllForService
                 params:
                   - type: query
                     value: |
@@ -59,50 +103,7 @@ steps:
                   - type: mapperEnabled
                     value: false
                     valueType: custom
-                level: 0
-                fallthroughError: false
-                isChanged: true
-                nameConfigured: true
-          - condition: false
-            steps:
-              - id: '16969553381270.04940770984704601'
-                type: customSQLQuery
-                name: GetData2
-                params:
-                  - type: query
-                    value: |
-                      select * from get_risk_data
-                      order by created_at
-                    valueType: interpolatedValue
-                    interpolationType: string
-                  - type: datasourceId
-                    value: Supabase Bridgelink Apps Database
-                    valueType: custom
-                    mustSelectFirst: true
-                  - type: preparedQuery
-                    value: |
-                      select * from get_risk_data
-                      order by created_at
-                    valueType: interpolatedValue
-                  - type: preparedQueryParams
-                    value: []
-                    valueType: custom
-                  - type: customDatabaseName
-                    value: ''
-                    valueType: interpolatedValue
-                  - type: stepVersion
-                    value: 2
-                    valueType: custom
-                  - type: successMapper
-                    value: ''
-                    valueType: interpolatedValue
-                  - type: failureMapper
-                    value: ''
-                    valueType: interpolatedValue
-                  - type: mapperEnabled
-                    value: false
-                    valueType: custom
-                level: 0
+                level: 2
                 fallthroughError: false
                 isChanged: true
                 nameConfigured: true
@@ -110,6 +111,7 @@ steps:
     level: 0
     fallthroughError: false
     isChanged: true
+    nameConfigured: true
 singleStep: false
 mode: manual
 modeConfigured: false
@@ -127,7 +129,7 @@ config:
   errorToastDuration: '3000'
   errorToastHideByClick: false
   delay: '0'
-  runWhenFirstReferenced: true
+  runWhenFirstReferenced: false
   preserveStateOnPageChange: false
 assigned: true
 selected: true

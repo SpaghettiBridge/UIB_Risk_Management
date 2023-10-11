@@ -1,0 +1,77 @@
+id: '16970383083400.40049417313186253'
+name: Filter_Status
+nameConfigured: true
+steps:
+  - id: '16970391046560.9989852482585129'
+    type: condition
+    name: condition
+    params:
+      - type: code
+        value: |-
+          if ({{ui.tog_Hide_Closed.value}} = true){
+            return true
+          }
+          else {
+            return false
+          }
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: steps
+        value:
+          - condition: true
+            steps:
+              - id: '16970383182840.7953139102745745'
+                type: customAsyncCode
+                name: code
+                params:
+                  - type: asyncCode
+                    value: |-
+                      const filter_Status = 'status: "Open"';
+                      console.log (filter_Status);
+                      {{ui.tbl_Risks.setFilters(filter_Status)}}
+                    valueType: interpolatedValue
+                    interpolationType: code
+                level: 1
+                fallthroughError: false
+                isChanged: true
+          - condition: false
+            steps:
+              - id: '16970391556910.31534453904191007'
+                type: customAsyncCode
+                name: code2
+                params:
+                  - type: asyncCode
+                    value: '{{ui.tbl_Risks.resetFilters()}}'
+                    valueType: interpolatedValue
+                    interpolationType: code
+                level: 1
+                fallthroughError: false
+                isChanged: true
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+singleStep: true
+mode: manual
+modeConfigured: true
+parentPageId: '1'
+folder: false
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.Filter_Status.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.Filter_Status.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.Filter_Status.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+assigned: true
+selected: true
+configured: false
+index: 23

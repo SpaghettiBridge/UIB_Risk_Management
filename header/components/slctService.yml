@@ -27,7 +27,7 @@ properties:
       {{var output = actions.loadPublicService.data.map(x=>{return
       {title:x.service_name, value:x.id} })}}
 
-      output.unshift({ title: "Select Service...", value: "" })
+      output.unshift({ title: "Any", value: "0" })
 
       return output
     withData: true
@@ -41,12 +41,16 @@ properties:
     position: horizontal
     align: left
   labelWidth: 0
-  value: '{{state.SelectedServiceID}}'
+  value: '0'
 actions:
   selectChange:
     - action: '16968564093060.47677390951301524'
       paramCode: ''
       index: 0
+    - action: '16968517651850.7367747537503266'
+      paramCode: ''
+      blockPageLoad: false
+      index: 1
   init: []
   focusEvent: []
   blurEvent: []

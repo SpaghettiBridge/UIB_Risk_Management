@@ -5,7 +5,7 @@ styles:
   xl:
     gridItem:
       x: 0
-      y: 33
+      y: 43
       w: 24
       h: 10
   xs:
@@ -47,7 +47,7 @@ properties:
     dataValue: '{{state.RiskDisabled}}'
     withData: true
 actions: {}
-index: 10
+index: 11
 slots:
   - id: '16968567946340.8379263097455796'
     name: optionViewTypes

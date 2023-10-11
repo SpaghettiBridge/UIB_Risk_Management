@@ -27,6 +27,11 @@ properties:
     - xl
     - xs
   __UIBAKERY__SHOW__CONDITION__CODE__: ' state.flag == ''Green'''
-actions: {}
+actions:
+  imageClick:
+    - action: '16970211678470.6159918114959002'
+      paramCode: ''
+      index: 0
+  init: []
 index: 6
 slots: []

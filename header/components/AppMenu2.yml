@@ -5,7 +5,7 @@ styles:
   xl:
     gridItem:
       x: 23
-      y: 15
+      y: 25
       w: 1
       h: 5
   xs:
@@ -59,7 +59,7 @@ properties:
               <button id="addLink" class="btn-floating tooltipped" style="color: #DF6F2A" data-position="bottom" data-tooltip="File Link"><i class="material-icons">link</i></button>
             </li> -->
             <li>
-              <button id="addILPs" class="btn-floating tooltipped" style="color: #DF6F2A" data-position="bottom" data-tooltip="ILP"><i class="material-icons">note_add</i></button>
+              <button id="addRisk" class="btn-floating tooltipped" style="color: #DF6F2A" data-position="bottom" data-tooltip="Add Risk"><i class="material-icons">note_add</i></button>
             </li>
 
          
@@ -90,12 +90,12 @@ properties:
     //       var addLink = document.getElementById("addLink");
     //       addLink.addEventListener("click", addLinkfunc);
 
-          function addILPfunc() {
+          function addRiskfunc() {
             UB.updateValue(3);
             UB.triggerEvent("Open_Modal");
           }
-          var addILP = document.getElementById("addILPs");
-          addILP.addEventListener("click", addILPfunc);
+          var addRisk = document.getElementById("addRisk");
+          addRisk.addEventListener("click", addRiskfunc);
 
        
         </script>
@@ -107,8 +107,11 @@ properties:
     - xs
 actions:
   triggerEvent:
-    - action: '16951137197410.1871009521731717'
-      paramCode: ''
+    - action: '16968576687710.9596333746278372'
+      paramCode: |-
+        {
+          id: 1
+        }
       blockPageLoad: false
       index: 0
 index: 3

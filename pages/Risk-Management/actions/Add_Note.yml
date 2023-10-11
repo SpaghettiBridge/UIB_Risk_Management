@@ -86,7 +86,7 @@ steps:
         value: |-
           let return_Type = ''
           if ({{params.Type}} == undefined){
-            return_Type = {{ui.tbl_Progress_Notes.selectedRow.data.type}}
+            return_Type = {{ui.tbl_Progress_Notes.newRow.data.type}}
           }
           else if ({{params.Type}} == null){
             return_Type = {{ui.tbl_Progress_Notes.selectedRow.data.type}}
@@ -109,7 +109,7 @@ steps:
         value: |-
           let return_Type = ''
           if ({{params.Description}} == undefined){
-            return_Type = {{ui.tbl_Progress_Notes.selectedRow.data.details}}
+            return_Type = {{ui.tbl_Progress_Notes.newRow.data.details}}
           }
           else if ({{params.Description}} == null){
             return_Type = {{ui.tbl_Progress_Notes.selectedRow.data.details}}
@@ -124,6 +124,36 @@ steps:
     fallthroughError: false
     isChanged: true
     nameConfigured: true
+  - id: '16970160603890.9276952262555058'
+    type: customAsyncCode
+    name: Get_Name
+    params:
+      - type: asyncCode
+        value: return {{actions.Get_Account_Name.trigger(state.account.account_id)}}
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+  - id: '16970162122700.4869935265316889'
+    type: customAsyncCode
+    name: Get_Service_Name
+    params:
+      - type: asyncCode
+        value: |-
+          if ({{state.SelectedServiceID}} != '0'){
+            return {{actions.Get_Service_Name.trigger(state.SelectedServiceID)}}
+          }
+          else {
+            return {{ui.tbl_Risks.selectedRow.data.fk_service_id}}
+          }
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
   - id: '16968690350350.9631261672560434'
     type: CREATE_ENTITY
     name: Create_Note
@@ -132,25 +162,45 @@ steps:
         value: Supabase Bridgelink Apps Database
         valueType: string
       - type: resourceId
-        value: public.rm_progress_notes
+        value: public.actions
         valueType: string
       - type: entity
         value:
           mode: structured
           valueByMode:
             structured:
-              rm_progressnote_id:
+              id:
                 value: '{{steps.Get_New_Id.data[0].risk_progress_id}}'
               type:
                 value: '{{steps.Get_Type.data}}'
               details:
                 value: '{{steps.Get_Desc.data}}'
-              created_by:
-                value: '{{state.user_Id}}'
-              risk_id:
-                value: '{{state.Selected_Risk_ID}}'
               created_at:
                 value: '{{steps.Get_Date.data[0].todays_date}}'
+              account_id:
+                value: '{{state.account.account_id}}'
+              account_name:
+                value: '{{steps.Get_Name.data}}'
+              service_id:
+                value: 7b096f39-3e4b-4392-8a95-63635443c3b4
+              assigned_to_id:
+                value: '{{state.account.account_id}}'
+              service_name:
+                value: '{{steps.Get_Service_Name.data}}'
+              assigned_to_name:
+                value: '{{steps.Get_Name.data}}'
+              date:
+                value: '{{steps.Get_Date.data[0].todays_date}}'
+              due_date:
+                value: '{{steps.Get_Date.data[0].todays_date}}'
+              source:
+                value: Risk Management
+              title:
+                value: 'substring({{ui.inpDetails.value}},1,100) '
+              status:
+                value: Open
+              fk_rm_risk_id:
+                value: '{{state.Selected_Risk_ID}}'
             custom: ''
         valueType: custom
       - type: customDatabaseName
@@ -217,6 +267,56 @@ steps:
     fallthroughError: false
     isChanged: true
     nameConfigured: true
+  - id: '16970066645830.9788238172411772'
+    type: executeAction
+    name: execute2
+    params:
+      - type: action
+        value: '16968517651850.7367747537503266'
+        valueType: string
+      - type: isActionsLibraryCall
+        value: false
+        valueType: string
+      - type: customParams
+        value: return {{data}};
+        valueType: string
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+  - id: '16970065718060.45376550874869337'
+    type: executeAction
+    name: execute
+    params:
+      - type: action
+        value: '16968520159240.7357300507703233'
+        valueType: string
+      - type: isActionsLibraryCall
+        value: false
+        valueType: string
+      - type: customParams
+        value: return {{data}};
+        valueType: string
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
 singleStep: false
 mode: manual
 modeConfigured: false
