@@ -16,3 +16,6 @@ slots:
       - tbl_Risks.yml
       - msg_Risks.yml
       - tog_Hide_Closed.yml
+      - slct_Area_Filter.yml
+      - slct_Type_Filter.yml
+      - slct_Rating_Filter.yml

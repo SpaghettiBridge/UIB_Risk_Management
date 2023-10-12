@@ -20,7 +20,7 @@ properties:
     - xl
     - xs
   labelConfig:
-    text: Entry IDText
+    text: Entry ID
     position: horizontal
     align: left
   disabled:

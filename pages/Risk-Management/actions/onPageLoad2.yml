@@ -1,10 +1,10 @@
-id: '16970383083400.40049417313186253'
-name: Filter_Status
+id: '16971120803000.21186327288177775'
+name: onPageLoad2
 nameConfigured: true
 steps:
-  - id: '16971033824710.705051616219087'
+  - id: '16971122501720.6557377643619293'
     type: executeAction
-    name: condition
+    name: execute
     params:
       - type: action
         value: '16968517651850.7367747537503266'
@@ -27,7 +27,7 @@ steps:
     level: 0
     fallthroughError: false
     isChanged: true
-    nameConfigured: true
+    paused: false
 singleStep: true
 mode: manual
 modeConfigured: true
@@ -35,19 +35,16 @@ parentPageId: '1'
 folder: false
 config:
   shouldConfirm: false
-  confirmMessage: Are you sure you'd like to proceed with "{{actions.Filter_Status.name}}"?
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.onPageLoad2.name}}"?
   showSuccessToast: false
-  successToast: Action "{{actions.Filter_Status.name}}" successfully executed
+  successToast: Action "{{actions.onPageLoad2.name}}" successfully executed
   successToastDuration: '3000'
   successToastHideByClick: false
   showErrorToast: true
-  errorToast: Action "{{actions.Filter_Status.name}}" has failed
+  errorToast: Action "{{actions.onPageLoad2.name}}" has failed
   errorToastDuration: '3000'
   errorToastHideByClick: false
-  delay: '0'
+  delay: '600'
   runWhenFirstReferenced: true
   preserveStateOnPageChange: false
-assigned: true
-selected: true
-configured: false
-index: 23
+index: 26

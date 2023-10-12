@@ -5,8 +5,8 @@ styles:
   xl:
     gridItem:
       x: 0
-      y: 43
-      w: 24
+      y: 44
+      w: 18
       h: 10
   xs:
     gridItem:
@@ -40,7 +40,7 @@ properties:
     text: 'Control Measure:'
     position: horizontal
     align: left
-  labelWidth: 41
+  labelWidth: 55
   value: '{{ui.tbl_Risks.selectedRow.data.control_measure}}'
   disabled:
     value: false

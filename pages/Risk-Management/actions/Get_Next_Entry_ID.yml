@@ -1,0 +1,81 @@
+id: '16971139493510.3633808127729168'
+name: Get_Next_Entry_ID
+nameConfigured: true
+steps:
+  - id: '16971139645360.46724427041711514'
+    type: customSQLQuery
+    name: Get_Current_Highest
+    params:
+      - type: query
+        value: select max (entry_id) from rm_risks
+        valueType: interpolatedValue
+        interpolationType: string
+      - type: datasourceId
+        value: Supabase Bridgelink Apps Database
+        valueType: custom
+        mustSelectFirst: true
+      - type: preparedQuery
+        value: select max (entry_id) from rm_risks
+        valueType: interpolatedValue
+      - type: preparedQueryParams
+        value: []
+        valueType: custom
+      - type: customDatabaseName
+        value: ''
+        valueType: interpolatedValue
+      - type: stepVersion
+        value: 2
+        valueType: custom
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+  - id: '16971141601130.004738624275366865'
+    type: customAsyncCode
+    name: Add_One
+    params:
+      - type: asyncCode
+        value: |-
+          let new_Entry_ID = parseInt({{data[0].max}}) + 1
+          return {{new_Entry_ID}}
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+singleStep: false
+mode: manual
+modeConfigured: false
+parentPageId: '1'
+folder: false
+parentId: null
+config:
+  shouldConfirm: false
+  confirmMessage: >-
+    Are you sure you'd like to proceed with
+    "{{actions.Get_Next_Entry_ID.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.Get_Next_Entry_ID.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.Get_Next_Entry_ID.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+assigned: false
+selected: true
+configured: true
+index: 27

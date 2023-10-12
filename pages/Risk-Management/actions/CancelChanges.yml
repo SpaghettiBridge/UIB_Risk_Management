@@ -57,6 +57,31 @@ steps:
     level: 0
     fallthroughError: false
     isChanged: true
+  - id: '16971122304370.9314570935581701'
+    type: executeAction
+    name: execute2
+    params:
+      - type: action
+        value: '16968517651850.7367747537503266'
+        valueType: string
+      - type: isActionsLibraryCall
+        value: false
+        valueType: string
+      - type: customParams
+        value: return {{data}};
+        valueType: string
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
 singleStep: true
 mode: manual
 modeConfigured: true
