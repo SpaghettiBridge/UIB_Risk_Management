@@ -21,15 +21,16 @@ slots:
             - xl
             - xs
         actions:
-          pageLoad: []
+          pageLoad:
+            - action: '16971120803000.21186327288177775'
+              paramCode: ''
+              index: 0
         slots:
           - id: '2'
             name: content
             bindings: {}
             children:
               - components/tb_Risks/tb_Risks.yml
-              - components/inpDetails2.yml
-              - components/card/card.yml
-              - components/loadRiskDataTable2.yml
               - components/mdl_Help_Risks/mdl_Help_Risks.yml
               - components/cst_Risks.yml
+              - components/mdl_Help_Control/mdl_Help_Control.yml

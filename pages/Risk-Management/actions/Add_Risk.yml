@@ -89,6 +89,20 @@ steps:
     fallthroughError: false
     isChanged: true
     nameConfigured: true
+  - id: '16971144540730.6023255880135776'
+    type: customAsyncCode
+    name: Get_Next_Entry_ID
+    params:
+      - type: asyncCode
+        value: |-
+          let new_Entry_ID = {{actions.Get_Next_Entry_ID.trigger()}}
+          return {{new_Entry_ID}};
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
   - id: '16968558440920.21175062039538695'
     type: CREATE_ENTITY
     name: Create_Record
@@ -126,6 +140,8 @@ steps:
                 value: '{{ui.inpOwner.value}}'
               fk_created_by:
                 value: '{{state.account.account_id}}'
+              entry_id:
+                value: '{{steps.Get_Next_Entry_ID.data}}'
             custom: ''
         valueType: custom
       - type: customDatabaseName
@@ -158,6 +174,23 @@ steps:
     fallthroughError: false
     isChanged: true
     nameConfigured: true
+  - id: '16971151341460.337661675043494'
+    type: putInStore
+    name: save
+    params:
+      - type: name
+        value: '16969400102590.5245147857840291'
+        valueType: string
+      - type: value
+        value: '{{steps.Get_New_ID.data[0].risk_id}}'
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: producible
+        value: true
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
 singleStep: false
 mode: manual
 modeConfigured: false

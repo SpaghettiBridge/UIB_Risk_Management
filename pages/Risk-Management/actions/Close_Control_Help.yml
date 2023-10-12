@@ -1,0 +1,40 @@
+id: '16971010231480.4059535274318804'
+name: Close_Control_Help
+nameConfigured: true
+steps:
+  - id: '16971010350540.9431501842648531'
+    type: customAsyncCode
+    name: code
+    params:
+      - type: asyncCode
+        value: '{{ui.mdl_Help_Control.close()}}'
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
+singleStep: true
+mode: manual
+modeConfigured: true
+parentPageId: '1'
+folder: false
+config:
+  shouldConfirm: false
+  confirmMessage: >-
+    Are you sure you'd like to proceed with
+    "{{actions.Close_Control_Help.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.Close_Control_Help.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.Close_Control_Help.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+assigned: true
+selected: true
+configured: false
+index: 24

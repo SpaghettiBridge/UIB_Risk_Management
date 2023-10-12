@@ -154,6 +154,18 @@ steps:
     fallthroughError: false
     isChanged: true
     nameConfigured: true
+  - id: '16971165644980.2561405788955482'
+    type: customAsyncCode
+    name: Shrink_Title
+    params:
+      - type: asyncCode
+        value: 'return ({{steps.Get_Desc.data}}.substring(0,100)) '
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
   - id: '16968690350350.9631261672560434'
     type: CREATE_ENTITY
     name: Create_Note
@@ -196,7 +208,7 @@ steps:
               source:
                 value: Risk Management
               title:
-                value: 'substring({{ui.inpDetails.value}},1,100) '
+                value: '{{steps.Shrink_Title.data}}'
               status:
                 value: Open
               fk_rm_risk_id:
@@ -269,7 +281,7 @@ steps:
     nameConfigured: true
   - id: '16970066645830.9788238172411772'
     type: executeAction
-    name: execute2
+    name: Refresh_Risks
     params:
       - type: action
         value: '16968517651850.7367747537503266'
@@ -292,9 +304,10 @@ steps:
     level: 0
     fallthroughError: false
     isChanged: true
+    nameConfigured: true
   - id: '16970065718060.45376550874869337'
     type: executeAction
-    name: execute
+    name: Refresh_Risk_Notes
     params:
       - type: action
         value: '16968520159240.7357300507703233'
@@ -317,6 +330,7 @@ steps:
     level: 0
     fallthroughError: false
     isChanged: true
+    nameConfigured: true
 singleStep: false
 mode: manual
 modeConfigured: false

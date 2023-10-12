@@ -2,58 +2,6 @@ id: '16968635410790.6648237389472313'
 name: SetEditFalse
 nameConfigured: true
 steps:
-  - id: '16968642347110.4905381005378'
-    type: executeAction
-    name: Refresh_Risk_Data
-    params:
-      - type: action
-        value: '16968517651850.7367747537503266'
-        valueType: string
-      - type: isActionsLibraryCall
-        value: false
-        valueType: string
-      - type: customParams
-        value: return {{data}};
-        valueType: string
-      - type: successMapper
-        value: ''
-        valueType: interpolatedValue
-      - type: failureMapper
-        value: ''
-        valueType: interpolatedValue
-      - type: mapperEnabled
-        value: false
-        valueType: custom
-    level: 0
-    fallthroughError: false
-    isChanged: true
-    nameConfigured: true
-  - id: '16968697420350.9958971839721815'
-    type: executeAction
-    name: Refresh_Note_Date
-    params:
-      - type: action
-        value: '16968520159240.7357300507703233'
-        valueType: string
-      - type: isActionsLibraryCall
-        value: false
-        valueType: string
-      - type: customParams
-        value: return {{data}};
-        valueType: string
-      - type: successMapper
-        value: ''
-        valueType: interpolatedValue
-      - type: failureMapper
-        value: ''
-        valueType: interpolatedValue
-      - type: mapperEnabled
-        value: false
-        valueType: custom
-    level: 0
-    fallthroughError: false
-    isChanged: true
-    nameConfigured: true
   - id: '16968635489920.5414158135744753'
     type: customAsyncCode
     name: Save_To_State

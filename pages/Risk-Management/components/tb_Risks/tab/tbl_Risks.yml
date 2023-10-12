@@ -64,7 +64,7 @@ properties:
   limit: '12'
   selectedRowIndex: '0'
   emptyMessage: No risk data found
-  showFilter: false
+  showFilter: true
 actions:
   smartTableRowClick:
     - action: '16969400265810.7198078406620261'
@@ -204,6 +204,10 @@ slots:
           width: '70'
           filter: true
           title: Status
+          filterVariation:
+            value: equal
+            dataValue: equal
+            withData: true
         index: 7
         slots: []
       - id: '16968555036750.9921617133318832'

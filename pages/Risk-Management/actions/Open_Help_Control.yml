@@ -1,13 +1,13 @@
-id: '16968650217590.8831798604238024'
-name: Open_Help_Modal
+id: '16971010710390.9790630858707134'
+name: Open_Help_Control
 nameConfigured: true
 steps:
-  - id: '16968650324180.43556419629709286'
+  - id: '16971010914230.6838995035084934'
     type: customAsyncCode
     name: code
     params:
       - type: asyncCode
-        value: '{{ui.mdl_Help_Risks.open()}}'
+        value: '{{ui.mdl_Help_Control.open()}}'
         valueType: interpolatedValue
         interpolationType: code
     level: 0
@@ -20,13 +20,15 @@ parentPageId: '1'
 folder: false
 config:
   shouldConfirm: false
-  confirmMessage: Are you sure you'd like to proceed with "{{actions.Open_Help_Modal.name}}"?
+  confirmMessage: >-
+    Are you sure you'd like to proceed with
+    "{{actions.Open_Help_Control.name}}"?
   showSuccessToast: false
-  successToast: Action "{{actions.Open_Help_Modal.name}}" successfully executed
+  successToast: Action "{{actions.Open_Help_Control.name}}" successfully executed
   successToastDuration: '3000'
   successToastHideByClick: false
   showErrorToast: true
-  errorToast: Action "{{actions.Open_Help_Modal.name}}" has failed
+  errorToast: Action "{{actions.Open_Help_Control.name}}" has failed
   errorToastDuration: '3000'
   errorToastHideByClick: false
   delay: '0'
@@ -35,4 +37,4 @@ config:
 assigned: true
 selected: true
 configured: false
-index: 18
+index: 25

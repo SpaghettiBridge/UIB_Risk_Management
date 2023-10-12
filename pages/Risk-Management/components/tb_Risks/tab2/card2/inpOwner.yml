@@ -39,7 +39,8 @@ properties:
     position: horizontal
     align: left
   labelWidth: 41
-  value: '{{ui.tbl_Risks.selectedRow.data.fk_risk_owner}}'
+  value: |
+    {{ui.tbl_Risks.selectedRow.data.fk_risk_owner}}
   disabled:
     value: false
     dataValue: '{{state.RiskDisabled}}'

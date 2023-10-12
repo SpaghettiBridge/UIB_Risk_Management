@@ -25,7 +25,7 @@ actions:
     - action: '16969423514190.8996528966037205'
       paramCode: ''
       index: 0
-index: 1
+index: 0
 slots:
   - id: '16968520326600.669215539587811'
     name: tabs

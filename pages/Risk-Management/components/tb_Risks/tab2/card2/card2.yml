@@ -39,8 +39,9 @@ slots:
       - inpCreatedBy.yml
       - inpOwner.yml
       - inpControl.yml
-      - button.yml
+      - btn_Help_Rating.yml
       - inpEntryID.yml
+      - btn_Help_Control.yml
   - id: '16969255301610.42909471459887105'
     name: footer
     children: []

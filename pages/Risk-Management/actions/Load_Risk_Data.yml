@@ -2,6 +2,36 @@ id: '16968517651850.7367747537503266'
 name: Load_Risk_Data
 nameConfigured: true
 steps:
+  - id: '16971114215390.8165961790195606'
+    type: customAsyncCode
+    name: Get_Status
+    params:
+      - type: asyncCode
+        value: |-
+          let myReturn = '%'
+          if ({{ui.tog_Hide_Closed.value}} == true){
+            myReturn = 'Open'
+          }  
+          return myReturn
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+  - id: '16971131293620.30221924319461824'
+    type: customAsyncCode
+    name: Get_Rating
+    params:
+      - type: asyncCode
+        value: |
+          return {{ui.slct_Rating_Filter.value}}
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
   - id: '16969552536350.8797808458337781'
     type: condition
     name: condition
@@ -18,92 +48,373 @@ steps:
         value:
           - condition: true
             steps:
-              - id: '16968519874320.23501418393565188'
-                type: customSQLQuery
-                name: AllRisks
+              - id: '16971136489840.1881353262465737'
+                type: condition
+                name: Filter_Rating
                 params:
-                  - type: query
-                    value: |
-                      select * from get_risk_data
+                  - type: code
+                    value: |-
+                      if ({{ui.slct_Rating_Filter.value}} == 0){
+                        return false}
+                      else{
+                        return true}
+                    valueType: interpolatedValue
+                    interpolationType: code
+                  - type: steps
+                    value:
+                      - condition: true
+                        steps:
+                          - id: '16968519874320.23501418393565188'
+                            type: customSQLQuery
+                            name: AllRisks
+                            params:
+                              - type: query
+                                value: >+
+                                  SELECT * from get_risk_data
 
-                      order by fk_service_id, created_at
-                    valueType: interpolatedValue
-                    interpolationType: string
-                  - type: datasourceId
-                    value: Supabase Bridgelink Apps Database
-                    valueType: custom
-                    mustSelectFirst: true
-                  - type: preparedQuery
-                    value: |
-                      select * from get_risk_data
+                                  WHERE exists  (select 1 from
+                                  join_account_services where service_id =
+                                  get_risk_data.fk_service_id and account_id
+                                  ={{state.account.account_id}})
 
-                      order by fk_service_id, created_at
-                    valueType: interpolatedValue
-                  - type: preparedQueryParams
-                    value: []
+                                  and risk_status like {{steps.Get_Status.data}}
+
+                                  and area like {{ui.slct_Area_Filter.value}}
+
+                                  and risk_type like
+                                  {{ui.slct_Type_Filter.value}}
+
+                                  and risk_rating = {{steps.Get_Rating.data}}
+
+                                  order by created_at desc
+
+                                valueType: interpolatedValue
+                                interpolationType: string
+                              - type: datasourceId
+                                value: Supabase Bridgelink Apps Database
+                                valueType: custom
+                                mustSelectFirst: true
+                              - type: preparedQuery
+                                value: >+
+                                  SELECT * from get_risk_data
+
+                                  WHERE exists  (select 1 from
+                                  join_account_services where service_id =
+                                  get_risk_data.fk_service_id and account_id =?)
+
+                                  and risk_status like ?
+
+                                  and area like ?
+
+                                  and risk_type like ?
+
+                                  and risk_rating = ?
+
+                                  order by created_at desc
+
+                                valueType: interpolatedValue
+                              - type: preparedQueryParams
+                                value:
+                                  - >-
+                                    __UI_BAKERY__FORMAT_IF_DATE__(state.account.account_id)
+                                  - >-
+                                    __UI_BAKERY__FORMAT_IF_DATE__(steps.Get_Status.data)
+                                  - >-
+                                    __UI_BAKERY__FORMAT_IF_DATE__(ui.slct_Area_Filter.value)
+                                  - >-
+                                    __UI_BAKERY__FORMAT_IF_DATE__(ui.slct_Type_Filter.value)
+                                  - >-
+                                    __UI_BAKERY__FORMAT_IF_DATE__(steps.Get_Rating.data)
+                                valueType: custom
+                              - type: customDatabaseName
+                                value: ''
+                                valueType: interpolatedValue
+                              - type: stepVersion
+                                value: 2
+                                valueType: custom
+                              - type: successMapper
+                                value: ''
+                                valueType: interpolatedValue
+                              - type: failureMapper
+                                value: ''
+                                valueType: interpolatedValue
+                              - type: mapperEnabled
+                                value: false
+                                valueType: custom
+                            level: 2
+                            fallthroughError: false
+                            isChanged: true
+                            nameConfigured: true
+                      - condition: false
+                        steps:
+                          - id: '16971137163030.5157047564733581'
+                            type: customSQLQuery
+                            name: AllRisks2
+                            params:
+                              - type: query
+                                value: >+
+                                  SELECT * from get_risk_data
+
+                                  WHERE exists  (select 1 from
+                                  join_account_services where service_id =
+                                  get_risk_data.fk_service_id and account_id
+                                  ={{state.account.account_id}})
+
+                                  and risk_status like {{steps.Get_Status.data}}
+
+                                  and area like {{ui.slct_Area_Filter.value}}
+
+                                  and risk_type like
+                                  {{ui.slct_Type_Filter.value}}
+
+                                  order by created_at desc
+
+                                valueType: interpolatedValue
+                                interpolationType: string
+                              - type: datasourceId
+                                value: Supabase Bridgelink Apps Database
+                                valueType: custom
+                                mustSelectFirst: true
+                              - type: preparedQuery
+                                value: >+
+                                  SELECT * from get_risk_data
+
+                                  WHERE exists  (select 1 from
+                                  join_account_services where service_id =
+                                  get_risk_data.fk_service_id and account_id =?)
+
+                                  and risk_status like ?
+
+                                  and area like ?
+
+                                  and risk_type like ?
+
+                                  order by created_at desc
+
+                                valueType: interpolatedValue
+                              - type: preparedQueryParams
+                                value:
+                                  - >-
+                                    __UI_BAKERY__FORMAT_IF_DATE__(state.account.account_id)
+                                  - >-
+                                    __UI_BAKERY__FORMAT_IF_DATE__(steps.Get_Status.data)
+                                  - >-
+                                    __UI_BAKERY__FORMAT_IF_DATE__(ui.slct_Area_Filter.value)
+                                  - >-
+                                    __UI_BAKERY__FORMAT_IF_DATE__(ui.slct_Type_Filter.value)
+                                valueType: custom
+                              - type: customDatabaseName
+                                value: ''
+                                valueType: interpolatedValue
+                              - type: stepVersion
+                                value: 2
+                                valueType: custom
+                              - type: successMapper
+                                value: ''
+                                valueType: interpolatedValue
+                              - type: failureMapper
+                                value: ''
+                                valueType: interpolatedValue
+                              - type: mapperEnabled
+                                value: false
+                                valueType: custom
+                            level: 2
+                            fallthroughError: false
+                            isChanged: true
+                            nameConfigured: true
                     valueType: custom
-                  - type: customDatabaseName
-                    value: ''
-                    valueType: interpolatedValue
-                  - type: stepVersion
-                    value: 2
-                    valueType: custom
-                  - type: successMapper
-                    value: ''
-                    valueType: interpolatedValue
-                  - type: failureMapper
-                    value: ''
-                    valueType: interpolatedValue
-                  - type: mapperEnabled
-                    value: false
-                    valueType: custom
-                level: 2
+                level: 1
                 fallthroughError: false
                 isChanged: true
                 nameConfigured: true
           - condition: false
             steps:
-              - id: '16969553381270.04940770984704601'
-                type: customSQLQuery
-                name: AllForService
+              - id: '16971137028860.7180010238065273'
+                type: condition
+                name: Filter_Rating2
                 params:
-                  - type: query
-                    value: |
-                      select * from get_risk_data
-                      where fk_service_id = {{state.SelectedServiceID}}
-                      order by created_at
+                  - type: code
+                    value: |-
+                      if ({{ui.slct_Rating_Filter.value}} == 0){
+                        return false}
+                      else {
+                        return true}
                     valueType: interpolatedValue
-                    interpolationType: string
-                  - type: datasourceId
-                    value: Supabase Bridgelink Apps Database
-                    valueType: custom
-                    mustSelectFirst: true
-                  - type: preparedQuery
-                    value: |
-                      select * from get_risk_data
-                      where fk_service_id = ?
-                      order by created_at
-                    valueType: interpolatedValue
-                  - type: preparedQueryParams
+                    interpolationType: code
+                  - type: steps
                     value:
-                      - __UI_BAKERY__FORMAT_IF_DATE__(state.SelectedServiceID)
+                      - condition: true
+                        steps:
+                          - id: '16969553381270.04940770984704601'
+                            type: customSQLQuery
+                            name: AllForService
+                            params:
+                              - type: query
+                                value: >
+                                  SELECT * from get_risk_data
+
+                                  WHERE exists  (select 1 from
+                                  join_account_services where service_id =
+                                  get_risk_data.fk_service_id and account_id
+                                  ={{state.account.account_id}})
+
+                                  and (fk_service_id =
+                                  {{state.SelectedServiceID}})
+
+                                  and risk_status like {{steps.Get_Status.data}}
+
+                                  and area like {{ui.slct_Area_Filter.value}}
+
+                                  and risk_type like
+                                  {{ui.slct_Type_Filter.value}}
+
+                                  and risk_rating = {{steps.Get_Rating.data}}
+
+                                  order by created_at desc
+                                valueType: interpolatedValue
+                                interpolationType: string
+                              - type: datasourceId
+                                value: Supabase Bridgelink Apps Database
+                                valueType: custom
+                                mustSelectFirst: true
+                              - type: preparedQuery
+                                value: >
+                                  SELECT * from get_risk_data
+
+                                  WHERE exists  (select 1 from
+                                  join_account_services where service_id =
+                                  get_risk_data.fk_service_id and account_id =?)
+
+                                  and (fk_service_id = ?)
+
+                                  and risk_status like ?
+
+                                  and area like ?
+
+                                  and risk_type like ?
+
+                                  and risk_rating = ?
+
+                                  order by created_at desc
+                                valueType: interpolatedValue
+                              - type: preparedQueryParams
+                                value:
+                                  - >-
+                                    __UI_BAKERY__FORMAT_IF_DATE__(state.account.account_id)
+                                  - >-
+                                    __UI_BAKERY__FORMAT_IF_DATE__(state.SelectedServiceID)
+                                  - >-
+                                    __UI_BAKERY__FORMAT_IF_DATE__(steps.Get_Status.data)
+                                  - >-
+                                    __UI_BAKERY__FORMAT_IF_DATE__(ui.slct_Area_Filter.value)
+                                  - >-
+                                    __UI_BAKERY__FORMAT_IF_DATE__(ui.slct_Type_Filter.value)
+                                  - >-
+                                    __UI_BAKERY__FORMAT_IF_DATE__(steps.Get_Rating.data)
+                                valueType: custom
+                              - type: customDatabaseName
+                                value: ''
+                                valueType: interpolatedValue
+                              - type: stepVersion
+                                value: 2
+                                valueType: custom
+                              - type: successMapper
+                                value: ''
+                                valueType: interpolatedValue
+                              - type: failureMapper
+                                value: ''
+                                valueType: interpolatedValue
+                              - type: mapperEnabled
+                                value: false
+                                valueType: custom
+                            level: 2
+                            fallthroughError: false
+                            isChanged: true
+                            nameConfigured: true
+                      - condition: false
+                        steps:
+                          - id: '16971137088290.681886193783352'
+                            type: customSQLQuery
+                            name: AllForService2
+                            params:
+                              - type: query
+                                value: >
+                                  SELECT * from get_risk_data
+
+                                  WHERE exists  (select 1 from
+                                  join_account_services where service_id =
+                                  get_risk_data.fk_service_id and account_id
+                                  ={{state.account.account_id}})
+
+                                  and (fk_service_id =
+                                  {{state.SelectedServiceID}})
+
+                                  and risk_status like {{steps.Get_Status.data}}
+
+                                  and area like {{ui.slct_Area_Filter.value}}
+
+                                  and risk_type like
+                                  {{ui.slct_Type_Filter.value}}
+
+                                  order by created_at desc
+                                valueType: interpolatedValue
+                                interpolationType: string
+                              - type: datasourceId
+                                value: Supabase Bridgelink Apps Database
+                                valueType: custom
+                                mustSelectFirst: true
+                              - type: preparedQuery
+                                value: >
+                                  SELECT * from get_risk_data
+
+                                  WHERE exists  (select 1 from
+                                  join_account_services where service_id =
+                                  get_risk_data.fk_service_id and account_id =?)
+
+                                  and (fk_service_id = ?)
+
+                                  and risk_status like ?
+
+                                  and area like ?
+
+                                  and risk_type like ?
+
+                                  order by created_at desc
+                                valueType: interpolatedValue
+                              - type: preparedQueryParams
+                                value:
+                                  - >-
+                                    __UI_BAKERY__FORMAT_IF_DATE__(state.account.account_id)
+                                  - >-
+                                    __UI_BAKERY__FORMAT_IF_DATE__(state.SelectedServiceID)
+                                  - >-
+                                    __UI_BAKERY__FORMAT_IF_DATE__(steps.Get_Status.data)
+                                  - >-
+                                    __UI_BAKERY__FORMAT_IF_DATE__(ui.slct_Area_Filter.value)
+                                  - >-
+                                    __UI_BAKERY__FORMAT_IF_DATE__(ui.slct_Type_Filter.value)
+                                valueType: custom
+                              - type: customDatabaseName
+                                value: ''
+                                valueType: interpolatedValue
+                              - type: stepVersion
+                                value: 2
+                                valueType: custom
+                              - type: successMapper
+                                value: ''
+                                valueType: interpolatedValue
+                              - type: failureMapper
+                                value: ''
+                                valueType: interpolatedValue
+                              - type: mapperEnabled
+                                value: false
+                                valueType: custom
+                            level: 2
+                            fallthroughError: false
+                            isChanged: true
+                            nameConfigured: true
                     valueType: custom
-                  - type: customDatabaseName
-                    value: ''
-                    valueType: interpolatedValue
-                  - type: stepVersion
-                    value: 2
-                    valueType: custom
-                  - type: successMapper
-                    value: ''
-                    valueType: interpolatedValue
-                  - type: failureMapper
-                    value: ''
-                    valueType: interpolatedValue
-                  - type: mapperEnabled
-                    value: false
-                    valueType: custom
-                level: 2
+                level: 1
                 fallthroughError: false
                 isChanged: true
                 nameConfigured: true
@@ -128,7 +439,7 @@ config:
   errorToast: Action "{{actions.Load_Risk_Data.name}}" has failed
   errorToastDuration: '3000'
   errorToastHideByClick: false
-  delay: '0'
+  delay: '600'
   runWhenFirstReferenced: false
   preserveStateOnPageChange: false
 assigned: true

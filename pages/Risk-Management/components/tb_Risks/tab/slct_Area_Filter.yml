@@ -1,0 +1,381 @@
+id: '16971098911350.6778225464444312'
+definitionId: selectWithAtomics
+parentSlotId: '16968520326600.9060417850556657'
+styles:
+  xl:
+    gridItem:
+      x: 7
+      y: 6
+      w: 5
+      h: 10
+  xs:
+    gridItem:
+      x: 0
+      y: 96
+      w: 24
+      h: 10
+properties:
+  options:
+    value:
+      - title: All
+        value: '%'
+        __UIBAKERY__SYSTEM_ID__: '16971101885800.31890288761775976'
+      - value: Estate, H&S
+        title: Estate, H&S
+        __UIBAKERY__SYSTEM_ID__: '1'
+      - value: Safeguarding
+        title: Safeguarding
+        __UIBAKERY__SYSTEM_ID__: '2'
+      - title: HR
+        value: HR
+        __UIBAKERY__SYSTEM_ID__: '16971100966810.27891222266027293'
+      - title: New Dev
+        value: New dev
+        __UIBAKERY__SYSTEM_ID__: '16971100989960.6232628705588834'
+      - title: Finance
+        value: Finance
+        __UIBAKERY__SYSTEM_ID__: '16971100995820.39811459285248696'
+      - title: Systems and IT
+        value: Systems and IT
+        __UIBAKERY__SYSTEM_ID__: '16971101000560.11074032907515208'
+      - title: Marketing
+        value: Marketing
+        __UIBAKERY__SYSTEM_ID__: '16971101006220.14022106596196937'
+    dataValue: |-
+      [
+        {
+          "pk_risk_id": "401c1427-0346-4c7a-9531-f65e7a923815",
+          "entry_id": null,
+          "fk_service_id": "7b096f39-3e4b-4392-8a95-63635443c3b4",
+          "fk_created_by": "b1b36630-9ca8-414e-8a21-d6d522d3fb81",
+          "fk_risk_owner": "b1b36630-9ca8-414e-8a21-d6d522d3fb81",
+          "area": "HR",
+          "description": "Task Assignment",
+          "risk_type": "Strategic",
+          "risk_rating": "5",
+          "control_measure": "Treat",
+          "risk_status": "Open",
+          "created_at": "2023-10-11T10:42:26.596Z",
+          "last_review_date": null,
+          "risk_owner_name": "Chris Bates",
+          "risk_creator_name": "Chris Bates",
+          "tinydesc": "Task Assignment",
+          "shortdesc": "Task Assignment",
+          "shortcontrol": "Treat",
+          "service_name": "X Bridge School"
+        },
+        {
+          "pk_risk_id": "149763b9-0f87-4c7f-8292-401650209ee1",
+          "entry_id": null,
+          "fk_service_id": "7b096f39-3e4b-4392-8a95-63635443c3b4",
+          "fk_created_by": "3e038d87-a744-47f6-a302-e6d431d4cd73",
+          "fk_risk_owner": "b1b36630-9ca8-414e-8a21-d6d522d3fb81",
+          "area": "New dev",
+          "description": "Meteorite strikes can happen",
+          "risk_type": "Compliance",
+          "risk_rating": "1",
+          "control_measure": "Terminate",
+          "risk_status": "Closed",
+          "created_at": "2023-10-11T00:00:00.000Z",
+          "last_review_date": "2023-10-11T00:00:00.000Z",
+          "risk_owner_name": "Chris Bates",
+          "risk_creator_name": "Paul Rastall",
+          "tinydesc": "Meteorite strikes can happen",
+          "shortdesc": "Meteorite strikes can happen",
+          "shortcontrol": "Terminate",
+          "service_name": "X Bridge School"
+        },
+        {
+          "pk_risk_id": "500fd54c-9a2e-45be-9a7b-59ec5a2708cd",
+          "entry_id": null,
+          "fk_service_id": "7b096f39-3e4b-4392-8a95-63635443c3b4",
+          "fk_created_by": "3e038d87-a744-47f6-a302-e6d431d4cd73",
+          "fk_risk_owner": "b1b36630-9ca8-414e-8a21-d6d522d3fb81",
+          "area": "HR",
+          "description": "Mondays are horrible",
+          "risk_type": "Operational",
+          "risk_rating": "2",
+          "control_measure": "Treat",
+          "risk_status": "Open",
+          "created_at": "2023-10-11T00:00:00.000Z",
+          "last_review_date": "2023-10-11T00:00:00.000Z",
+          "risk_owner_name": "Chris Bates",
+          "risk_creator_name": "Paul Rastall",
+          "tinydesc": "Mondays are horrible",
+          "shortdesc": "Mondays are horrible",
+          "shortcontrol": "Treat",
+          "service_name": "X Bridge School"
+        },
+        {
+          "pk_risk_id": "c04d61df-a4cb-4731-b926-974bf5b891f4",
+          "entry_id": null,
+          "fk_service_id": "e15d17a2-ebdf-4d86-b251-3ee078135aa1",
+          "fk_created_by": "3e038d87-a744-47f6-a302-e6d431d4cd73",
+          "fk_risk_owner": "b1b36630-9ca8-414e-8a21-d6d522d3fb81",
+          "area": "Safeguarding",
+          "description": "Test",
+          "risk_type": "Operational",
+          "risk_rating": "2",
+          "control_measure": "Treat",
+          "risk_status": "Open",
+          "created_at": "2023-10-11T00:00:00.000Z",
+          "last_review_date": "2023-10-11T07:16:54.502Z",
+          "risk_owner_name": "Chris Bates",
+          "risk_creator_name": "Paul Rastall",
+          "tinydesc": "Test",
+          "shortdesc": "Test",
+          "shortcontrol": "Treat",
+          "service_name": "Spaghetti Bridge"
+        },
+        {
+          "pk_risk_id": "0c9bd000-6b93-4dab-a919-fa6a718c66f3",
+          "entry_id": null,
+          "fk_service_id": "7b096f39-3e4b-4392-8a95-63635443c3b4",
+          "fk_created_by": "3e038d87-a744-47f6-a302-e6d431d4cd73",
+          "fk_risk_owner": "b1b36630-9ca8-414e-8a21-d6d522d3fb81",
+          "area": "Safeguarding",
+          "description": "Test Entry ID",
+          "risk_type": "Operational",
+          "risk_rating": "5",
+          "control_measure": "Treat",
+          "risk_status": "Open",
+          "created_at": "2023-10-11T00:00:00.000Z",
+          "last_review_date": "2023-10-11T00:00:00.000Z",
+          "risk_owner_name": "Chris Bates",
+          "risk_creator_name": "Paul Rastall",
+          "tinydesc": "Test Entry ID",
+          "shortdesc": "Test Entry ID",
+          "shortcontrol": "Treat",
+          "service_name": "X Bridge School"
+        },
+        {
+          "pk_risk_id": "af18bbf1-0dcd-4076-a075-cc569a771238",
+          "entry_id": null,
+          "fk_service_id": "e15d17a2-ebdf-4d86-b251-3ee078135aa1",
+          "fk_created_by": "b1b36630-9ca8-414e-8a21-d6d522d3fb81",
+          "fk_risk_owner": "b1b36630-9ca8-414e-8a21-d6d522d3fb81",
+          "area": "HR",
+          "description": "In Spaghetti Bridge service",
+          "risk_type": "Operational",
+          "risk_rating": "3",
+          "control_measure": "Treat",
+          "risk_status": "Open",
+          "created_at": "2023-10-10T16:26:21.467Z",
+          "last_review_date": "2023-10-11T00:00:00.000Z",
+          "risk_owner_name": "Chris Bates",
+          "risk_creator_name": "Chris Bates",
+          "tinydesc": "In Spaghetti Bridge service",
+          "shortdesc": "In Spaghetti Bridge service",
+          "shortcontrol": "Treat",
+          "service_name": "Spaghetti Bridge"
+        },
+        {
+          "pk_risk_id": "7769c83e-04fd-4e0b-9878-4e7b79bb606a",
+          "entry_id": null,
+          "fk_service_id": "7b096f39-3e4b-4392-8a95-63635443c3b4",
+          "fk_created_by": "3e038d87-a744-47f6-a302-e6d431d4cd73",
+          "fk_risk_owner": "b1b36630-9ca8-414e-8a21-d6d522d3fb81",
+          "area": "New dev",
+          "description": "This is really important",
+          "risk_type": "Operational",
+          "risk_rating": "10",
+          "control_measure": "Transfer",
+          "risk_status": "Open",
+          "created_at": "2023-10-10T00:00:00.000Z",
+          "last_review_date": "2023-10-11T00:00:00.000Z",
+          "risk_owner_name": "Chris Bates",
+          "risk_creator_name": "Paul Rastall",
+          "tinydesc": "This is really important",
+          "shortdesc": "This is really important",
+          "shortcontrol": "Transfer",
+          "service_name": "X Bridge School"
+        },
+        {
+          "pk_risk_id": "ebae6c90-9276-4f32-a56a-36041a469d8f",
+          "entry_id": null,
+          "fk_service_id": "7b096f39-3e4b-4392-8a95-63635443c3b4",
+          "fk_created_by": "3e038d87-a744-47f6-a302-e6d431d4cd73",
+          "fk_risk_owner": "b1b36630-9ca8-414e-8a21-d6d522d3fb81",
+          "area": "Estates, H&S",
+          "description": "Test for review date",
+          "risk_type": "Strategic",
+          "risk_rating": "1",
+          "control_measure": "Tolerate",
+          "risk_status": "Closed",
+          "created_at": "2023-10-10T00:00:00.000Z",
+          "last_review_date": "2023-10-11T00:00:00.000Z",
+          "risk_owner_name": "Chris Bates",
+          "risk_creator_name": "Paul Rastall",
+          "tinydesc": "Test for review date",
+          "shortdesc": "Test for review date",
+          "shortcontrol": "Tolerate",
+          "service_name": "X Bridge School"
+        },
+        {
+          "pk_risk_id": "229a5bc3-ead0-457a-b2f2-dad8f7b38d55",
+          "entry_id": null,
+          "fk_service_id": "7b096f39-3e4b-4392-8a95-63635443c3b4",
+          "fk_created_by": "3e038d87-a744-47f6-a302-e6d431d4cd73",
+          "fk_risk_owner": "b1b36630-9ca8-414e-8a21-d6d522d3fb81",
+          "area": "Safeguarding",
+          "description": "Test for even more auto note addition",
+          "risk_type": "Operational",
+          "risk_rating": "2",
+          "control_measure": "Treat",
+          "risk_status": "Open",
+          "created_at": "2023-10-10T00:00:00.000Z",
+          "last_review_date": "2023-10-11T00:00:00.000Z",
+          "risk_owner_name": "Chris Bates",
+          "risk_creator_name": "Paul Rastall",
+          "tinydesc": "Test for even more auto note addition",
+          "shortdesc": "Test for even more auto note addition",
+          "shortcontrol": "Treat",
+          "service_name": "X Bridge School"
+        },
+        {
+          "pk_risk_id": "c3258ef2-22a7-4f9f-b722-507080ab7451",
+          "entry_id": null,
+          "fk_service_id": "7b096f39-3e4b-4392-8a95-63635443c3b4",
+          "fk_created_by": "3e038d87-a744-47f6-a302-e6d431d4cd73",
+          "fk_risk_owner": "b1b36630-9ca8-414e-8a21-d6d522d3fb81",
+          "area": "HR",
+          "description": "Test risk addition",
+          "risk_type": "Compliance",
+          "risk_rating": "7",
+          "control_measure": "Transfer",
+          "risk_status": "Open",
+          "created_at": "2023-10-10T00:00:00.000Z",
+          "last_review_date": "2023-10-10T12:59:16.550Z",
+          "risk_owner_name": "Chris Bates",
+          "risk_creator_name": "Paul Rastall",
+          "tinydesc": "Test risk addition",
+          "shortdesc": "Test risk addition",
+          "shortcontrol": "Transfer",
+          "service_name": "X Bridge School"
+        },
+        {
+          "pk_risk_id": "31617087-d174-45ef-a7a2-1e9dcff665b4",
+          "entry_id": null,
+          "fk_service_id": "7b096f39-3e4b-4392-8a95-63635443c3b4",
+          "fk_created_by": "3e038d87-a744-47f6-a302-e6d431d4cd73",
+          "fk_risk_owner": "b1b36630-9ca8-414e-8a21-d6d522d3fb81",
+          "area": "New dev",
+          "description": "This one is a red review test",
+          "risk_type": "Operational",
+          "risk_rating": "8",
+          "control_measure": "Treat",
+          "risk_status": "Closed",
+          "created_at": "2023-10-10T00:00:00.000Z",
+          "last_review_date": "2023-09-04T00:00:00.000Z",
+          "risk_owner_name": "Chris Bates",
+          "risk_creator_name": "Paul Rastall",
+          "tinydesc": "This one is a red review test",
+          "shortdesc": "This one is a red review test",
+          "shortcontrol": "Treat",
+          "service_name": "X Bridge School"
+        },
+        {
+          "pk_risk_id": "78a04cb0-dc34-4e66-b3c6-f12dd3372cb7",
+          "entry_id": null,
+          "fk_service_id": "7b096f39-3e4b-4392-8a95-63635443c3b4",
+          "fk_created_by": "3e038d87-a744-47f6-a302-e6d431d4cd73",
+          "fk_risk_owner": "b1b36630-9ca8-414e-8a21-d6d522d3fb81",
+          "area": "Marketing",
+          "description": "Our marketing team have lost their door keys",
+          "risk_type": "Operational",
+          "risk_rating": "9",
+          "control_measure": "Transfer",
+          "risk_status": "Open",
+          "created_at": "2023-10-10T00:00:00.000Z",
+          "last_review_date": "2023-10-11T00:00:00.000Z",
+          "risk_owner_name": "Chris Bates",
+          "risk_creator_name": "Paul Rastall",
+          "tinydesc": "Our marketing team have lost their door keys",
+          "shortdesc": "Our marketing team have lost their door keys",
+          "shortcontrol": "Transfer",
+          "service_name": "X Bridge School"
+        },
+        {
+          "pk_risk_id": "9ffdf6c3-643e-4926-aef7-6bc23995a31e",
+          "entry_id": null,
+          "fk_service_id": "7b096f39-3e4b-4392-8a95-63635443c3b4",
+          "fk_created_by": "3e038d87-a744-47f6-a302-e6d431d4cd73",
+          "fk_risk_owner": "b1b36630-9ca8-414e-8a21-d6d522d3fb81",
+          "area": "Finance",
+          "description": "There is an ongoing issue with this person who keeps telling other people to do things and they do not like being told what to do, especially when they are being told to dance.",
+          "risk_type": "Compliance",
+          "risk_rating": "10",
+          "control_measure": "Terminate",
+          "risk_status": "Open",
+          "created_at": "2023-10-09T09:16:08.669Z",
+          "last_review_date": "2023-10-11T00:00:00.000Z",
+          "risk_owner_name": "Chris Bates",
+          "risk_creator_name": "Paul Rastall",
+          "tinydesc": "There is an ongoing issue with this person who keeps telling",
+          "shortdesc": "There is an ongoing issue with this person who keeps telling other people to do things and they do not like being told what to do, especially when they are being told to dance.",
+          "shortcontrol": "Terminate",
+          "service_name": "X Bridge School"
+        },
+        {
+          "pk_risk_id": "072891e7-63a6-47e2-aa54-ee581cb19bd8",
+          "entry_id": null,
+          "fk_service_id": "7b096f39-3e4b-4392-8a95-63635443c3b4",
+          "fk_created_by": "b1b36630-9ca8-414e-8a21-d6d522d3fb81",
+          "fk_risk_owner": "3e038d87-a744-47f6-a302-e6d431d4cd73",
+          "area": "HR",
+          "description": "We have noticed that we do not have enough diversity in the hair colour of our staff. ",
+          "risk_type": "Compliance",
+          "risk_rating": "2",
+          "control_measure": "Treat",
+          "risk_status": "Closed",
+          "created_at": "2023-10-09T00:00:00.000Z",
+          "last_review_date": "2023-10-11T00:00:00.000Z",
+          "risk_owner_name": "Paul Rastall",
+          "risk_creator_name": "Chris Bates",
+          "tinydesc": "We have noticed that we do not have enough diversity in the ",
+          "shortdesc": "We have noticed that we do not have enough diversity in the hair colour of our staff. ",
+          "shortcontrol": "Treat",
+          "service_name": "X Bridge School"
+        }
+      ]
+    withData: false
+  name: slct_Area_Filter
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  optionValueKey: value
+  labelConfig:
+    text: Area
+    position: horizontal
+    align: left
+  placeholder: ''
+  value: '%'
+actions:
+  selectChange:
+    - action: '16968517651850.7367747537503266'
+      paramCode: ''
+      blockPageLoad: false
+      index: 0
+  init: []
+  focusEvent: []
+  blurEvent: []
+index: 3
+slots:
+  - id: '16971098911350.9802219882371714'
+    name: optionViewTypes
+    children:
+      - id: '16971098911650.9026645063874716'
+        definitionId: atomicString
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicString7
+          prop: title
+          primaryKey: true
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+        parentSlotId: '16971098911350.9802219882371714'
+        index: 0
+        slots: []
