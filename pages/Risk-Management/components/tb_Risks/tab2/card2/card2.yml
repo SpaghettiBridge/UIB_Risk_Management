@@ -7,7 +7,7 @@ styles:
       x: 0
       y: 0
       w: 8
-      h: 144
+      h: 178
   xs:
     gridItem:
       x: 0
@@ -21,7 +21,7 @@ properties:
     - xs
   showHeader: false
 actions: {}
-index: 16
+index: 18
 slots:
   - id: '16969255301610.08610302010066162'
     name: header

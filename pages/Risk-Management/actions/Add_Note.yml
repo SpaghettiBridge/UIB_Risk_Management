@@ -78,6 +78,52 @@ steps:
     fallthroughError: false
     isChanged: true
     nameConfigured: true
+  - id: '16974378401040.40480522749817816'
+    type: customAsyncCode
+    name: Get_DueDate
+    params:
+      - type: asyncCode
+        value: |-
+          let due_Date = ''
+          if ({{params.Type}} == undefined){
+            due_Date = {{ui.tbl_Progress_Notes.newRow.data.due_date}}
+          }
+          else if ({{params.Type}} == null){
+            due_Date = {{ui.tbl_Progress_Notes.selectedRow.data.due_date}}
+          }  
+          else {
+            due_Date = {{steps.Get_Date.data[0].todays_date}}
+          }
+          return {{due_Date}};
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+  - id: '16974380930720.004038201327318358'
+    type: customAsyncCode
+    name: Get_Assigned_To
+    params:
+      - type: asyncCode
+        value: |-
+          let assigned_To = ''
+          if ({{params.Type}} == undefined){
+            assigned_To = {{ui.tbl_Progress_Notes.newRow.data.assigned_to_id}}
+          }
+          else if ({{params.Type}} == null){
+            assigned_To = {{ui.tbl_Progress_Notes.selectedRow.data.assigned_to_id}}
+          }  
+          else {
+            assigned_To = {{state.account.account_id}}
+          }
+          return {{assigned_To}};
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
   - id: '16969260405930.928904040905087'
     type: customAsyncCode
     name: Get_Type
@@ -130,6 +176,20 @@ steps:
     params:
       - type: asyncCode
         value: return {{actions.Get_Account_Name.trigger(state.account.account_id)}}
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+  - id: '16974382059870.04788123791355603'
+    type: customAsyncCode
+    name: Get_Assigned_To_Name
+    params:
+      - type: asyncCode
+        value: |-
+          let assigned_To_Name = {{steps.Get_Assigned_To.data}}
+          return {{actions.Get_Account_Name.trigger(assigned_To_Name)}}
         valueType: interpolatedValue
         interpolationType: code
     level: 0
@@ -196,15 +256,15 @@ steps:
               service_id:
                 value: 7b096f39-3e4b-4392-8a95-63635443c3b4
               assigned_to_id:
-                value: '{{state.account.account_id}}'
+                value: '{{steps.Get_Assigned_To.data}}'
               service_name:
                 value: '{{steps.Get_Service_Name.data}}'
               assigned_to_name:
-                value: '{{steps.Get_Name.data}}'
+                value: '{{steps.Get_Assigned_To_Name.data}}'
               date:
                 value: '{{steps.Get_Date.data[0].todays_date}}'
               due_date:
-                value: '{{steps.Get_Date.data[0].todays_date}}'
+                value: '{{steps.Get_DueDate.data}}'
               source:
                 value: Risk Management
               title:
@@ -354,4 +414,4 @@ config:
 assigned: true
 selected: true
 configured: false
-index: 11
+index: 12

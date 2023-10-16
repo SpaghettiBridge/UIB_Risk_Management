@@ -10,6 +10,10 @@ children:
       __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
         - xl
         - xs
+      stickyHeader:
+        value: true
+        dataValue: 'false'
+        withData: false
     index: 0
     slots:
       - id: '16968527397430.3124061488024241'

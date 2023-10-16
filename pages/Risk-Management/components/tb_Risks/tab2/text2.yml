@@ -5,7 +5,7 @@ styles:
   xl:
     gridItem:
       x: 17
-      y: 1
+      y: 0
       w: 6
       h: 6
     color:

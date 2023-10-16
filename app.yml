@@ -56,21 +56,21 @@ storeItemList:
     version: 1
   - id: '16970342038270.8540005136786206'
     name: ColourRed
-    value: '#E37977'
+    value: '#C03032'
     valueType: string
-    initialValue: '#E37977'
+    initialValue: '#C03032'
     version: 1
   - id: '16970342587920.010041608967162219'
     name: ColourOrange
-    value: '#FAC898'
+    value: '#FEC98F'
     valueType: string
-    initialValue: '#FAC898'
+    initialValue: '#FEC98F'
     version: 1
   - id: '16970343250780.3987824277662848'
     name: ColourYellow
-    value: '#ffffba'
+    value: '#FFF192'
     valueType: string
-    initialValue: '#ffffba'
+    initialValue: '#FFF192'
     version: 1
   - id: '16970343337180.656714657004076'
     name: ColourGreen
