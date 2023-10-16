@@ -1,29 +1,29 @@
-id: '16968532639750.7229955678865716'
+id: '16974396052350.7295422165511956'
 definitionId: text
 parentSlotId: '16968520326600.6317433755868269'
 styles:
   xl:
     gridItem:
       x: 8
-      y: 0
+      y: 105
       w: 4
       h: 6
   xs:
     gridItem:
       x: 0
-      y: 237
+      y: 769
       w: 24
       h: 6
 properties:
-  name: text17
+  name: text3
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
     - xl
     - xs
-  value: Actions and updates
+  value: Actions and Notes
   textStyle:
     transform: none
     styles:
       - bold
 actions: {}
-index: 11
+index: 8
 slots: []

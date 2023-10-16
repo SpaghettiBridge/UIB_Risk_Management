@@ -136,6 +136,32 @@ steps:
                 isChanged: true
                 nameConfigured: true
                 paused: false
+              - id: '16974368884400.9313251879749831'
+                type: executeAction
+                name: RefreshRisks
+                params:
+                  - type: action
+                    value: '16968517651850.7367747537503266'
+                    valueType: string
+                  - type: isActionsLibraryCall
+                    value: false
+                    valueType: string
+                  - type: customParams
+                    value: return {{data}};
+                    valueType: string
+                  - type: successMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: failureMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: mapperEnabled
+                    value: false
+                    valueType: custom
+                level: 0
+                fallthroughError: false
+                isChanged: true
+                nameConfigured: true
           - condition: false
             steps:
               - id: '16968685624440.8222439671860913'
@@ -385,4 +411,4 @@ config:
 assigned: true
 selected: true
 configured: false
-index: 10
+index: 11

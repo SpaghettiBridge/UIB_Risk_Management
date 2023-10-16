@@ -7,7 +7,7 @@ styles:
       x: 8
       y: 25
       w: 16
-      h: 127
+      h: 75
   xs:
     gridItem:
       x: 0
@@ -61,7 +61,7 @@ properties:
     value: false
     dataValue: 'true'
     withData: false
-  limit: '10'
+  limit: '5'
 actions:
   smartTableCreate:
     - action: '16968537200240.35960634730493646'
@@ -82,7 +82,7 @@ actions:
   smartTableFilterChange: []
   smartTableSortChange: []
   smartTableReload: []
-index: 10
+index: 12
 slots:
   - id: '16968532737040.037852872871457555'
     name: columns
@@ -168,7 +168,7 @@ slots:
           __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
             - xl
             - xs
-          width: '300'
+          width: '400'
           filter: true
           title: Description
         index: 2
@@ -293,14 +293,50 @@ slots:
                 color: primary
                 __UIBAKERY__SYSTEM_ID__: '16969253398770.06868270546342625'
                 title: Action
-              - value: Note
+              - value: Update
                 color: primary
                 __UIBAKERY__SYSTEM_ID__: '16969253577850.928911622368291'
-                title: Note
+                title: Update
             dataValue: '[]'
             withData: false
           title: ''
         index: 0
+        slots: []
+      - id: '16968534100950.15511189138313952'
+        definitionId: atomicSelect
+        parentSlotId: '16968532737040.037852872871457555'
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicSelect2
+          prop: assigned_to_id
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          disabled:
+            value: false
+            dataValue: 'false'
+            withData: false
+          title: Assigned To
+          primaryKey: false
+          filter: true
+          width: '80'
+          options:
+            value:
+              - value: afc9176d-284f-4bcc-a0e5-53035afb23bd
+                color: primary
+                __UIBAKERY__SYSTEM_ID__: '16974375243260.38535560771825983'
+              - value: 3e038d87-a744-47f6-a302-e6d431d4cd73
+                color: success
+                __UIBAKERY__SYSTEM_ID__: '16974375243260.9105017233717803'
+            dataValue: >
+              {{var output = actions.LU_Account.data.map(x=>{return
+              {title:x.name, value:x.id} })
+
+              return output}}
+            withData: true
+        index: 3
         slots: []
       - id: '16968534100940.7195782918846922'
         definitionId: atomicDate
@@ -310,32 +346,7 @@ slots:
             visible: true
         properties:
           name: atomicDate
-          prop: created_at
-          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
-            - xl
-            - xs
-          dateFormat:
-            value: MMM dd, yyyy
-            dataValue: dd/MM/yyyy
-            withData: true
-          primaryKey: false
-          filter: true
-          width: '60'
-          disabled:
-            value: true
-            dataValue: 'false'
-            withData: false
-        index: 1
-        slots: []
-      - id: '16968534100950.15511189138313952'
-        definitionId: atomicSelect
-        parentSlotId: '16968532737040.037852872871457555'
-        styles:
-          xl:
-            visible: true
-        properties:
-          name: atomicSelect9
-          prop: account_id
+          prop: due_date
           __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
             - xl
             - xs
@@ -343,20 +354,14 @@ slots:
             value: false
             dataValue: 'false'
             withData: false
+          mappedValue: ''
+          dateFormat:
+            value: MMM dd, yyyy
+            dataValue: dd/MM/yyyy
+            withData: true
+          title: Date
           primaryKey: false
           filter: true
-          width: '80'
-          options:
-            value:
-              - value: 3e038d87-a744-47f6-a302-e6d431d4cd73
-                color: primary
-                __UIBAKERY__SYSTEM_ID__: '16970185205660.704500395337226'
-            dataValue: >
-              {{var output = actions.LU_Account.data.map(x=>{return
-              {title:x.name, value:x.id} })
-
-              return output}}
-            withData: true
-          title: Created by
-        index: 3
+          width: '60'
+        index: 1
         slots: []

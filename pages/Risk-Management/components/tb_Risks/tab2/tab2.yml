@@ -20,3 +20,5 @@ slots:
       - img_Red_Flag.yml
       - img_Orange_Flag.yml
       - img_Green_Flag.yml
+      - loadActionProgressNotesTable.yml
+      - text3.yml

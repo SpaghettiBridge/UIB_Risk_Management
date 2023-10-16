@@ -1,5 +1,5 @@
 id: '16968625536150.6089216859452218'
-name: Show_Detailled_Risk
+name: Show_Risk_Details_Tab
 nameConfigured: true
 steps:
   - id: '16968625690390.04104737027034888'
@@ -23,13 +23,13 @@ config:
   shouldConfirm: false
   confirmMessage: >-
     Are you sure you'd like to proceed with
-    "{{actions.Show_Detailled_Risk.name}}"?
+    "{{actions.Show_Risk_Details_Tab.name}}"?
   showSuccessToast: false
-  successToast: Action "{{actions.Show_Detailled_Risk.name}}" successfully executed
+  successToast: Action "{{actions.Show_Risk_Details_Tab.name}}" successfully executed
   successToastDuration: '3000'
   successToastHideByClick: false
   showErrorToast: true
-  errorToast: Action "{{actions.Show_Detailled_Risk.name}}" has failed
+  errorToast: Action "{{actions.Show_Risk_Details_Tab.name}}" has failed
   errorToastDuration: '3000'
   errorToastHideByClick: false
   delay: '0'
@@ -37,5 +37,5 @@ config:
   preserveStateOnPageChange: false
 assigned: true
 selected: true
-configured: false
-index: 17
+configured: true
+index: 18

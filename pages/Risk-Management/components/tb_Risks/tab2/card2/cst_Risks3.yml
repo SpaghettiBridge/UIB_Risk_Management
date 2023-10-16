@@ -5,8 +5,8 @@ styles:
   xl:
     gridItem:
       x: 16
-      y: 76
-      w: 8
+      y: 11
+      w: 6
       h: 10
     iconPlacement: left
   xs:
@@ -45,7 +45,7 @@ properties:
     dataValue: bottom
     withData: false
   icon:
-    value: close
+    value: checkmark
     dataValue: menu
     withData: false
   appearance:

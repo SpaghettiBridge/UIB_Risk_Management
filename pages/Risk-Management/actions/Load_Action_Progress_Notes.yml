@@ -1,14 +1,14 @@
-id: '16968520159240.7357300507703233'
-name: Load_Risk_Progress_Notes
+id: '16974398500990.18214830527474213'
+name: Load_Action_Progress_Notes
 nameConfigured: true
 steps:
-  - id: '16969419325140.8621382554267321'
+  - id: '16974398500990.8488152136335987'
     type: condition
     name: condition
     params:
       - type: code
         value: |-
-          if ({{state.Selected_Risk_ID}} != ''){
+          if ({{ui.tbl_Progress_Notes.selectedRow.data.type}} != 'Update'){
             return true}
           else {
             return false}
@@ -18,7 +18,7 @@ steps:
         value:
           - condition: true
             steps:
-              - id: '16968520194000.9504476977960603'
+              - id: '16974398500990.30072553922834344'
                 type: customSQLQuery
                 name: query
                 params:
@@ -26,30 +26,24 @@ steps:
                     value: >-
                       select 
 
-                      public.actions.id,
+                      public.progress_notes.id,
 
-                      public.actions.created_at,
+                      public.progress_notes.created_at,
 
-                      public.actions.details,
+                      public.progress_notes.action_id,
 
-                      public.actions.account_id,
+                      public.progress_notes.notes,
 
-                      public.actions.assigned_to_id,
+                      public.progress_notes.account_id,
 
-                      public.actions.assigned_to_name,
+                      public.progress_notes.editable
 
-                      public.actions.due_date,
+                      from public.progress_notes
 
-                      public.actions.type,
+                      where public.progress_notes.action_id =
+                      {{ui.tbl_Progress_Notes.selectedRow.data.id}}
 
-                      public.actions.account_name
-
-                      from public.actions
-
-                      where public.actions.fk_rm_risk_id =
-                      {{state.Selected_Risk_ID}}
-
-                      order by public.actions.created_at desc
+                      order by public.progress_notes.created_at desc
                     valueType: interpolatedValue
                     interpolationType: string
                   - type: datasourceId
@@ -59,22 +53,20 @@ steps:
                   - type: preparedQuery
                     value: |-
                       select 
-                      public.actions.id,
-                      public.actions.created_at,
-                      public.actions.details,
-                      public.actions.account_id,
-                      public.actions.assigned_to_id,
-                      public.actions.assigned_to_name,
-                      public.actions.due_date,
-                      public.actions.type,
-                      public.actions.account_name
-                      from public.actions
-                      where public.actions.fk_rm_risk_id = ?
-                      order by public.actions.created_at desc
+                      public.progress_notes.id,
+                      public.progress_notes.created_at,
+                      public.progress_notes.action_id,
+                      public.progress_notes.notes,
+                      public.progress_notes.account_id,
+                      public.progress_notes.editable
+                      from public.progress_notes
+                      where public.progress_notes.action_id = ?
+                      order by public.progress_notes.created_at desc
                     valueType: interpolatedValue
                   - type: preparedQueryParams
                     value:
-                      - __UI_BAKERY__FORMAT_IF_DATE__(state.Selected_Risk_ID)
+                      - >-
+                        __UI_BAKERY__FORMAT_IF_DATE__(ui.tbl_Progress_Notes.selectedRow.data.id)
                     valueType: custom
                   - type: customDatabaseName
                     value: ''
@@ -122,7 +114,7 @@ config:
   delay: '0'
   runWhenFirstReferenced: false
   preserveStateOnPageChange: false
-assigned: true
+assigned: false
 selected: true
 configured: true
-index: 8
+index: 9
