@@ -87,6 +87,7 @@ steps:
                 fallthroughError: false
                 isChanged: true
                 nameConfigured: true
+                paused: false
               - id: '16968658757320.7774423570936033'
                 type: UPDATE_ENTITY
                 name: Closing

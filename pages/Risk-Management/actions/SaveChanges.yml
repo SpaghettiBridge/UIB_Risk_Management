@@ -2,95 +2,15 @@ id: '16968635178490.49955484775472647'
 name: SaveChanges
 nameConfigured: true
 steps:
-  - id: '16971122167650.7235726797644846'
-    type: executeAction
-    name: execute
-    params:
-      - type: action
-        value: '16968517651850.7367747537503266'
-        valueType: string
-      - type: isActionsLibraryCall
-        value: false
-        valueType: string
-      - type: customParams
-        value: return {{data}};
-        valueType: string
-      - type: successMapper
-        value: ''
-        valueType: interpolatedValue
-      - type: failureMapper
-        value: ''
-        valueType: interpolatedValue
-      - type: mapperEnabled
-        value: false
-        valueType: custom
-    level: 0
-    fallthroughError: false
-    isChanged: true
-    paused: true
-  - id: '16971147068150.3804298609646708'
-    type: executeAction
-    name: execute2
-    params:
-      - type: action
-        value: '16969400265810.7198078406620261'
-        valueType: string
-      - type: isActionsLibraryCall
-        value: false
-        valueType: string
-      - type: customParams
-        value: return {{data}};
-        valueType: string
-      - type: successMapper
-        value: ''
-        valueType: interpolatedValue
-      - type: failureMapper
-        value: ''
-        valueType: interpolatedValue
-      - type: mapperEnabled
-        value: false
-        valueType: custom
-    level: 0
-    fallthroughError: false
-    isChanged: true
-  - id: '16968635640870.639256021099345'
-    type: executeAction
-    name: SetEditFalse
-    params:
-      - type: action
-        value: '16968635410790.6648237389472313'
-        valueType: string
-      - type: isActionsLibraryCall
-        value: false
-        valueType: string
-      - type: customParams
-        value: return {{data}};
-        valueType: string
-      - type: successMapper
-        value: ''
-        valueType: interpolatedValue
-      - type: failureMapper
-        value: ''
-        valueType: interpolatedValue
-      - type: mapperEnabled
-        value: false
-        valueType: custom
-    level: 1
-    fallthroughError: false
-    isChanged: true
-    nameConfigured: true
-  - id: '16968636644020.8621650768194935'
+  - id: '16977982320080.34345993406834574'
     type: condition
-    name: Add_Or_Edit_Mode
+    name: condition
     params:
       - type: code
         value: |-
-          if ({{state.PageMode}} == 'pmAdd') {
-            //we are in add mode 
-            return true
-          }
+          if ({{ui.inpRating.value}} != ''){
+            return true}
           else {
-            // we are in edit mode
             return false
           }
         valueType: interpolatedValue
@@ -99,12 +19,91 @@ steps:
         value:
           - condition: true
             steps:
-              - id: '16968637595330.6684534944056375'
+              - id: '16968636644020.8621650768194935'
+                type: condition
+                name: Add_Or_Edit_Mode
+                params:
+                  - type: code
+                    value: |-
+                      if ({{state.PageMode}} == 'pmAdd') {
+                        //we are in add mode 
+                        return true
+                      }
+                      else {
+                        // we are in edit mode
+                        return false
+                      }
+                    valueType: interpolatedValue
+                    interpolationType: code
+                  - type: steps
+                    value:
+                      - condition: true
+                        steps:
+                          - id: '16968637595330.6684534944056375'
+                            type: executeAction
+                            name: Add_New_Risk
+                            params:
+                              - type: action
+                                value: '16968537042570.9695396239916811'
+                                valueType: string
+                              - type: isActionsLibraryCall
+                                value: false
+                                valueType: string
+                              - type: customParams
+                                value: return {{data}};
+                                valueType: string
+                              - type: successMapper
+                                value: ''
+                                valueType: interpolatedValue
+                              - type: failureMapper
+                                value: ''
+                                valueType: interpolatedValue
+                              - type: mapperEnabled
+                                value: false
+                                valueType: custom
+                            level: 2
+                            fallthroughError: false
+                            isChanged: true
+                            nameConfigured: true
+                      - condition: false
+                        steps:
+                          - id: '16968637863210.4279319598042468'
+                            type: executeAction
+                            name: Edit_Risk
+                            params:
+                              - type: action
+                                value: '16968537131650.4582187971438638'
+                                valueType: string
+                              - type: isActionsLibraryCall
+                                value: false
+                                valueType: string
+                              - type: customParams
+                                value: 'return {Closing: false}'
+                                valueType: string
+                              - type: successMapper
+                                value: ''
+                                valueType: interpolatedValue
+                              - type: failureMapper
+                                value: ''
+                                valueType: interpolatedValue
+                              - type: mapperEnabled
+                                value: false
+                                valueType: custom
+                            level: 2
+                            fallthroughError: false
+                            isChanged: true
+                            nameConfigured: true
+                    valueType: custom
+                level: 1
+                fallthroughError: false
+                isChanged: true
+                nameConfigured: true
+              - id: '16968635640870.639256021099345'
                 type: executeAction
-                name: Add_New_Risk
+                name: SetEditFalse
                 params:
                   - type: action
-                    value: '16968537042570.9695396239916811'
+                    value: '16968635410790.6648237389472313'
                     valueType: string
                   - type: isActionsLibraryCall
                     value: false
@@ -125,20 +124,18 @@ steps:
                 fallthroughError: false
                 isChanged: true
                 nameConfigured: true
-          - condition: false
-            steps:
-              - id: '16968637863210.4279319598042468'
+              - id: '16971147068150.3804298609646708'
                 type: executeAction
-                name: Edit_Risk
+                name: execute2
                 params:
                   - type: action
-                    value: '16968537131650.4582187971438638'
+                    value: '16969400265810.7198078406620261'
                     valueType: string
                   - type: isActionsLibraryCall
                     value: false
                     valueType: string
                   - type: customParams
-                    value: 'return {Closing: false}'
+                    value: return {{data}};
                     valueType: string
                   - type: successMapper
                     value: ''
@@ -152,12 +149,37 @@ steps:
                 level: 1
                 fallthroughError: false
                 isChanged: true
-                nameConfigured: true
+          - condition: false
+            steps:
+              - id: '16977983209730.09903520014848466'
+                type: showToast
+                name: notification
+                params:
+                  - type: message
+                    value: The rating needs to be selected
+                    valueType: interpolatedValue
+                  - type: type
+                    value: warning
+                    valueType: string
+                  - type: icon
+                    value: alert-circle
+                    valueType: string
+                  - type: duration
+                    value: '3000'
+                    valueType: interpolatedValue
+                  - type: position
+                    value: top-end
+                    valueType: string
+                  - type: hideOnClick
+                    value: false
+                    valueType: custom
+                level: 1
+                fallthroughError: false
+                isChanged: true
         valueType: custom
     level: 0
     fallthroughError: false
     isChanged: true
-    nameConfigured: true
 singleStep: true
 mode: manual
 modeConfigured: true

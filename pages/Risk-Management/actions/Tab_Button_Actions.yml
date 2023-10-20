@@ -4,7 +4,7 @@ nameConfigured: true
 steps:
   - id: '16970197189290.7196683708863778'
     type: condition
-    name: condition3
+    name: Check_Service
     params:
       - type: code
         value: |-
@@ -147,22 +147,21 @@ steps:
 
                                               {{ui.inpEntryID.setValue('')}}
 
-                                              {{ui.inpRating.setValue('5')}}
+                                              {{ui.inpRating.setValue('')}}
 
-                                              {{ui.inpArea.setValue('Estates, H&S')}}
+                                              {{ui.inpArea.setValue('')}}
 
-                                              {{ui.inpType.setValue('Strategic')}}
+                                              {{ui.inpType.setValue('')}}
 
-                                              {{ui.inpControl.setValue('Tolerate')}}
+                                              {{ui.inpControl.setValue('')}}
 
-                                              {{ui.inpCreatedBy.setValue(state.user_Id)}}
+                                              {{ui.inpCreatedBy.setValue(state.account.account_id)}}
 
                                               {{ui.inpOwner.setValue(state.account.account_id)}}
 
                                               {{ui.inpStatus.setValue('Open')}}
 
-                                              {{ui.inpDetails.setValue('Please enter a
-                                              description of the risk here')}}
+                                              {{ui.inpDetails.setValue('')}}
                                             valueType: interpolatedValue
                                             interpolationType: code
                                         level: 2
@@ -305,6 +304,7 @@ steps:
     level: 1
     fallthroughError: false
     isChanged: true
+    nameConfigured: true
 singleStep: true
 mode: manual
 modeConfigured: true
