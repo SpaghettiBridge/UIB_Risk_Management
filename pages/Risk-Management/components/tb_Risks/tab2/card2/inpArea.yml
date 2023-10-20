@@ -46,7 +46,7 @@ properties:
     - xs
   optionValueKey: value
   labelConfig:
-    text: Responsibile Area
+    text: Responsible Area
     position: horizontal
     align: left
   labelWidth: 41
