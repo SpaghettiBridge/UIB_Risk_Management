@@ -40,12 +40,12 @@ config:
   successToast: Action "{{actions.onPageLoad2.name}}" successfully executed
   successToastDuration: '3000'
   successToastHideByClick: false
-  showErrorToast: true
+  showErrorToast: false
   errorToast: Action "{{actions.onPageLoad2.name}}" has failed
   errorToastDuration: '3000'
   errorToastHideByClick: false
   delay: '600'
-  runWhenFirstReferenced: true
+  runWhenFirstReferenced: false
   preserveStateOnPageChange: false
 assigned: true
 index: 27

@@ -9,7 +9,7 @@ styles:
       w: 3
       h: 11
     modalSize:
-      widthValue: 30
+      widthValue: 80
       widthUnit: '%'
       heightValue: 70
       heightUnit: '%'

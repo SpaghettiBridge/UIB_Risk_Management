@@ -6,15 +6,15 @@ styles:
     gridItem:
       x: 0
       y: 0
-      w: 23
-      h: 135
+      w: 14
+      h: 180
     src:
       url: >-
         https://bridgelink2.spaghettibridge.co.uk/wp-content/uploads/2023/10/Ratings1.jpg
       uploadUrl: ''
       name: ''
       active: url
-    fit: scale-down
+    fit: fill
   xs:
     gridItem:
       x: 0

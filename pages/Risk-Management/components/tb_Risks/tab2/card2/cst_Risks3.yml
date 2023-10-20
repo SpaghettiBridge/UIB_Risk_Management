@@ -55,7 +55,7 @@ properties:
   cssClasses:
     - ''
   status:
-    value: primary
+    value: success-light
     dataValue: basic
     withData: false
   __UIBAKERY__SHOW__CONDITION__CODE__: |-
