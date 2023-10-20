@@ -7,8 +7,10 @@ styles:
       customUnit: px
       themeDefaultOverridePropertyKey: baseTextFontSize
     gridItem:
+      x: 0
+      y: 0
+      w: 18
       h: 10
-      w: 6
 properties:
   name: heading2
   text: Guide to Risks
@@ -18,4 +20,5 @@ properties:
     - xs
 parentSlotId: '16968645055170.5441825225672554'
 index: 0
+actions: {}
 slots: []
