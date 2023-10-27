@@ -26,7 +26,7 @@ steps:
           offset:
             value: ''
           orderBy:
-            value: ''
+            value: service_name
           orderDirection:
             value: asc
         valueType: custom

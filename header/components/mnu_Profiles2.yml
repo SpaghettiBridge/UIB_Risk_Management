@@ -23,10 +23,10 @@ properties:
   items: |
     if ({{["SLT","GROUP"].includes(state.account.roles)}}){
        return[
-        {
-          title: 'Dashboard',
-          link: '/Risk_Management'
-        },
+    //     {
+    //       title: 'Dashboard',
+    //       link: '/Risk_Management'
+    //     },
         { 
           title: 'Risk Management',
           link: '/Risk_Management'
