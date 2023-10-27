@@ -65,6 +65,10 @@ properties:
   selectedRowIndex: '0'
   emptyMessage: No risk data found
   showFilter: true
+  showClearSelection:
+    value: false
+    dataValue: 'true'
+    withData: false
 actions:
   smartTableRowClick:
     - action: '16969400265810.7198078406620261'
@@ -184,7 +188,7 @@ slots:
           options:
             value:
               - value: Closed
-                color: primary
+                color: basic
                 __UIBAKERY__SYSTEM_ID__: '16968555036750.4493060860798379'
               - value: Open
                 color: primary
@@ -207,7 +211,8 @@ slots:
           filterVariation:
             value: equal
             dataValue: equal
-            withData: true
+            withData: false
+          __UIBAKERY__SHOW__CONDITION__CODE__: '{{!ui.tog_Hide_Closed.value}}'
         index: 7
         slots: []
       - id: '16968555036750.9921617133318832'
@@ -358,30 +363,30 @@ slots:
                 color: primary
                 __UIBAKERY__SYSTEM_ID__: '16968651158710.34827338349334735'
                 title: Estates, H&S
-              - value: Safeguarding
-                color: primary
-                __UIBAKERY__SYSTEM_ID__: '16968651751450.12455269425502302'
-                title: Safeguarding
-              - value: HR
-                color: primary
-                __UIBAKERY__SYSTEM_ID__: '16968651847490.3018490806652885'
-                title: HR
-              - value: New dev
-                color: primary
-                __UIBAKERY__SYSTEM_ID__: '16968651927680.7706979849020184'
-                title: New Dev
               - value: Finance
                 color: primary
                 __UIBAKERY__SYSTEM_ID__: '16968652019610.6211398821162759'
                 title: Finance
-              - value: Systems and IT
+              - value: HR
                 color: primary
-                __UIBAKERY__SYSTEM_ID__: '16968652110490.2614523480446349'
-                title: Systems and IT
+                __UIBAKERY__SYSTEM_ID__: '16968651847490.3018490806652885'
+                title: HR
               - value: Marketing
                 color: primary
                 __UIBAKERY__SYSTEM_ID__: '16968652224500.48108407245066664'
                 title: Marketing
+              - value: New dev
+                color: primary
+                __UIBAKERY__SYSTEM_ID__: '16968651927680.7706979849020184'
+                title: New Dev
+              - value: Safeguarding
+                color: primary
+                __UIBAKERY__SYSTEM_ID__: '16968651751450.12455269425502302'
+                title: Safeguarding
+              - value: Systems and IT
+                color: primary
+                __UIBAKERY__SYSTEM_ID__: '16968652110490.2614523480446349'
+                title: Systems and IT
             dataValue: |-
               [
                 {
@@ -410,12 +415,6 @@ slots:
           width: '100'
           options:
             value:
-              - value: Strategic
-                color: primary
-                __UIBAKERY__SYSTEM_ID__: '16968652570690.3744438057269892'
-              - value: Operational
-                color: primary
-                __UIBAKERY__SYSTEM_ID__: '16968652570690.3596733898706044'
               - value: Compliance
                 color: primary
                 __UIBAKERY__SYSTEM_ID__: '16968652853710.7487841484313527'
@@ -424,6 +423,12 @@ slots:
                 color: primary
                 __UIBAKERY__SYSTEM_ID__: '16968652943730.7932884201045838'
                 title: Financial
+              - value: Operational
+                color: primary
+                __UIBAKERY__SYSTEM_ID__: '16968652570690.3596733898706044'
+              - value: Strategic
+                color: primary
+                __UIBAKERY__SYSTEM_ID__: '16968652570690.3744438057269892'
             dataValue: |-
               [
                 {
@@ -493,18 +498,50 @@ slots:
                 color: primary-dark
                 __UIBAKERY__SYSTEM_ID__: '16969394498950.04882803679619441'
                 title: '10'
-            dataValue: |-
+            dataValue: |
               [
                 {
-                  value: '1',
-                  color: 'primary'
+                  value: 10,
+                  title: '10'
                 },
                 {
-                  value: '3',
-                  color: 'success'
+                  value: 9,
+                  title: '9'
+                },
+                {
+                  value: 8,
+                  title: '8'
+                },
+                {
+                  value: 7,
+                  title: '7'
+                },
+                {
+                  value: 6,
+                  title: '6'
+                },
+                {
+                  value: 5,
+                  title: '5'
+                },
+                {
+                  value: 4,
+                  title: '4'
+                },
+                {
+                  value: 3,
+                  title: '3'
+                },
+                {
+                  value: 2,
+                  title: '2'
+                },
+                {
+                  value: 1,
+                  title: '1'
                 }
               ]
-            withData: false
+            withData: true
           title: Rating
         index: 5
         slots: []

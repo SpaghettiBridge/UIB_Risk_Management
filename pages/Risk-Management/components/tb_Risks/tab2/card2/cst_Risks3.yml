@@ -6,7 +6,7 @@ styles:
     gridItem:
       x: 16
       y: 11
-      w: 6
+      w: 7
       h: 10
     iconPlacement: left
   xs:

@@ -23,24 +23,24 @@ properties:
       - value: Estate, H&S
         title: Estate, H&S
         __UIBAKERY__SYSTEM_ID__: '1'
-      - value: Safeguarding
-        title: Safeguarding
-        __UIBAKERY__SYSTEM_ID__: '2'
-      - title: HR
-        value: HR
-        __UIBAKERY__SYSTEM_ID__: '16971100966810.27891222266027293'
-      - title: New Dev
-        value: New dev
-        __UIBAKERY__SYSTEM_ID__: '16971100989960.6232628705588834'
       - title: Finance
         value: Finance
         __UIBAKERY__SYSTEM_ID__: '16971100995820.39811459285248696'
-      - title: Systems and IT
-        value: Systems and IT
-        __UIBAKERY__SYSTEM_ID__: '16971101000560.11074032907515208'
+      - title: HR
+        value: HR
+        __UIBAKERY__SYSTEM_ID__: '16971100966810.27891222266027293'
       - title: Marketing
         value: Marketing
         __UIBAKERY__SYSTEM_ID__: '16971101006220.14022106596196937'
+      - title: New Dev
+        value: New dev
+        __UIBAKERY__SYSTEM_ID__: '16971100989960.6232628705588834'
+      - value: Safeguarding
+        title: Safeguarding
+        __UIBAKERY__SYSTEM_ID__: '2'
+      - title: Systems and IT
+        value: Systems and IT
+        __UIBAKERY__SYSTEM_ID__: '16971101000560.11074032907515208'
     dataValue: |-
       [
         {
@@ -350,6 +350,7 @@ properties:
     align: left
   placeholder: ''
   value: '%'
+  multi: false
 actions:
   selectChange:
     - action: '16968517651850.7367747537503266'

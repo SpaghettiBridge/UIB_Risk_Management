@@ -53,7 +53,7 @@ properties:
     dataValue: 'true'
     withData: false
   sortable:
-    value: false
+    value: true
     dataValue: 'true'
     withData: false
   putEmptyValuesAtTheEnd: false
@@ -62,6 +62,14 @@ properties:
     dataValue: 'true'
     withData: false
   limit: '5'
+  sortColumn:
+    value: created_at
+    dataValue: ''
+    withData: false
+  sortDirection:
+    value: desc
+    dataValue: asc
+    withData: false
 actions:
   smartTableCreate:
     - action: '16968537200240.35960634730493646'
@@ -76,7 +84,11 @@ actions:
       paramCode: ''
       blockPageLoad: false
       index: 1
-  smartTableRowSelect: []
+  smartTableRowSelect:
+    - action: '16974398500990.18214830527474213'
+      paramCode: ''
+      blockPageLoad: false
+      index: 2
   smartTableRowClick: []
   smartTablePageSelect: []
   smartTableFilterChange: []
