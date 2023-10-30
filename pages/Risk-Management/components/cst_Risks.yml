@@ -78,12 +78,17 @@ properties:
     value: primary
     dataValue: basic
     withData: false
-  __UIBAKERY__SHOW__CONDITION__CODE__: state.RiskDisabled
+  __UIBAKERY__SHOW__CONDITION__CODE__: '{{state.RiskDisabled}}'
+  disabled:
+    value: false
+    dataValue: ''
+    withData: false
 actions:
   buttonClick: []
   menuItemClick:
-    - action: '16968576687710.9596333746278372'
+    - action: '16986732063240.6033112310139075'
       paramCode: ''
+      blockPageLoad: false
       index: 0
   init: []
 index: 0

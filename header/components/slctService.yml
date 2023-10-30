@@ -42,6 +42,10 @@ properties:
     align: left
   labelWidth: 0
   value: '0'
+  disabled:
+    value: false
+    dataValue: '!{{state.RiskDisabled}}'
+    withData: true
 actions:
   selectChange:
     - action: '16968564093060.47677390951301524'

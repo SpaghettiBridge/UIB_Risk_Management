@@ -1,0 +1,72 @@
+id: '16986732063240.6033112310139075'
+name: CheckEditState
+nameConfigured: true
+steps:
+  - id: '16986732213470.31619338094365457'
+    type: condition
+    name: Is_Button_Enabled
+    params:
+      - type: code
+        value: return {{state.RiskDisabled}}
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: steps
+        value:
+          - condition: true
+            steps:
+              - id: '16986732625560.7302302977722159'
+                type: executeAction
+                name: execute
+                params:
+                  - type: action
+                    value: '16968576687710.9596333746278372'
+                    valueType: string
+                  - type: isActionsLibraryCall
+                    value: false
+                    valueType: string
+                  - type: customParams
+                    value: return {{data}};
+                    valueType: string
+                  - type: successMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: failureMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: mapperEnabled
+                    value: false
+                    valueType: custom
+                level: 1
+                fallthroughError: false
+                isChanged: true
+          - condition: false
+            steps: []
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+singleStep: false
+mode: manual
+modeConfigured: false
+parentPageId: '1'
+folder: false
+parentId: null
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.CheckEditState.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.CheckEditState.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.CheckEditState.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+assigned: false
+selected: true
+configured: false
+index: 29
