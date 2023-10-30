@@ -64,7 +64,7 @@ properties:
   limit: '12'
   selectedRowIndex: '0'
   emptyMessage: No risk data found
-  showFilter: true
+  showFilter: false
   showClearSelection:
     value: false
     dataValue: 'true'

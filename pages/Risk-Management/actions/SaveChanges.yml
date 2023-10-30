@@ -149,6 +149,7 @@ steps:
                 level: 1
                 fallthroughError: false
                 isChanged: true
+                paused: true
           - condition: false
             steps:
               - id: '16977983209730.09903520014848466'

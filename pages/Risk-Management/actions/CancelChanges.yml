@@ -87,8 +87,8 @@ mode: manual
 modeConfigured: true
 folder: false
 config:
-  shouldConfirm: false
-  confirmMessage: Are you sure you'd like to proceed with "{{actions.CancelChanges.name}}"?
+  shouldConfirm: true
+  confirmMessage: Are you sure you wish to cancel the changes to this risk?
   showSuccessToast: false
   successToast: Action "{{actions.CancelChanges.name}}" successfully executed
   successToastDuration: '3000'

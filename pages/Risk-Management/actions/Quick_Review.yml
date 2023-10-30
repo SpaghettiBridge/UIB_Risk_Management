@@ -2,27 +2,98 @@ id: '16970211678470.6159918114959002'
 name: Quick_Review
 nameConfigured: true
 steps:
-  - id: '16970211783700.9533239382196474'
-    type: customAsyncCode
-    name: code
+  - id: '16986734888820.771845033856766'
+    type: condition
+    name: Check_Not_Editing
     params:
-      - type: asyncCode
-        value: >-
-          {{actions.Add_Note.trigger({Type: 'Note', Description: 'Risk has been
-          marked as reviewed'}) }}
+      - type: code
+        value: return {{state.RiskDisabled}}
         valueType: interpolatedValue
         interpolationType: code
+      - type: steps
+        value:
+          - condition: true
+            steps:
+              - id: '16970211783700.9533239382196474'
+                type: customAsyncCode
+                name: code
+                params:
+                  - type: asyncCode
+                    value: >-
+                      {{actions.Add_Note.trigger({Type: 'Note', Description:
+                      'Risk has been marked as reviewed'}) }}
+                    valueType: interpolatedValue
+                    interpolationType: code
+                level: 0
+                fallthroughError: false
+                isChanged: true
+              - id: '16986738841810.6989789869826151'
+                type: executeAction
+                name: refresh_Risks
+                params:
+                  - type: action
+                    value: '16968517651850.7367747537503266'
+                    valueType: string
+                  - type: isActionsLibraryCall
+                    value: false
+                    valueType: string
+                  - type: customParams
+                    value: return {{data}};
+                    valueType: string
+                  - type: successMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: failureMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: mapperEnabled
+                    value: false
+                    valueType: custom
+                level: 1
+                fallthroughError: false
+                isChanged: true
+                nameConfigured: true
+              - id: '16986738131400.7495741663007205'
+                type: executeAction
+                name: refresh_Notes
+                params:
+                  - type: action
+                    value: '16968520159240.7357300507703233'
+                    valueType: string
+                  - type: isActionsLibraryCall
+                    value: false
+                    valueType: string
+                  - type: customParams
+                    value: return {{data}};
+                    valueType: string
+                  - type: successMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: failureMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: mapperEnabled
+                    value: false
+                    valueType: custom
+                level: 1
+                fallthroughError: false
+                isChanged: true
+                nameConfigured: true
+          - condition: false
+            steps: []
+        valueType: custom
     level: 0
     fallthroughError: false
     isChanged: true
+    nameConfigured: true
 singleStep: true
 mode: manual
 modeConfigured: true
 parentPageId: '1'
 folder: false
 config:
-  shouldConfirm: false
-  confirmMessage: Are you sure you'd like to proceed with "{{actions.Quick_Review.name}}"?
+  shouldConfirm: true
+  confirmMessage: Mark this risk as reviewed?
   showSuccessToast: false
   successToast: Action "{{actions.Quick_Review.name}}" successfully executed
   successToastDuration: '3000'
@@ -30,7 +101,7 @@ config:
   showErrorToast: true
   errorToast: Action "{{actions.Quick_Review.name}}" has failed
   errorToastDuration: '3000'
-  errorToastHideByClick: false
+  errorToastHideByClick: true
   delay: '0'
   runWhenFirstReferenced: true
   preserveStateOnPageChange: false

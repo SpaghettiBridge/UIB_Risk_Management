@@ -163,6 +163,18 @@ steps:
                 fallthroughError: false
                 isChanged: true
                 nameConfigured: true
+              - id: '16986759261680.19951103685568228'
+                type: customAsyncCode
+                name: return_Register
+                params:
+                  - type: asyncCode
+                    value: '{{ui.tb_Risks.selectTab(0)}}'
+                    valueType: interpolatedValue
+                    interpolationType: code
+                level: 1
+                fallthroughError: false
+                isChanged: true
+                nameConfigured: true
           - condition: false
             steps:
               - id: '16968685624440.8222439671860913'

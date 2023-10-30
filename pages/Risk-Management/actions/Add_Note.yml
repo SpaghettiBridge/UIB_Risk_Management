@@ -226,6 +226,23 @@ steps:
     fallthroughError: false
     isChanged: true
     nameConfigured: true
+  - id: '16986776690940.029344055679944248'
+    type: customAsyncCode
+    name: Get_Editable
+    params:
+      - type: asyncCode
+        value: |-
+          if ({{steps.Get_Type.data}} == 'Note'){
+              return false}
+          else {
+              return true
+          }
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
   - id: '16968690350350.9631261672560434'
     type: CREATE_ENTITY
     name: Create_Note
@@ -254,7 +271,7 @@ steps:
               account_name:
                 value: '{{steps.Get_Name.data}}'
               service_id:
-                value: 7b096f39-3e4b-4392-8a95-63635443c3b4
+                value: '{{ui.tbl_Risks.selectedRow.data.service_id}}'
               assigned_to_id:
                 value: '{{steps.Get_Assigned_To.data}}'
               service_name:
@@ -273,6 +290,8 @@ steps:
                 value: Open
               fk_rm_risk_id:
                 value: '{{state.Selected_Risk_ID}}'
+              editable:
+                value: '{{steps.Get_Editable.data}}'
             custom: ''
         valueType: custom
       - type: customDatabaseName
