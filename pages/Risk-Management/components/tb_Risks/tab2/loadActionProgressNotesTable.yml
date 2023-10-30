@@ -126,7 +126,7 @@ slots:
         parentSlotId: '16974395982820.8307521957145838'
         styles:
           xl:
-            visible: true
+            visible: false
         properties:
           name: atomicString26
           prop: created_at
@@ -160,7 +160,7 @@ slots:
         parentSlotId: '16974395982820.8307521957145838'
         styles:
           xl:
-            visible: true
+            visible: false
         properties:
           name: atomicBoolean
           prop: editable

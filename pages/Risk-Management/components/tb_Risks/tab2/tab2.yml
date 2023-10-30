@@ -22,3 +22,4 @@ slots:
       - img_Green_Flag.yml
       - loadActionProgressNotesTable.yml
       - text3.yml
+      - TGL_hide_notes.yml
