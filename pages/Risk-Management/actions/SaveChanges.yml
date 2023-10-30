@@ -135,7 +135,7 @@ steps:
                     value: false
                     valueType: string
                   - type: customParams
-                    value: 'return {new: {{steps.Add_New_Risk.data}} }'
+                    value: ''
                     valueType: string
                   - type: successMapper
                     value: ''

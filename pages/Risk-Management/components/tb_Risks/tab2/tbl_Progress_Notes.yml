@@ -5,7 +5,7 @@ styles:
   xl:
     gridItem:
       x: 8
-      y: 25
+      y: 26
       w: 16
       h: 75
   xs:
@@ -25,7 +25,14 @@ properties:
         { prop: 'email', type: 'link' },
       ]
     withData: false
-  data: '{{actions.Load_Risk_Progress_Notes.data}}'
+  data: |-
+
+    if({{!ui.TGL_hide_notes.value}})
+    {
+     return  {{actions.Load_Risk_Progress_Notes.data.filter(items => items.type != "Note")}} 
+    }
+
+    return {{actions.Load_Risk_Progress_Notes.data}} 
   name: tbl_Progress_Notes
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
     - xl
@@ -46,8 +53,8 @@ properties:
     withData: false
   showDeleteAction:
     value: true
-    dataValue: 'false'
-    withData: false
+    dataValue: row.editable!= false
+    withData: true
   showClearSelection:
     value: false
     dataValue: 'true'
@@ -70,6 +77,7 @@ properties:
     value: desc
     dataValue: asc
     withData: false
+  showFilter: false
 actions:
   smartTableCreate:
     - action: '16968537200240.35960634730493646'
@@ -94,7 +102,7 @@ actions:
   smartTableFilterChange: []
   smartTableSortChange: []
   smartTableReload: []
-index: 12
+index: 13
 slots:
   - id: '16968532737040.037852872871457555'
     name: columns
