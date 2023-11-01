@@ -4,8 +4,8 @@ parentSlotId: '16969255301610.26614310802214014'
 styles:
   xl:
     gridItem:
-      x: 16
-      y: 11
+      x: 17
+      y: 22
       w: 7
       h: 10
     iconPlacement: left

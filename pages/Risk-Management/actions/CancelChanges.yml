@@ -34,7 +34,7 @@ steps:
     nameConfigured: true
   - id: '16968635564020.8962821690328588'
     type: executeAction
-    name: execute
+    name: SetEditFalse
     params:
       - type: action
         value: '16968635410790.6648237389472313'
@@ -57,9 +57,10 @@ steps:
     level: 0
     fallthroughError: false
     isChanged: true
+    nameConfigured: true
   - id: '16971122304370.9314570935581701'
     type: executeAction
-    name: execute2
+    name: RefreshRisks
     params:
       - type: action
         value: '16968517651850.7367747537503266'
@@ -82,6 +83,59 @@ steps:
     level: 0
     fallthroughError: false
     isChanged: true
+    nameConfigured: true
+  - id: '16988474749600.5043429368929895'
+    type: executeAction
+    name: RefreshNotes
+    params:
+      - type: action
+        value: '16968520159240.7357300507703233'
+        valueType: string
+      - type: isActionsLibraryCall
+        value: false
+        valueType: string
+      - type: customParams
+        value: return {{data}};
+        valueType: string
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+  - id: '16988474887080.1372343442927122'
+    type: executeAction
+    name: RefreshActions
+    params:
+      - type: action
+        value: '16974398500990.18214830527474213'
+        valueType: string
+      - type: isActionsLibraryCall
+        value: false
+        valueType: string
+      - type: customParams
+        value: return {{data}};
+        valueType: string
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
 singleStep: true
 mode: manual
 modeConfigured: true
@@ -104,4 +158,4 @@ assigned: true
 selected: true
 configured: true
 parentPageId: '1'
-index: 6
+index: 7

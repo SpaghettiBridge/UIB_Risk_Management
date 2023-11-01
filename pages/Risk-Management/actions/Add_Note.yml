@@ -410,6 +410,32 @@ steps:
     fallthroughError: false
     isChanged: true
     nameConfigured: true
+  - id: '16988516968780.9888066180812027'
+    type: executeAction
+    name: Refresh_Actions
+    params:
+      - type: action
+        value: '16974398500990.18214830527474213'
+        valueType: string
+      - type: isActionsLibraryCall
+        value: false
+        valueType: string
+      - type: customParams
+        value: return {{data}};
+        valueType: string
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
 singleStep: false
 mode: manual
 modeConfigured: false
@@ -433,4 +459,4 @@ config:
 assigned: true
 selected: true
 configured: false
-index: 12
+index: 13

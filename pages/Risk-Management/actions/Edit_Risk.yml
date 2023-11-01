@@ -206,6 +206,10 @@ steps:
 
                       let reviewBool = true;
 
+                      let titleBool = false;
+
+                      let detailBool = false;
+
 
                       if ({{ui.tbl_Risks.selectedRow.data.risk_rating}} !=
                       {{ui.inpRating.value}}){
@@ -231,12 +235,21 @@ steps:
                       {{ui.inpStatus.value}}){
                         statusBool = true;  
                         reviewBool = false  }
+                      if ({{ui.tbl_Risks.selectedRow.data.title}} !=
+                      {{ui.inpTitle.value}}){
+                        titleBool = true;  
+                        reviewBool = false  }
+                      if ({{ui.tbl_Risks.selectedRow.data.description}} !=
+                      {{ui.inpDetails.value}}){
+                        detailBool = true;  
+                        reviewBool = false  }
 
                       ChangesMade = {Rating: ratingBool, Area: areaBool, Type:
                       typeBool, Control: controlBool, Assigned: assignedBool,
-                      Status: statusBool, Closed: false, Reviewing: reviewBool}
+                      Status: statusBool, Closed: false, Reviewing: reviewBool,
+                      Title: titleBool, Detail: detailBool}
 
-                      console.log('Reviewing: ' + ChangesMade.Reviewing)
+                      //console.log('Reviewing: ' + ChangesMade.Reviewing)
 
                       return ChangesMade;
                     valueType: interpolatedValue
@@ -298,6 +311,17 @@ steps:
                         To = {{ui.inpStatus.value}}
                         {{actions.Add_Note.trigger({Type: 'Note', Description: 'Status has been changed from ' + From + ' to ' + To}) }}
                       }
+                       if ({{data.Title}}){
+                        From = {{ui.tbl_Risks.selectedRow.data.title}}
+                        To = {{ui.inpTitle.value}}
+                        {{actions.Add_Note.trigger({Type: 'Note', Description: 'Title has been changed from ' + From + ' to ' + To}) }}
+                       if ({{data.Detail}}){
+                        From = {{ui.tbl_Risks.selectedRow.data.Decription}}
+                        To = {{ui.inpDetails.value}}
+                        {{actions.Add_Note.trigger({Type: 'Note', Description: 'Details has been changed from ' + From + ' to ' + To}) }}
+                      }    
+
+                      }
 
                       if ({{data.Reviewing}}){
                         {{actions.Add_Note.trigger({Type: 'Note', Description: 'Risk marked as reviewed'}) }}
@@ -330,10 +354,6 @@ steps:
                       mode: structured
                       valueByMode:
                         structured:
-                          created_by:
-                            value: '{{ui.inpCreatedBy.value}}'
-                          risk_owner:
-                            value: '{{ui.inpOwner.value}}'
                           area:
                             value: '{{ui.inpArea.value}}'
                           description:
@@ -346,6 +366,8 @@ steps:
                             value: '{{ui.inpControl.value}}'
                           status:
                             value: '{{ui.inpStatus.value}}'
+                          title:
+                            value: '{{ui.inpTitle.value}}'
                         custom: ''
                     valueType: custom
                   - type: replace
@@ -424,4 +446,4 @@ config:
 assigned: true
 selected: true
 configured: false
-index: 11
+index: 12

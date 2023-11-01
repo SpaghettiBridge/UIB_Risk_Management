@@ -7,7 +7,7 @@ styles:
       x: 0
       y: 0
       w: 8
-      h: 178
+      h: 193
   xs:
     gridItem:
       x: 0
@@ -42,6 +42,8 @@ slots:
       - btn_Help_Rating.yml
       - inpEntryID.yml
       - btn_Help_Control.yml
+      - inpTitle.yml
+      - text.yml
   - id: '16969255301610.42909471459887105'
     name: footer
     children: []

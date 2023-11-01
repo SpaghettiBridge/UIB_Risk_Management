@@ -1,0 +1,29 @@
+id: '16988519062900.26488804187772996'
+definitionId: text
+parentSlotId: '16969255301610.26614310802214014'
+styles:
+  xl:
+    gridItem:
+      x: 0
+      y: 5
+      w: 5
+      h: 6
+  xs:
+    gridItem:
+      x: 0
+      y: 178
+      w: 24
+      h: 6
+properties:
+  name: text
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  value: Title
+  textStyle:
+    transform: none
+    styles:
+      - bold
+actions: {}
+index: 13
+slots: []
