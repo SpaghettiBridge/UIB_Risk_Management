@@ -1,0 +1,69 @@
+id: '16988524138650.742505772700329'
+name: Mandatory_Checks
+nameConfigured: true
+steps:
+  - id: '16988524335010.952855648150716'
+    type: customAsyncCode
+    name: Check_All_Fields
+    params:
+      - type: asyncCode
+        value: >-
+          let Warn_Fields = []
+
+
+          if ({{ui.inpTitle.value == ''}}) {Warn_Fields.push('Title cannot be
+          left empty')}
+
+
+          if ({{ui.inpRating.value == ''}}) {Warn_Fields.push('Rating cannot be
+          left empty')}
+
+
+          if ({{ui.inpArea.value == ''}}) {Warn_Fields.push('Area cannot be left
+          empty')}
+
+
+          if ({{ui.inpType.value == ''}}) {Warn_Fields.push('Type cannot be left
+          empty')}
+
+
+          if ({{ui.inpControl.value == ''}}) {Warn_Fields.push('Control Measure
+          cannot be left empty')}
+
+
+          if ({{ui.inpDetails.value == ''}}) {Warn_Fields.push('Details cannot
+          be left empty')}
+
+
+          return Warn_Fields
+              
+              
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+singleStep: false
+mode: manual
+modeConfigured: false
+parentPageId: '1'
+folder: false
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.Mandatory_Checks.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.Mandatory_Checks.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.Mandatory_Checks.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+assigned: true
+selected: true
+configured: false
+index: 5

@@ -1,34 +1,34 @@
-id: '16968532566880.5412111979810261'
-definitionId: textArea
+id: '16988508614940.28729521976316263'
+definitionId: stringEdit
 parentSlotId: '16969255301610.26614310802214014'
 styles:
   xl:
     gridItem:
       x: 0
-      y: 100
+      y: 12
       w: 24
-      h: 86
+      h: 10
   xs:
     gridItem:
       x: 0
-      y: 80
-      w: 22
-      h: 58
+      y: 168
+      w: 24
+      h: 10
 properties:
-  name: inpDetails
+  name: inpTitle
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
     - xl
     - xs
   labelConfig:
-    text: Details
-    position: vertical
+    text: ''
+    position: horizontal
     align: left
-  placeholder: Enter the full risk details here
   disabled:
     value: false
     dataValue: '{{state.RiskDisabled}}'
     withData: true
-  value: '{{ui.tbl_Risks.selectedRow.data.description}}'
+  value: '{{ui.tbl_Risks.selectedRow.data.title}}'
+  labelWidth: 13
 actions: {}
-index: 4
+index: 12
 slots: []

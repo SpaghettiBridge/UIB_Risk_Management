@@ -2,13 +2,39 @@ id: '16968635178490.49955484775472647'
 name: SaveChanges
 nameConfigured: true
 steps:
+  - id: '16988531587260.21365059854820911'
+    type: executeAction
+    name: Mandatory_Checks
+    params:
+      - type: action
+        value: '16988524138650.742505772700329'
+        valueType: string
+      - type: isActionsLibraryCall
+        value: false
+        valueType: string
+      - type: customParams
+        value: return {{data}};
+        valueType: string
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 1
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
   - id: '16977982320080.34345993406834574'
     type: condition
     name: condition
     params:
       - type: code
         value: |-
-          if ({{ui.inpRating.value}} != ''){
+          if ({{data.length}} == 0){
             return true}
           else {
             return false
@@ -203,4 +229,4 @@ assigned: true
 selected: true
 configured: false
 parentPageId: '1'
-index: 5
+index: 6

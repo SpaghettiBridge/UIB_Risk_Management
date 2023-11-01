@@ -147,6 +147,8 @@ steps:
 
                                               {{ui.inpEntryID.setValue('')}}
 
+                                              {{ui.inpTitle.setValue('')}}
+
                                               {{ui.inpRating.setValue('')}}
 
                                               {{ui.inpArea.setValue('')}}
@@ -197,6 +199,8 @@ steps:
                                                       - type: asyncCode
                                                         value: >-
                                                           {{ui.inpEntryID.setValue(ui.tbl_Risks.selectedRow.data.entry_id)}} 
+
+                                                          {{ui.inpTitle.setValue(ui.tbl_Risks.selectedRow.data.title)}} 
 
                                                           {{ui.inpRating.setValue(ui.tbl_Risks.selectedRow.data.risk_rating)}}
 
@@ -329,4 +333,4 @@ config:
 assigned: true
 selected: true
 configured: false
-index: 17
+index: 18

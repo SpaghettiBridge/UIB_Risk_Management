@@ -4,9 +4,9 @@ parentSlotId: '16969255301610.26614310802214014'
 styles:
   xl:
     gridItem:
-      x: 0
+      x: 16
       y: 0
-      w: 14
+      w: 8
       h: 10
   xs:
     gridItem:
@@ -22,12 +22,13 @@ properties:
   labelConfig:
     text: Entry ID
     position: horizontal
-    align: left
+    align: right
   disabled:
     value: false
     dataValue: 'true'
     withData: true
   value: '{{ui.tbl_Risks.selectedRow.data.entry_id}}'
+  labelWidth: 78
 actions: {}
 index: 10
 slots: []

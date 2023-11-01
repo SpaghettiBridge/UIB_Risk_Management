@@ -142,6 +142,8 @@ steps:
                 value: '{{state.account.account_id}}'
               entry_id:
                 value: '{{steps.Get_Next_Entry_ID.data}}'
+              title:
+                value: '{{ui.inpTitle.value}}'
             custom: ''
         valueType: custom
       - type: customDatabaseName
@@ -213,4 +215,4 @@ config:
 assigned: false
 selected: true
 configured: false
-index: 10
+index: 11
