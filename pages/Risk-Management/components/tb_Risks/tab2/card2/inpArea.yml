@@ -6,7 +6,7 @@ styles:
     gridItem:
       x: 0
       y: 43
-      w: 18
+      w: 24
       h: 10
   xs:
     gridItem:
@@ -49,7 +49,7 @@ properties:
     text: Responsible Area
     position: horizontal
     align: left
-  labelWidth: 55
+  labelWidth: 41
   value: '{{ui.tbl_Risks.selectedRow.data.area}}'
   disabled:
     value: false
