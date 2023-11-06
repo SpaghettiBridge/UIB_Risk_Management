@@ -71,6 +71,10 @@ properties:
     value: false
     dataValue: 'false'
     withData: false
+  __UIBAKERY__SHOW__CONDITION__PRESERVE__:
+    value: true
+    dataValue: 'false'
+    withData: false
 actions:
   buttonClick:
     - action: '16968537131650.4582187971438638'

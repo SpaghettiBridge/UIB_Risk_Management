@@ -502,47 +502,62 @@ slots:
               [
                 {
                   value: 10,
-                  title: '10'
+                  title: '10',
+                    color: 'primary'
                 },
                 {
                   value: 9,
-                  title: '9'
+                  title: '9',
+                    color: 'primary'
                 },
                 {
                   value: 8,
-                  title: '8'
+                  title: '8',
+                    color: 'primary'
                 },
                 {
                   value: 7,
-                  title: '7'
+                  title: '7',
+                    color: 'primary'
                 },
                 {
                   value: 6,
-                  title: '6'
+                  title: '6',
+                    color: 'primary'
                 },
                 {
                   value: 5,
-                  title: '5'
+                  title: '5',
+                    color: 'primary'
                 },
                 {
                   value: 4,
-                  title: '4'
+                  title: '4',
+                    color: 'primary'
                 },
                 {
                   value: 3,
-                  title: '3'
+                  title: '3',
+                    color: 'primary'
                 },
                 {
                   value: 2,
-                  title: '2'
+                  title: '2',
+                    color: 'primary'
                 },
                 {
                   value: 1,
-                  title: '1'
+                  title: '1',
+                    color: 'primary'
                 }
               ]
             withData: true
           title: Rating
+          appearance:
+            value: filled
+            dataValue: outline
+            withData: false
+            themeDefaultOverridePropertyKey: atomicSelectAppearance
         index: 6
         slots: []
       - id: '16968555036750.8644999884612194'

@@ -45,6 +45,8 @@ properties:
     value: false
     dataValue: '{{state.RiskDisabled}}'
     withData: true
+  withOptionsAutocomplete: true
+  placeholder: Unassigned
 actions: {}
 index: 9
 slots:

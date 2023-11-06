@@ -226,15 +226,29 @@ steps:
                                                     paused: false
                                               - condition: false
                                                 steps:
-                                                  - id: '16970057416800.29174020771064857'
-                                                    type: customAsyncCode
-                                                    name: code
+                                                  - id: '16992769908990.467427463857617'
+                                                    type: executeAction
+                                                    name: execute
                                                     params:
-                                                      - type: asyncCode
-                                                        value: '{{actions.Quick_Review.trigger()}}'
+                                                      - type: action
+                                                        value: '16970211678470.6159918114959002'
+                                                        valueType: string
+                                                      - type: isActionsLibraryCall
+                                                        value: false
+                                                        valueType: string
+                                                      - type: customParams
+                                                        value: return {{data}};
+                                                        valueType: string
+                                                      - type: successMapper
+                                                        value: ''
                                                         valueType: interpolatedValue
-                                                        interpolationType: code
-                                                    level: 3
+                                                      - type: failureMapper
+                                                        value: ''
+                                                        valueType: interpolatedValue
+                                                      - type: mapperEnabled
+                                                        value: false
+                                                        valueType: custom
+                                                    level: 4
                                                     fallthroughError: false
                                                     isChanged: true
                                             valueType: custom

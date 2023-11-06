@@ -6,7 +6,7 @@ styles:
     gridItem:
       x: 0
       y: 32
-      w: 16
+      w: 21
       h: 10
   xs:
     gridItem:
@@ -58,7 +58,7 @@ properties:
     text: Risk Rating
     position: horizontal
     align: left
-  labelWidth: 62
+  labelWidth: 47
   value: '{{ui.tbl_Risks.selectedRow.data.risk_rating}}'
   disabled:
     value: false
