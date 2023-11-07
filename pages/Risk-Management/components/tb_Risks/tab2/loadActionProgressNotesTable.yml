@@ -186,7 +186,7 @@ slots:
             - xs
           primaryKey: true
           filter: true
-          width: '80'
+          width: '50'
           options:
             value:
               - value: 3e038d87-a744-47f6-a302-e6d431d4cd73
@@ -198,5 +198,6 @@ slots:
 
               return output}}
             withData: true
+          title: Name
         index: 3
         slots: []

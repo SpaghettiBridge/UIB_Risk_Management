@@ -5,7 +5,7 @@ styles:
   xl:
     gridItem:
       x: 0
-      y: 12
+      y: 13
       w: 24
       h: 10
   xs:
@@ -29,6 +29,7 @@ properties:
     withData: true
   value: '{{ui.tbl_Risks.selectedRow.data.title}}'
   labelWidth: 13
+  required: true
 actions: {}
 index: 12
 slots: []

@@ -47,18 +47,6 @@ steps:
                 isChanged: true
                 nameConfigured: true
                 paused: false
-              - id: '16969397593950.7933246953908906'
-                type: customAsyncCode
-                name: Move_To_Tab
-                params:
-                  - type: asyncCode
-                    value: '{{ui.tb_Risks.selectTab(1)}}'
-                    valueType: interpolatedValue
-                    interpolationType: code
-                level: 1
-                fallthroughError: false
-                isChanged: true
-                nameConfigured: true
               - id: '16969397913070.5496035348108363'
                 type: condition
                 name: condition2
@@ -179,11 +167,11 @@ steps:
                                           - type: code
                                             value: |-
                                               if ({{state.PageMode}} == 'pmEdit') {
-                                                //we are in add mode 
+                                                //we are in Edit mode 
                                                 return true
                                               }
                                               else {
-                                                // we are in edit mode
+                                                // we are in Quick Review mode
                                                 return false
                                               }
                                             valueType: interpolatedValue
@@ -291,6 +279,18 @@ steps:
                 level: 0
                 fallthroughError: false
                 isChanged: true
+              - id: '16969397593950.7933246953908906'
+                type: customAsyncCode
+                name: Move_To_Tab
+                params:
+                  - type: asyncCode
+                    value: '{{ui.tb_Risks.selectTab(1)}}'
+                    valueType: interpolatedValue
+                    interpolationType: code
+                level: 1
+                fallthroughError: false
+                isChanged: true
+                nameConfigured: true
           - condition: false
             steps:
               - id: '16970197264920.9190261186526252'

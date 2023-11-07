@@ -26,6 +26,8 @@ steps:
           {{ui.inpStatus.setValue(ui.tbl_Risks.selectedRow.data.risk_status)}}
 
           {{ui.inpDetails.setValue(ui.tbl_Risks.selectedRow.data.description)}}
+
+          {{ui.inpEntryID.setValue(ui.tbl_Risks.selectedRow.data.entry_id)}}
         valueType: interpolatedValue
         interpolationType: code
     level: 0

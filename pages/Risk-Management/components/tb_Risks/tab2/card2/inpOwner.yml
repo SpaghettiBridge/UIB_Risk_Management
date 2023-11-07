@@ -5,7 +5,7 @@ styles:
   xl:
     gridItem:
       x: 0
-      y: 87
+      y: 89
       w: 24
       h: 10
   xs:
@@ -47,6 +47,7 @@ properties:
     withData: true
   withOptionsAutocomplete: true
   placeholder: Unassigned
+  required: false
 actions: {}
 index: 9
 slots:

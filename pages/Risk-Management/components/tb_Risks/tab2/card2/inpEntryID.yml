@@ -28,7 +28,11 @@ properties:
     dataValue: 'true'
     withData: true
   value: '{{ui.tbl_Risks.selectedRow.data.entry_id}}'
-  labelWidth: 78
+  labelWidth: 76
+  status:
+    value: basic
+    dataValue: basic
+    withData: false
 actions: {}
 index: 10
 slots: []

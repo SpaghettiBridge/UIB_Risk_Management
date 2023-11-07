@@ -29,6 +29,7 @@ properties:
     dataValue: '{{state.RiskDisabled}}'
     withData: true
   value: '{{ui.tbl_Risks.selectedRow.data.description}}'
+  required: true
 actions: {}
 index: 4
 slots: []

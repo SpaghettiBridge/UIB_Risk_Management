@@ -188,9 +188,10 @@ slots:
           __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
             - xl
             - xs
-          width: '400'
+          width: '300'
           filter: true
           title: Description
+          required: true
         index: 2
         slots: []
       - id: '16968534100940.7692584859217231'
@@ -306,7 +307,7 @@ slots:
             - xs
           primaryKey: false
           filter: true
-          width: '40'
+          width: '80'
           options:
             value:
               - value: Action
@@ -320,6 +321,7 @@ slots:
             dataValue: '[]'
             withData: false
           title: ''
+          required: true
         index: 0
         slots: []
       - id: '16968534100950.15511189138313952'
@@ -341,7 +343,7 @@ slots:
           title: Assigned To
           primaryKey: false
           filter: true
-          width: '80'
+          width: '120'
           options:
             value:
               - value: afc9176d-284f-4bcc-a0e5-53035afb23bd
@@ -356,17 +358,23 @@ slots:
 
               return output}}
             withData: true
+          required: true
         index: 3
         slots: []
       - id: '16968534100940.7195782918846922'
-        definitionId: atomicDate
+        definitionId: atomicDateTime
         parentSlotId: '16968532737040.037852872871457555'
         styles:
           xl:
             visible: true
         properties:
-          name: atomicDate
-          prop: due_date
+          name: atomicDateTime
+          prop: created_at
+          primaryKey: false
+          timeFormat:
+            value: ''
+            dataValue: HH:mm
+            withData: false
           __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
             - xl
             - xs
@@ -380,8 +388,7 @@ slots:
             dataValue: dd/MM/yyyy
             withData: true
           title: Date
-          primaryKey: false
           filter: true
-          width: '60'
+          width: '80'
         index: 1
         slots: []

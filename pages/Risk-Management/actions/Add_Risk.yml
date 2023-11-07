@@ -96,7 +96,20 @@ steps:
       - type: asyncCode
         value: |-
           let new_Entry_ID = {{actions.Get_Next_Entry_ID.trigger()}}
+
           return {{new_Entry_ID}};
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+  - id: '16993559445330.014921742844753894'
+    type: customAsyncCode
+    name: Set_EntryID_Label
+    params:
+      - type: asyncCode
+        value: '{{ui.inpEntryID.setValue(steps.Get_Next_Entry_ID.data)}}'
         valueType: interpolatedValue
         interpolationType: code
     level: 0
@@ -172,6 +185,32 @@ steps:
           created'}) }}
         valueType: interpolatedValue
         interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+  - id: '16993541351810.2721620254387995'
+    type: executeAction
+    name: execute
+    params:
+      - type: action
+        value: '16968517651850.7367747537503266'
+        valueType: string
+      - type: isActionsLibraryCall
+        value: false
+        valueType: string
+      - type: customParams
+        value: return {{data}};
+        valueType: string
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
     level: 0
     fallthroughError: false
     isChanged: true
