@@ -5,7 +5,7 @@ styles:
   xl:
     gridItem:
       x: 0
-      y: 54
+      y: 56
       w: 24
       h: 10
   xs:
@@ -17,18 +17,18 @@ styles:
 properties:
   options:
     value:
-      - value: Strategic
-        title: Strategic
-        __UIBAKERY__SYSTEM_ID__: '2'
-      - value: Operational
-        title: Operational
-        __UIBAKERY__SYSTEM_ID__: '1'
       - title: Compliance
         value: Compliance
         __UIBAKERY__SYSTEM_ID__: '16968571289290.3419048261293449'
+      - value: Operational
+        title: Operational
+        __UIBAKERY__SYSTEM_ID__: '1'
       - title: Financial
         value: Financial
         __UIBAKERY__SYSTEM_ID__: '16968571295030.8852703973735632'
+      - value: Strategic
+        title: Strategic
+        __UIBAKERY__SYSTEM_ID__: '2'
     dataValue: '{{actions.loadPublicRmRisks.data}}'
     withData: false
   name: inpType
@@ -46,6 +46,7 @@ properties:
     value: false
     dataValue: '{{state.RiskDisabled}}'
     withData: true
+  required: true
 actions: {}
 index: 3
 slots:

@@ -68,8 +68,12 @@ properties:
 
     let returnDate = (currentDate.toLocaleDateString('en-UK', options));
 
-
+    if (ui.tbl_Risks.selectedRow.data.pk_risk_id == state.Selected_Risk_ID){
     return 'Last reviewed: ' +  returnDate
+    }
+    else {
+      return ''
+    }
 
 
     }}

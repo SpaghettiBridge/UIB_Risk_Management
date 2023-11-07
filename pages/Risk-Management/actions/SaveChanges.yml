@@ -183,7 +183,7 @@ steps:
                 name: notification
                 params:
                   - type: message
-                    value: The rating needs to be selected
+                    value: Pleqse ensure that all required (*) fields are completed
                     valueType: interpolatedValue
                   - type: type
                     value: warning

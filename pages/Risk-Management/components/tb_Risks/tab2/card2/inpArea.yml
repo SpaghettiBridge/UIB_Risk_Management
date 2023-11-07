@@ -5,7 +5,7 @@ styles:
   xl:
     gridItem:
       x: 0
-      y: 43
+      y: 45
       w: 24
       h: 10
   xs:
@@ -20,24 +20,24 @@ properties:
       - title: Estates, H&S
         value: Estates, H&S
         __UIBAKERY__SYSTEM_ID__: '16968571644060.672092403830012'
-      - title: Safeguarding
-        value: Safeguarding
-        __UIBAKERY__SYSTEM_ID__: '16968571651900.03230778300280224'
-      - value: HR
-        title: HR
-        __UIBAKERY__SYSTEM_ID__: '1'
-      - title: New dev
-        value: New dev
-        __UIBAKERY__SYSTEM_ID__: '16968571657520.9462791442166947'
       - title: Finance
         value: Finance
         __UIBAKERY__SYSTEM_ID__: '16968571687200.034741002269731425'
-      - title: Systems and IT
-        value: Systems and IT
-        __UIBAKERY__SYSTEM_ID__: '16968449241920.38361457890087913'
+      - value: HR
+        title: HR
+        __UIBAKERY__SYSTEM_ID__: '1'
       - title: Marketing
         value: Marketing
         __UIBAKERY__SYSTEM_ID__: '16968573179790.9808397754948539'
+      - title: New dev
+        value: New dev
+        __UIBAKERY__SYSTEM_ID__: '16968571657520.9462791442166947'
+      - title: Safeguarding
+        value: Safeguarding
+        __UIBAKERY__SYSTEM_ID__: '16968571651900.03230778300280224'
+      - title: Systems and IT
+        value: Systems and IT
+        __UIBAKERY__SYSTEM_ID__: '16968449241920.38361457890087913'
     dataValue: '{{actions.loadPublicRmRisks.data}}'
     withData: false
   name: inpArea
@@ -55,6 +55,7 @@ properties:
     value: false
     dataValue: '{{state.RiskDisabled}}'
     withData: true
+  required: true
 actions: {}
 index: 2
 slots:

@@ -38,7 +38,7 @@ properties:
   rowVariation: dense
   rowBackgroundColor: |-
     {{
-    if (row.risk_status == 'Closed') { return state.ColourGreen}
+    if (row.risk_status == 'Closed') { return state.ColourWhite}
     else if (row.risk_status != 'Closed') {
       switch (row.risk_rating) {
       case '1':
@@ -104,7 +104,7 @@ slots:
             - xs
           width: 120
           filter: true
-        index: 10
+        index: 11
         slots: []
       - id: '16968555036740.10925508740388712'
         definitionId: atomicString
@@ -121,7 +121,7 @@ slots:
             - xs
           width: 120
           filter: true
-        index: 11
+        index: 12
         slots: []
       - id: '16968555036740.8969587175500133'
         definitionId: atomicString
@@ -138,7 +138,7 @@ slots:
             - xs
           width: 120
           filter: true
-        index: 12
+        index: 13
         slots: []
       - id: '16968555036740.5941989899040565'
         definitionId: atomicString
@@ -155,7 +155,7 @@ slots:
             - xs
           width: 120
           filter: true
-        index: 13
+        index: 14
         slots: []
       - id: '16968555036750.05147737254245266'
         definitionId: atomicText
@@ -173,7 +173,7 @@ slots:
           width: '600'
           filter: true
           title: Details
-        index: 4
+        index: 5
         slots: []
       - id: '16968555036750.13071579450597715'
         definitionId: atomicSelect
@@ -213,7 +213,7 @@ slots:
             dataValue: equal
             withData: false
           __UIBAKERY__SHOW__CONDITION__CODE__: '{{!ui.tog_Hide_Closed.value}}'
-        index: 8
+        index: 9
         slots: []
       - id: '16968555036750.9921617133318832'
         definitionId: atomicDateTime
@@ -255,7 +255,7 @@ slots:
             - xs
           width: 120
           filter: true
-        index: 14
+        index: 15
         slots: []
       - id: '16968555036750.45186124627056024'
         definitionId: atomicString
@@ -272,7 +272,7 @@ slots:
             - xs
           width: 120
           filter: true
-        index: 15
+        index: 16
         slots: []
       - id: '16968555036750.8881247952336295'
         definitionId: atomicText
@@ -289,7 +289,7 @@ slots:
             - xs
           width: 200
           filter: true
-        index: 16
+        index: 17
         slots: []
       - id: '16968555036750.6721071288892944'
         definitionId: atomicText
@@ -306,7 +306,7 @@ slots:
             - xs
           width: 200
           filter: true
-        index: 17
+        index: 18
         slots: []
       - id: '16968555036750.18794614044242408'
         definitionId: atomicString
@@ -323,7 +323,7 @@ slots:
             - xs
           width: 120
           filter: true
-        index: 18
+        index: 19
         slots: []
       - id: '16968555036750.10097867520375936'
         definitionId: atomicString
@@ -396,7 +396,7 @@ slots:
               ]
             withData: false
           pinColumn: ''
-        index: 3
+        index: 4
         slots: []
       - id: '16968555036750.34037693635255084'
         definitionId: atomicSelect
@@ -441,7 +441,7 @@ slots:
                 }
               ]
             withData: false
-        index: 5
+        index: 6
         slots: []
       - id: '16968555036750.05675748946835402'
         definitionId: atomicSelect
@@ -558,7 +558,7 @@ slots:
             dataValue: outline
             withData: false
             themeDefaultOverridePropertyKey: atomicSelectAppearance
-        index: 6
+        index: 7
         slots: []
       - id: '16968555036750.8644999884612194'
         definitionId: atomicSelect
@@ -604,7 +604,7 @@ slots:
               ]
             withData: false
           title: Control
-        index: 7
+        index: 8
         slots: []
       - id: '16969430293800.15386008318151534'
         definitionId: atomicString
@@ -618,7 +618,7 @@ slots:
           __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
             - xl
             - xs
-        index: 19
+        index: 20
         slots: []
       - id: '16969431447220.8504667915750339'
         definitionId: atomicString
@@ -632,7 +632,7 @@ slots:
           __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
             - xl
             - xs
-        index: 20
+        index: 21
         slots: []
       - id: '16969431469050.6174946457312751'
         definitionId: atomicDateTime
@@ -651,7 +651,7 @@ slots:
           __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
             - xl
             - xs
-        index: 9
+        index: 10
         slots: []
       - id: '16988505992910.9445527882492242'
         definitionId: atomicString
@@ -664,5 +664,19 @@ slots:
             - xl
             - xs
           width: '260'
+        index: 3
+        slots: []
+      - id: '16993562402630.6346515580210661'
+        definitionId: atomicNumber
+        parentSlotId: '16968526520460.12079022901158187'
+        styles: {}
+        properties:
+          name: atomicNumber
+          prop: entry_id
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: '20'
+          title: ID
         index: 2
         slots: []

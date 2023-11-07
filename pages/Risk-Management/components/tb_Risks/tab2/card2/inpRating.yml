@@ -5,7 +5,7 @@ styles:
   xl:
     gridItem:
       x: 0
-      y: 32
+      y: 34
       w: 21
       h: 10
   xs:
@@ -64,6 +64,7 @@ properties:
     value: false
     dataValue: '{{state.RiskDisabled}}'
     withData: true
+  required: true
 actions: {}
 index: 0
 slots:

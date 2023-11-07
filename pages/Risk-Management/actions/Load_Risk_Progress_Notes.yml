@@ -51,7 +51,8 @@ steps:
                       where public.actions.fk_rm_risk_id =
                       {{state.Selected_Risk_ID}}
 
-                      order by public.actions.created_at desc
+                      order by public.actions.created_at desc,
+                      public.actions.type
                     valueType: interpolatedValue
                     interpolationType: string
                   - type: datasourceId
@@ -59,21 +60,35 @@ steps:
                     valueType: custom
                     mustSelectFirst: true
                   - type: preparedQuery
-                    value: |-
+                    value: >-
                       select 
+
                       public.actions.id,
+
                       public.actions.created_at,
+
                       public.actions.details,
+
                       public.actions.account_id,
+
                       public.actions.assigned_to_id,
+
                       public.actions.assigned_to_name,
+
                       public.actions.due_date,
+
                       public.actions.type,
+
                       public.actions.editable,
+
                       public.actions.account_name
+
                       from public.actions
+
                       where public.actions.fk_rm_risk_id = ?
-                      order by public.actions.created_at desc
+
+                      order by public.actions.created_at desc,
+                      public.actions.type
                     valueType: interpolatedValue
                   - type: preparedQueryParams
                     value:
