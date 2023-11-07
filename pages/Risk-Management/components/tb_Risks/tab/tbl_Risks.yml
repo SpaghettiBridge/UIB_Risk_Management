@@ -396,6 +396,11 @@ slots:
               ]
             withData: false
           pinColumn: ''
+          appearance:
+            value: filled
+            dataValue: outline
+            withData: false
+            themeDefaultOverridePropertyKey: atomicSelectAppearance
         index: 4
         slots: []
       - id: '16968555036750.34037693635255084'
@@ -441,6 +446,11 @@ slots:
                 }
               ]
             withData: false
+          appearance:
+            value: filled
+            dataValue: outline
+            withData: false
+            themeDefaultOverridePropertyKey: atomicSelectAppearance
         index: 6
         slots: []
       - id: '16968555036750.05675748946835402'
@@ -604,6 +614,11 @@ slots:
               ]
             withData: false
           title: Control
+          appearance:
+            value: filled
+            dataValue: outline
+            withData: false
+            themeDefaultOverridePropertyKey: atomicSelectAppearance
         index: 8
         slots: []
       - id: '16969430293800.15386008318151534'

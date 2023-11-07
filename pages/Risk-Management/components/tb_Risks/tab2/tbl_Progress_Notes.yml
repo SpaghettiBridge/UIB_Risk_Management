@@ -362,19 +362,14 @@ slots:
         index: 3
         slots: []
       - id: '16968534100940.7195782918846922'
-        definitionId: atomicDateTime
+        definitionId: atomicDate
         parentSlotId: '16968532737040.037852872871457555'
         styles:
           xl:
             visible: true
         properties:
-          name: atomicDateTime
+          name: atomicDate
           prop: created_at
-          primaryKey: false
-          timeFormat:
-            value: ''
-            dataValue: HH:mm
-            withData: false
           __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
             - xl
             - xs
@@ -388,6 +383,7 @@ slots:
             dataValue: dd/MM/yyyy
             withData: true
           title: Date
+          primaryKey: false
           filter: true
           width: '80'
         index: 1
