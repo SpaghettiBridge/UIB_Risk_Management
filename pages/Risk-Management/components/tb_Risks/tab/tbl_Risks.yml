@@ -5,7 +5,7 @@ styles:
   xl:
     gridItem:
       x: 0
-      y: 17
+      y: 19
       w: 24
       h: 133
   xs:
@@ -198,10 +198,14 @@ slots:
               [
                 {
                   value: 'Closed',
-                  color: 'primary'
+                  color: '#2596be'
+                },
+                 {
+                  value: 'Open',
+                  color: '#2596be'
                 }
               ]
-            withData: false
+            withData: true
           __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
             - xl
             - xs
@@ -395,11 +399,42 @@ slots:
             dataValue: |-
               [
                 {
-                  value: 'HR',
-                  color: 'primary'
+                  "value": "Estates, H&S",
+                  "title": "Estates, H&S",
+                  "color": "#2596be"
+                },
+                {
+                  "value": "Finance",
+                  "title": "Finance",
+                  "color": "#2596be"
+                },
+                {
+                  "value": "HR",
+                  "title": "HR",
+                  "color": "#2596be"
+                },
+                {
+                  "value": "Marketing",
+                  "title": "Marketing",
+                  "color": "#2596be"
+                },
+                {
+                  "value": "New dev",
+                  "title": "New dev",
+                  "color": "#2596be"
+                },
+                {
+                  "value": "Safeguarding",
+                  "title": "Safeguarding",
+                  "color": "#2596be"
+                },
+                {
+                  "value": "Systems and IT",
+                  "title": "Systems and IT",
+                  "color": "#2596be"
                 }
               ]
-            withData: false
+            withData: true
           pinColumn: ''
           appearance:
             value: filled
@@ -442,15 +477,27 @@ slots:
             dataValue: |-
               [
                 {
-                  value: 'Operational',
-                  color: 'primary'
+                  "value": "Compliance",
+                  "title": "Compliance",
+                  "color": "#2596be"
                 },
                 {
-                  value: 'Strategic',
-                  color: 'success'
+                  "value": "Financial",
+                  "title": "Financial",
+                  "color": "#2596be"
+                },
+                {
+                  "value": "Operational",
+                  "title": "Operational",
+                  "color": "#2596be"
+                },
+                {
+                  "value": "Strategic",
+                  "title": "Strategic",
+                  "color": "#2596be"
                 }
               ]
-            withData: false
+            withData: true
           appearance:
             value: filled
             dataValue: outline
@@ -518,52 +565,52 @@ slots:
                 {
                   value: 10,
                   title: '10',
-                    color: 'primary'
+                    color: '#2596be'
                 },
                 {
                   value: 9,
                   title: '9',
-                    color: 'primary'
+                    color: '#2596be'
                 },
                 {
                   value: 8,
                   title: '8',
-                    color: 'primary'
+                    color: '#2596be'
                 },
                 {
                   value: 7,
                   title: '7',
-                    color: 'primary'
+                    color: '#2596be'
                 },
                 {
                   value: 6,
                   title: '6',
-                    color: 'primary'
+                    color: '#2596be'
                 },
                 {
                   value: 5,
                   title: '5',
-                    color: 'primary'
+                    color: '#2596be'
                 },
                 {
                   value: 4,
                   title: '4',
-                    color: 'primary'
+                    color: '#2596be'
                 },
                 {
                   value: 3,
                   title: '3',
-                    color: 'primary'
+                    color: '#2596be'
                 },
                 {
                   value: 2,
                   title: '2',
-                    color: 'primary'
+                    color: '#2596be'
                 },
                 {
                   value: 1,
                   title: '1',
-                    color: 'primary'
+                    color: '#2596be'
                 }
               ]
             withData: true
@@ -606,18 +653,30 @@ slots:
                 color: primary
                 __UIBAKERY__SYSTEM_ID__: '16968654379120.5871446306788686'
                 title: Terminate
-            dataValue: |-
+            dataValue: |
               [
                 {
-                  value: 'Treat',
-                  color: 'primary'
+                  "value": "Treat",
+                  "title": "Treat",
+                  "color": "#2596be"
                 },
                 {
-                  value: 'Tolerate',
-                  color: 'success'
+                  "value": "Tolerate",
+                  "title": "Tolerate",
+                  "color": "#2596be"
+                },
+                {
+                  "value": "Transfer",
+                  "title": "Transfer",
+                  "color": "#2596be"
+                },
+                {
+                  "value": "Terminate",
+                  "title": "Terminate",
+                  "color": "#2596be"
                 }
               ]
-            withData: false
+            withData: true
           title: Control
           appearance:
             value: filled
