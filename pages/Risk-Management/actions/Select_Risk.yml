@@ -10,7 +10,11 @@ steps:
         value: '16969400102590.5245147857840291'
         valueType: string
       - type: value
-        value: '{{ui.tbl_Risks.selectedRow.data.pk_risk_id}}'
+        value: |-
+          if({{params}}){
+          return {{params.id}}
+          }
+          return {{ ui.tbl_Risks.selectedRow.data.pk_risk_id}}
         valueType: interpolatedValue
         interpolationType: code
       - type: producible
