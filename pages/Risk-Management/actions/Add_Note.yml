@@ -207,7 +207,7 @@ steps:
             return {{actions.Get_Service_Name.trigger(state.SelectedServiceID)}}
           }
           else {
-            return {{ui.tbl_Risks.selectedRow.data.fk_service_id}}
+            return {{ui.tbl_Risks.selectedRow.data.service_name}}
           }
         valueType: interpolatedValue
         interpolationType: code
@@ -272,7 +272,7 @@ steps:
               account_name:
                 value: '{{steps.Get_Name.data}}'
               service_id:
-                value: '{{ui.tbl_Risks.selectedRow.data.service_id}}'
+                value: '{{ui.tbl_Risks.selectedRow.data.fk_service_id}}'
               assigned_to_id:
                 value: '{{steps.Get_Assigned_To.data}}'
               service_name:
