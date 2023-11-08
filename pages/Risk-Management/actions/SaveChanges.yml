@@ -91,6 +91,33 @@ steps:
                             fallthroughError: false
                             isChanged: true
                             nameConfigured: true
+                          - id: '16971147068150.3804298609646708'
+                            type: executeAction
+                            name: execute2
+                            params:
+                              - type: action
+                                value: '16969400265810.7198078406620261'
+                                valueType: string
+                              - type: isActionsLibraryCall
+                                value: false
+                                valueType: string
+                              - type: customParams
+                                value: return {id:data.pk_risk_id}
+                                valueType: string
+                              - type: successMapper
+                                value: ''
+                                valueType: interpolatedValue
+                              - type: failureMapper
+                                value: ''
+                                valueType: interpolatedValue
+                              - type: mapperEnabled
+                                value: false
+                                valueType: custom
+                            level: 1
+                            fallthroughError: false
+                            isChanged: true
+                            paused: false
+                            nameConfigured: true
                       - condition: false
                         steps:
                           - id: '16968637863210.4279319598042468'
@@ -150,32 +177,6 @@ steps:
                 fallthroughError: false
                 isChanged: true
                 nameConfigured: true
-              - id: '16971147068150.3804298609646708'
-                type: executeAction
-                name: execute2
-                params:
-                  - type: action
-                    value: '16969400265810.7198078406620261'
-                    valueType: string
-                  - type: isActionsLibraryCall
-                    value: false
-                    valueType: string
-                  - type: customParams
-                    value: ''
-                    valueType: string
-                  - type: successMapper
-                    value: ''
-                    valueType: interpolatedValue
-                  - type: failureMapper
-                    value: ''
-                    valueType: interpolatedValue
-                  - type: mapperEnabled
-                    value: false
-                    valueType: custom
-                level: 1
-                fallthroughError: false
-                isChanged: true
-                paused: true
           - condition: false
             steps:
               - id: '16977983209730.09903520014848466'

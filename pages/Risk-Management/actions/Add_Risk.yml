@@ -175,6 +175,7 @@ steps:
     fallthroughError: false
     isChanged: true
     nameConfigured: true
+    paused: false
   - id: '16969252757010.8881005592844773'
     type: customAsyncCode
     name: Add_Note
@@ -189,6 +190,7 @@ steps:
     fallthroughError: false
     isChanged: true
     nameConfigured: true
+    paused: false
   - id: '16993541351810.2721620254387995'
     type: executeAction
     name: execute
@@ -215,6 +217,7 @@ steps:
     fallthroughError: false
     isChanged: true
     nameConfigured: true
+    paused: false
   - id: '16971151341460.337661675043494'
     type: putInStore
     name: save
@@ -232,12 +235,15 @@ steps:
     level: 0
     fallthroughError: false
     isChanged: true
+    paused: false
   - id: '16994438808050.8200451980656023'
     type: customAsyncCode
     name: code2
     params:
       - type: asyncCode
-        value: '{{ui.tb_Risks.selectTab(0)}}'
+        value: |-
+          {{ui.tb_Risks.selectTab(0)}}
+          return {{steps.Create_Record.data}}
         valueType: interpolatedValue
         interpolationType: code
     level: 0
