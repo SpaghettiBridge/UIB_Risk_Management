@@ -198,11 +198,11 @@ slots:
               [
                 {
                   value: 'Closed',
-                  color: '#2596be'
+                  color: {{state.ColourSatus}}
                 },
                  {
                   value: 'Open',
-                  color: '#2596be'
+                  color: {{state.ColourSatus}}
                 }
               ]
             withData: true
@@ -401,37 +401,37 @@ slots:
                 {
                   "value": "Estates, H&S",
                   "title": "Estates, H&S",
-                  "color": "#2596be"
+                  "color": {{state.ColourSatus}}
                 },
                 {
                   "value": "Finance",
                   "title": "Finance",
-                  "color": "#2596be"
+                  "color":{{state.ColourSatus}}
                 },
                 {
                   "value": "HR",
                   "title": "HR",
-                  "color": "#2596be"
+                  "color": {{state.ColourSatus}}
                 },
                 {
                   "value": "Marketing",
                   "title": "Marketing",
-                  "color": "#2596be"
+                  "color": {{state.ColourSatus}}
                 },
                 {
                   "value": "New dev",
                   "title": "New dev",
-                  "color": "#2596be"
+                  "color": {{state.ColourSatus}}
                 },
                 {
                   "value": "Safeguarding",
                   "title": "Safeguarding",
-                  "color": "#2596be"
+                  "color": {{state.ColourSatus}}
                 },
                 {
                   "value": "Systems and IT",
                   "title": "Systems and IT",
-                  "color": "#2596be"
+                  "color": {{state.ColourSatus}}
                 }
               ]
             withData: true
@@ -479,22 +479,22 @@ slots:
                 {
                   "value": "Compliance",
                   "title": "Compliance",
-                  "color": "#2596be"
+                  "color": {{state.ColourSatus}}
                 },
                 {
                   "value": "Financial",
                   "title": "Financial",
-                  "color": "#2596be"
+                  "color": {{state.ColourSatus}}
                 },
                 {
                   "value": "Operational",
                   "title": "Operational",
-                  "color": "#2596be"
+                  "color": {{state.ColourSatus}}
                 },
                 {
                   "value": "Strategic",
                   "title": "Strategic",
-                  "color": "#2596be"
+                  "color": {{state.ColourSatus}}
                 }
               ]
             withData: true
@@ -565,52 +565,52 @@ slots:
                 {
                   value: 10,
                   title: '10',
-                    color: '#2596be'
+                    color: {{state.ColourSatus}}
                 },
                 {
                   value: 9,
                   title: '9',
-                    color: '#2596be'
+                    color: {{state.ColourSatus}}
                 },
                 {
                   value: 8,
                   title: '8',
-                    color: '#2596be'
+                    color: {{state.ColourSatus}}
                 },
                 {
                   value: 7,
                   title: '7',
-                    color: '#2596be'
+                    color:{{state.ColourSatus}}
                 },
                 {
                   value: 6,
                   title: '6',
-                    color: '#2596be'
+                    color: {{state.ColourSatus}}
                 },
                 {
                   value: 5,
                   title: '5',
-                    color: '#2596be'
+                    color: {{state.ColourSatus}}
                 },
                 {
                   value: 4,
                   title: '4',
-                    color: '#2596be'
+                    color: {{state.ColourSatus}}
                 },
                 {
                   value: 3,
                   title: '3',
-                    color: '#2596be'
+                    color: {{state.ColourSatus}}
                 },
                 {
                   value: 2,
                   title: '2',
-                    color: '#2596be'
+                    color: {{state.ColourSatus}}
                 },
                 {
                   value: 1,
                   title: '1',
-                    color: '#2596be'
+                    color: {{state.ColourSatus}}
                 }
               ]
             withData: true
@@ -658,22 +658,22 @@ slots:
                 {
                   "value": "Treat",
                   "title": "Treat",
-                  "color": "#2596be"
+                  "color": {{state.ColourSatus}}
                 },
                 {
                   "value": "Tolerate",
                   "title": "Tolerate",
-                  "color": "#2596be"
+                  "color":{{state.ColourSatus}}
                 },
                 {
                   "value": "Transfer",
                   "title": "Transfer",
-                  "color": "#2596be"
+                  "color": {{state.ColourSatus}}
                 },
                 {
                   "value": "Terminate",
                   "title": "Terminate",
-                  "color": "#2596be"
+                  "color": {{state.ColourSatus}}
                 }
               ]
             withData: true
