@@ -315,12 +315,11 @@ steps:
                         From = {{ui.tbl_Risks.selectedRow.data.title}}
                         To = {{ui.inpTitle.value}}
                         {{actions.Add_Note.trigger({Type: 'Note', Description: 'Title has been changed from ' + From + ' to ' + To}) }}
-                       if ({{data.Detail}}){
-                        From = {{ui.tbl_Risks.selectedRow.data.Decription}}
+                       } 
+                        if ({{data.Detail}}){
+                        From = {{ui.tbl_Risks.selectedRow.data.description}}
                         To = {{ui.inpDetails.value}}
-                        {{actions.Add_Note.trigger({Type: 'Note', Description: 'Details has been changed from ' + From + ' to ' + To}) }}
-                      }    
-
+                        {{actions.Add_Note.trigger({Type: 'Note', Description: 'Details has been changed from ' + From + ' to ' + To}) }}   
                       }
 
                       if ({{data.Reviewing}}){

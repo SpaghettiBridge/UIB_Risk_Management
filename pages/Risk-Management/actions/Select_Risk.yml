@@ -46,6 +46,31 @@ steps:
     fallthroughError: false
     isChanged: true
     paused: false
+  - id: '16994326732030.5062318682060343'
+    type: executeAction
+    name: execute3
+    params:
+      - type: action
+        value: '16974398500990.18214830527474213'
+        valueType: string
+      - type: isActionsLibraryCall
+        value: false
+        valueType: string
+      - type: customParams
+        value: return {{data}};
+        valueType: string
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
   - id: '16970036507590.4125156792875735'
     type: executeAction
     name: execute2
