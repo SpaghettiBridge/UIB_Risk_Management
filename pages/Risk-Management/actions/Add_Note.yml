@@ -87,6 +87,7 @@ steps:
           let due_Date = ''
           if ({{params.Type}} == undefined){
             due_Date = {{ui.tbl_Progress_Notes.newRow.data.due_date}}
+              console.log({{ui.tbl_Progress_Notes.newRow.data.due_date}})
           }
           else if ({{params.Type}} == null){
             due_Date = {{ui.tbl_Progress_Notes.selectedRow.data.due_date}}

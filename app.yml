@@ -85,10 +85,10 @@ storeItemList:
     initialValue: '#FFFFFF'
     version: 1
   - id: '16994391354930.8377809989148901'
-    name: ColourSatus
-    value: '#2187ab'
+    name: ColourStatus
+    value: '#3898c0'
     valueType: string
-    initialValue: '#2187ab'
+    initialValue: '#3898c0'
     version: 1
 metadata:
   favicon: ''

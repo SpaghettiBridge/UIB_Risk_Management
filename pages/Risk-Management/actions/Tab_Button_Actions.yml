@@ -96,51 +96,13 @@ steps:
                                         level: 3
                                         fallthroughError: false
                                         isChanged: true
-                                      - id: '16969403279360.7678188664605599'
-                                        type: customSQLQuery
-                                        name: Get_Blank_ID
-                                        params:
-                                          - type: query
-                                            value: select uuid_generate_v4() as risk_id
-                                            valueType: interpolatedValue
-                                            interpolationType: string
-                                          - type: datasourceId
-                                            value: Supabase Bridgelink Apps Database
-                                            valueType: custom
-                                            mustSelectFirst: true
-                                          - type: preparedQuery
-                                            value: select uuid_generate_v4() as risk_id
-                                            valueType: interpolatedValue
-                                          - type: preparedQueryParams
-                                            value: []
-                                            valueType: custom
-                                          - type: customDatabaseName
-                                            value: ''
-                                            valueType: interpolatedValue
-                                          - type: stepVersion
-                                            value: 2
-                                            valueType: custom
-                                          - type: successMapper
-                                            value: ''
-                                            valueType: interpolatedValue
-                                          - type: failureMapper
-                                            value: ''
-                                            valueType: interpolatedValue
-                                          - type: mapperEnabled
-                                            value: false
-                                            valueType: custom
-                                        level: 2
-                                        fallthroughError: false
-                                        isChanged: true
-                                        nameConfigured: true
                                       - id: '16969346693530.2635280792401329'
                                         type: customAsyncCode
                                         name: Adding
                                         params:
                                           - type: asyncCode
                                             value: >-
-                                              {{state.Selected_Risk_ID}} =
-                                              {{steps.Get_Blank_ID.data[0].risk_id}}
+                                              {{state.Selected_Risk_ID}} = ''
 
                                               {{actions.Load_Risk_Progress_Notes.trigger()}}
 

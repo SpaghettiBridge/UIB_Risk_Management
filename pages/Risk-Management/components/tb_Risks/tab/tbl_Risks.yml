@@ -198,11 +198,11 @@ slots:
               [
                 {
                   value: 'Closed',
-                  color: {{state.ColourSatus}}
+                  color: {{state.ColourStatus}}
                 },
                  {
                   value: 'Open',
-                  color: {{state.ColourSatus}}
+                  color: {{state.ColourStatus}}
                 }
               ]
             withData: true
@@ -223,6 +223,7 @@ slots:
             withData: false
             themeDefaultOverridePropertyKey: atomicSelectAppearance
         index: 9
+        actions: {}
         slots: []
       - id: '16968555036750.9921617133318832'
         definitionId: atomicDateTime
@@ -401,37 +402,37 @@ slots:
                 {
                   "value": "Estates, H&S",
                   "title": "Estates, H&S",
-                  "color": {{state.ColourSatus}}
+                  "color": {{state.ColourStatus}}
                 },
                 {
                   "value": "Finance",
                   "title": "Finance",
-                  "color":{{state.ColourSatus}}
+                  "color":{{state.ColourStatus}}
                 },
                 {
                   "value": "HR",
                   "title": "HR",
-                  "color": {{state.ColourSatus}}
+                  "color": {{state.ColourStatus}}
                 },
                 {
                   "value": "Marketing",
                   "title": "Marketing",
-                  "color": {{state.ColourSatus}}
+                  "color": {{state.ColourStatus}}
                 },
                 {
                   "value": "New dev",
                   "title": "New dev",
-                  "color": {{state.ColourSatus}}
+                  "color": {{state.ColourStatus}}
                 },
                 {
                   "value": "Safeguarding",
                   "title": "Safeguarding",
-                  "color": {{state.ColourSatus}}
+                  "color": {{state.ColourStatus}}
                 },
                 {
                   "value": "Systems and IT",
                   "title": "Systems and IT",
-                  "color": {{state.ColourSatus}}
+                  "color": {{state.ColourStatus}}
                 }
               ]
             withData: true
@@ -442,6 +443,7 @@ slots:
             withData: false
             themeDefaultOverridePropertyKey: atomicSelectAppearance
         index: 5
+        actions: {}
         slots: []
       - id: '16968555036750.34037693635255084'
         definitionId: atomicSelect
@@ -479,22 +481,22 @@ slots:
                 {
                   "value": "Compliance",
                   "title": "Compliance",
-                  "color": {{state.ColourSatus}}
+                  "color": {{state.ColourStatus}}
                 },
                 {
                   "value": "Financial",
                   "title": "Financial",
-                  "color": {{state.ColourSatus}}
+                  "color": {{state.ColourStatus}}
                 },
                 {
                   "value": "Operational",
                   "title": "Operational",
-                  "color": {{state.ColourSatus}}
+                  "color": {{state.ColourStatus}}
                 },
                 {
                   "value": "Strategic",
                   "title": "Strategic",
-                  "color": {{state.ColourSatus}}
+                  "color": {{state.ColourStatus}}
                 }
               ]
             withData: true
@@ -504,6 +506,7 @@ slots:
             withData: false
             themeDefaultOverridePropertyKey: atomicSelectAppearance
         index: 7
+        actions: {}
         slots: []
       - id: '16968555036750.05675748946835402'
         definitionId: atomicSelect
@@ -565,52 +568,52 @@ slots:
                 {
                   value: 10,
                   title: '10',
-                    color: {{state.ColourSatus}}
+                    color: {{state.ColourStatus}}
                 },
                 {
                   value: 9,
                   title: '9',
-                    color: {{state.ColourSatus}}
+                    color: {{state.ColourStatus}}
                 },
                 {
                   value: 8,
                   title: '8',
-                    color: {{state.ColourSatus}}
+                    color: {{state.ColourStatus}}
                 },
                 {
                   value: 7,
                   title: '7',
-                    color:{{state.ColourSatus}}
+                    color:{{state.ColourStatus}}
                 },
                 {
                   value: 6,
                   title: '6',
-                    color: {{state.ColourSatus}}
+                    color: {{state.ColourStatus}}
                 },
                 {
                   value: 5,
                   title: '5',
-                    color: {{state.ColourSatus}}
+                    color: {{state.ColourStatus}}
                 },
                 {
                   value: 4,
                   title: '4',
-                    color: {{state.ColourSatus}}
+                    color: {{state.ColourStatus}}
                 },
                 {
                   value: 3,
                   title: '3',
-                    color: {{state.ColourSatus}}
+                    color: {{state.ColourStatus}}
                 },
                 {
                   value: 2,
                   title: '2',
-                    color: {{state.ColourSatus}}
+                    color: {{state.ColourStatus}}
                 },
                 {
                   value: 1,
                   title: '1',
-                    color: {{state.ColourSatus}}
+                    color: {{state.ColourStatus}}
                 }
               ]
             withData: true
@@ -621,6 +624,7 @@ slots:
             withData: false
             themeDefaultOverridePropertyKey: atomicSelectAppearance
         index: 1
+        actions: {}
         slots: []
       - id: '16968555036750.8644999884612194'
         definitionId: atomicSelect
@@ -658,22 +662,22 @@ slots:
                 {
                   "value": "Treat",
                   "title": "Treat",
-                  "color": {{state.ColourSatus}}
+                  "color": {{state.ColourStatus}}
                 },
                 {
                   "value": "Tolerate",
                   "title": "Tolerate",
-                  "color":{{state.ColourSatus}}
+                  "color":{{state.ColourStatus}}
                 },
                 {
                   "value": "Transfer",
                   "title": "Transfer",
-                  "color": {{state.ColourSatus}}
+                  "color": {{state.ColourStatus}}
                 },
                 {
                   "value": "Terminate",
                   "title": "Terminate",
-                  "color": {{state.ColourSatus}}
+                  "color": {{state.ColourStatus}}
                 }
               ]
             withData: true
@@ -684,6 +688,7 @@ slots:
             withData: false
             themeDefaultOverridePropertyKey: atomicSelectAppearance
         index: 8
+        actions: {}
         slots: []
       - id: '16969430293800.15386008318151534'
         definitionId: atomicString
