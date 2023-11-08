@@ -75,4 +75,11 @@ config:
 assigned: false
 selected: true
 configured: true
+actions:
+  success:
+    - action: '16968517651850.7367747537503266'
+      paramCode: ''
+      blockPageLoad: false
+      index: 0
+  error: []
 index: 1
