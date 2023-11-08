@@ -231,4 +231,11 @@ config:
 assigned: false
 selected: true
 configured: false
+actions:
+  success:
+    - action: '16968563252360.552228579969027'
+      paramCode: ''
+      blockPageLoad: false
+      index: 0
+  error: []
 index: 0

@@ -1,0 +1,50 @@
+id: '16994350182480.04988409851558284'
+name: appInit
+nameConfigured: true
+steps:
+  - id: '16994350225610.5628612954087531'
+    type: putInStore
+    name: save
+    params:
+      - type: name
+        value: '16968562387780.2957229714859937'
+        valueType: string
+      - type: value
+        value: '{{data}}'
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: producible
+        value: true
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+singleStep: false
+actions:
+  success:
+    - action: '16968561249850.020773528203544833'
+      paramCode: ''
+      blockPageLoad: false
+      index: 0
+  error: []
+mode: manual
+modeConfigured: false
+folder: false
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.appInit.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.appInit.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.appInit.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: true
+assigned: false
+selected: true
+configured: true
+index: 4
