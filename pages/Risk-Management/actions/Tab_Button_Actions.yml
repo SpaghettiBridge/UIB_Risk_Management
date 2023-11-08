@@ -85,6 +85,17 @@ steps:
                                 value:
                                   - condition: true
                                     steps:
+                                      - id: '16994429678610.7008830068227523'
+                                        type: customAsyncCode
+                                        name: code
+                                        params:
+                                          - type: asyncCode
+                                            value: '{{state.Selected_Risk_ID}} = '''';'
+                                            valueType: interpolatedValue
+                                            interpolationType: code
+                                        level: 3
+                                        fallthroughError: false
+                                        isChanged: true
                                       - id: '16969403279360.7678188664605599'
                                         type: customSQLQuery
                                         name: Get_Blank_ID
@@ -301,7 +312,7 @@ steps:
                     value: Please select a specific service before adding a new risk
                     valueType: interpolatedValue
                   - type: type
-                    value: success
+                    value: warning
                     valueType: string
                   - type: icon
                     value: checkmark-circle-2

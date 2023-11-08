@@ -17,18 +17,18 @@ styles:
 properties:
   options:
     value:
-      - title: Terminate
-        value: Terminate
-        __UIBAKERY__SYSTEM_ID__: '16968570806750.4991957601959165'
       - value: Tolerate
         title: Tolerate
         __UIBAKERY__SYSTEM_ID__: '1'
-      - title: Transfer
-        value: Transfer
-        __UIBAKERY__SYSTEM_ID__: '16968570800540.05832113438563069'
       - value: Treat
         title: Treat
         __UIBAKERY__SYSTEM_ID__: '2'
+      - title: Transfer
+        value: Transfer
+        __UIBAKERY__SYSTEM_ID__: '16968570800540.05832113438563069'
+      - title: Terminate
+        value: Terminate
+        __UIBAKERY__SYSTEM_ID__: '16968570806750.4991957601959165'
     dataValue: ''
     withData: false
   name: inpControl
