@@ -70,12 +70,8 @@ properties:
 
     if (returnDate == 'Invalid Date') {returnDate = ''};
 
-    if (ui.tbl_Risks.selectedRow.data.pk_risk_id == state.Selected_Risk_ID){
     return 'Last reviewed: ' +  returnDate
-    }
-    else {
-      return ''
-    }
+
 
 
     }}
@@ -84,6 +80,8 @@ properties:
     styles:
       - bold
   alignment: right
+  __UIBAKERY__SHOW__CONDITION__CODE__: |
+    {{state.RiskDisabled}}
 actions: {}
 index: 3
 slots: []
