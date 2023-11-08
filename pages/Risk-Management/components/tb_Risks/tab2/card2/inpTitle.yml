@@ -30,6 +30,8 @@ properties:
   value: '{{ui.tbl_Risks.selectedRow.data.title}}'
   labelWidth: 13
   required: true
+  regexpPatternErrorMessage: Title must be 50 characters or less
+  regexpPattern: a-zA-Z0-9- ]{1,40}$
 actions: {}
 index: 12
 slots: []
