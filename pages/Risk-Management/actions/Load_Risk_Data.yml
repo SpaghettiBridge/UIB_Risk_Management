@@ -105,7 +105,7 @@ steps:
                                               ({{steps.Get_Rating.data}})
 
                                               order by service_name asc, risk_rating
-                                              desc
+                                              desc, created_at desc
                                             valueType: interpolatedValue
                                             interpolationType: string
                                           - type: datasourceId
@@ -130,7 +130,7 @@ steps:
                                               AND risk_rating IN (?)
 
                                               order by service_name asc, risk_rating
-                                              desc
+                                              desc, created_at desc
                                             valueType: interpolatedValue
                                           - type: preparedQueryParams
                                             value:
@@ -191,7 +191,7 @@ steps:
                                               ({{steps.Get_Rating.data}})
 
                                               order by service_name asc, risk_rating
-                                              desc
+                                              desc, created_at desc
                                             valueType: interpolatedValue
                                             interpolationType: string
                                           - type: datasourceId
@@ -216,7 +216,7 @@ steps:
                                               AND risk_rating IN (?)
 
                                               order by service_name asc, risk_rating
-                                              desc
+                                              desc, created_at desc
                                             valueType: interpolatedValue
                                           - type: preparedQueryParams
                                             value:
@@ -296,7 +296,7 @@ steps:
 
 
                                               order by service_name asc, risk_rating
-                                              desc
+                                              desc, created_at desc
                                             valueType: interpolatedValue
                                             interpolationType: string
                                           - type: datasourceId
@@ -320,7 +320,7 @@ steps:
 
 
                                               order by service_name asc, risk_rating
-                                              desc
+                                              desc, created_at desc
                                             valueType: interpolatedValue
                                           - type: preparedQueryParams
                                             value:
@@ -377,7 +377,7 @@ steps:
 
 
                                               order by service_name asc, risk_rating
-                                              desc
+                                              desc, created_at desc
                                             valueType: interpolatedValue
                                             interpolationType: string
                                           - type: datasourceId
@@ -401,7 +401,7 @@ steps:
 
 
                                               order by service_name asc, risk_rating
-                                              desc
+                                              desc, created_at desc
                                             valueType: interpolatedValue
                                           - type: preparedQueryParams
                                             value:
@@ -505,7 +505,7 @@ steps:
                                               ({{steps.Get_Rating.data}})
 
                                               order by service_name asc, risk_rating
-                                              desc
+                                              desc, created_at desc
                                             valueType: interpolatedValue
                                             interpolationType: string
                                           - type: datasourceId
@@ -532,7 +532,7 @@ steps:
                                               AND risk_rating IN (?)
 
                                               order by service_name asc, risk_rating
-                                              desc
+                                              desc, created_at desc
                                             valueType: interpolatedValue
                                           - type: preparedQueryParams
                                             value:
@@ -598,7 +598,7 @@ steps:
                                               ({{steps.Get_Rating.data}})
 
                                               order by service_name asc, risk_rating
-                                              desc
+                                              desc, created_at desc
                                             valueType: interpolatedValue
                                             interpolationType: string
                                           - type: datasourceId
@@ -625,7 +625,7 @@ steps:
                                               AND risk_rating IN (?)
 
                                               order by service_name asc, risk_rating
-                                              desc
+                                              desc, created_at desc
                                             valueType: interpolatedValue
                                           - type: preparedQueryParams
                                             value:
@@ -713,7 +713,7 @@ steps:
                                               and risk_type like '%'
 
                                               order by service_name asc, risk_rating
-                                              desc
+                                              desc, created_at desc
                                             valueType: interpolatedValue
                                             interpolationType: string
                                           - type: datasourceId
@@ -743,7 +743,7 @@ steps:
                                               and risk_type like '%'
 
                                               order by service_name asc, risk_rating
-                                              desc
+                                              desc, created_at desc
                                             valueType: interpolatedValue
                                           - type: preparedQueryParams
                                             value:
@@ -808,7 +808,7 @@ steps:
                                               ({{ui.slct_Type_Filter.value}})
 
                                               order by service_name asc, risk_rating
-                                              desc
+                                              desc, created_at desc
                                             valueType: interpolatedValue
                                             interpolationType: string
                                           - type: datasourceId
@@ -838,7 +838,7 @@ steps:
                                               and risk_type IN (?)
 
                                               order by service_name asc, risk_rating
-                                              desc
+                                              desc, created_at desc
                                             valueType: interpolatedValue
                                           - type: preparedQueryParams
                                             value:
