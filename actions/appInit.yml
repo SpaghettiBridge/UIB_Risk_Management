@@ -19,6 +19,17 @@ steps:
     level: 0
     fallthroughError: false
     isChanged: true
+  - id: '16994363229740.7199619783319877'
+    type: customAsyncCode
+    name: code
+    params:
+      - type: asyncCode
+        value: console.log(state.User)
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
 singleStep: false
 actions:
   success:

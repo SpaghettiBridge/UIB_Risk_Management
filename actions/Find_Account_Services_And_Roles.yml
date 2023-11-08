@@ -71,6 +71,19 @@ steps:
                 level: 1
                 fallthroughError: false
                 isChanged: true
+              - id: '16994363792410.5975060742513407'
+                type: customAsyncCode
+                name: code2
+                params:
+                  - type: asyncCode
+                    value: |-
+                      console.log("state.user.emal:"+ state.User.email)
+                      console.log("user.emal:"+ user.email )
+                    valueType: interpolatedValue
+                    interpolationType: code
+                level: 1
+                fallthroughError: false
+                isChanged: true
               - id: '16969415604980.7630693141153428'
                 type: LOAD_COLLECTION
                 name: FindRole

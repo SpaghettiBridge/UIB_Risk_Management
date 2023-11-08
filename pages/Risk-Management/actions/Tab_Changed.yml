@@ -42,6 +42,5 @@ config:
   preserveStateOnPageChange: false
 assigned: true
 selected: true
-
 configured: true
-index: 22
+index: 23
