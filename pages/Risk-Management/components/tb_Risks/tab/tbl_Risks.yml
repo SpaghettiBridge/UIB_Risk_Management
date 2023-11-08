@@ -173,7 +173,7 @@ slots:
           width: '600'
           filter: true
           title: Details
-        index: 5
+        index: 6
         slots: []
       - id: '16968555036750.13071579450597715'
         definitionId: atomicSelect
@@ -247,7 +247,7 @@ slots:
             value: MMM dd, yyyy
             dataValue: dd/MM/yyyy
             withData: true
-        index: 1
+        index: 2
         slots: []
       - id: '16968555036750.3274669122700482'
         definitionId: atomicString
@@ -441,7 +441,7 @@ slots:
             dataValue: outline
             withData: false
             themeDefaultOverridePropertyKey: atomicSelectAppearance
-        index: 4
+        index: 5
         slots: []
       - id: '16968555036750.34037693635255084'
         definitionId: atomicSelect
@@ -503,7 +503,7 @@ slots:
             dataValue: outline
             withData: false
             themeDefaultOverridePropertyKey: atomicSelectAppearance
-        index: 6
+        index: 7
         slots: []
       - id: '16968555036750.05675748946835402'
         definitionId: atomicSelect
@@ -620,7 +620,7 @@ slots:
             dataValue: outline
             withData: false
             themeDefaultOverridePropertyKey: atomicSelectAppearance
-        index: 7
+        index: 1
         slots: []
       - id: '16968555036750.8644999884612194'
         definitionId: atomicSelect
@@ -743,7 +743,7 @@ slots:
             - xl
             - xs
           width: '260'
-        index: 3
+        index: 4
         slots: []
       - id: '16993562402630.6346515580210661'
         definitionId: atomicNumber
@@ -757,5 +757,5 @@ slots:
             - xs
           width: '20'
           title: ID
-        index: 2
+        index: 3
         slots: []
