@@ -104,7 +104,8 @@ steps:
                                               AND risk_rating IN
                                               ({{steps.Get_Rating.data}})
 
-                                              order by created_at desc
+                                              order by service_name asc, risk_rating
+                                              desc
                                             valueType: interpolatedValue
                                             interpolationType: string
                                           - type: datasourceId
@@ -128,7 +129,8 @@ steps:
 
                                               AND risk_rating IN (?)
 
-                                              order by created_at desc
+                                              order by service_name asc, risk_rating
+                                              desc
                                             valueType: interpolatedValue
                                           - type: preparedQueryParams
                                             value:
@@ -188,7 +190,8 @@ steps:
                                               AND risk_rating IN
                                               ({{steps.Get_Rating.data}})
 
-                                              order by created_at desc
+                                              order by service_name asc, risk_rating
+                                              desc
                                             valueType: interpolatedValue
                                             interpolationType: string
                                           - type: datasourceId
@@ -212,7 +215,8 @@ steps:
 
                                               AND risk_rating IN (?)
 
-                                              order by created_at desc
+                                              order by service_name asc, risk_rating
+                                              desc
                                             valueType: interpolatedValue
                                           - type: preparedQueryParams
                                             value:
@@ -291,7 +295,8 @@ steps:
                                               and risk_type like '%'
 
 
-                                              order by created_at desc
+                                              order by service_name asc, risk_rating
+                                              desc
                                             valueType: interpolatedValue
                                             interpolationType: string
                                           - type: datasourceId
@@ -314,7 +319,8 @@ steps:
                                               and risk_type like '%'
 
 
-                                              order by created_at desc
+                                              order by service_name asc, risk_rating
+                                              desc
                                             valueType: interpolatedValue
                                           - type: preparedQueryParams
                                             value:
@@ -370,7 +376,8 @@ steps:
                                               ({{ui.slct_Type_Filter.value}})
 
 
-                                              order by created_at desc
+                                              order by service_name asc, risk_rating
+                                              desc
                                             valueType: interpolatedValue
                                             interpolationType: string
                                           - type: datasourceId
@@ -393,7 +400,8 @@ steps:
                                               and risk_type IN (?)
 
 
-                                              order by created_at desc
+                                              order by service_name asc, risk_rating
+                                              desc
                                             valueType: interpolatedValue
                                           - type: preparedQueryParams
                                             value:
@@ -496,7 +504,8 @@ steps:
                                               AND risk_rating IN
                                               ({{steps.Get_Rating.data}})
 
-                                              order by created_at desc
+                                              order by service_name asc, risk_rating
+                                              desc
                                             valueType: interpolatedValue
                                             interpolationType: string
                                           - type: datasourceId
@@ -522,7 +531,8 @@ steps:
 
                                               AND risk_rating IN (?)
 
-                                              order by created_at desc
+                                              order by service_name asc, risk_rating
+                                              desc
                                             valueType: interpolatedValue
                                           - type: preparedQueryParams
                                             value:
@@ -587,7 +597,8 @@ steps:
                                               AND risk_rating IN
                                               ({{steps.Get_Rating.data}})
 
-                                              order by created_at desc
+                                              order by service_name asc, risk_rating
+                                              desc
                                             valueType: interpolatedValue
                                             interpolationType: string
                                           - type: datasourceId
@@ -613,7 +624,8 @@ steps:
 
                                               AND risk_rating IN (?)
 
-                                              order by created_at desc
+                                              order by service_name asc, risk_rating
+                                              desc
                                             valueType: interpolatedValue
                                           - type: preparedQueryParams
                                             value:
@@ -700,7 +712,8 @@ steps:
 
                                               and risk_type like '%'
 
-                                              order by created_at desc
+                                              order by service_name asc, risk_rating
+                                              desc
                                             valueType: interpolatedValue
                                             interpolationType: string
                                           - type: datasourceId
@@ -708,8 +721,9 @@ steps:
                                             valueType: custom
                                             mustSelectFirst: true
                                           - type: preparedQuery
-                                            value: |
+                                            value: >
                                               SELECT * from get_risk_data
+
                                               WHERE exists (
                                                 select
                                                   1
@@ -719,11 +733,17 @@ steps:
                                                   service_id = get_risk_data.fk_service_id
                                                   and account_id = ?
                                               )
+
                                               and (fk_service_id = ?)
+
                                               and risk_status like ?
+
                                               and area like ?
+
                                               and risk_type like '%'
-                                              order by created_at desc
+
+                                              order by service_name asc, risk_rating
+                                              desc
                                             valueType: interpolatedValue
                                           - type: preparedQueryParams
                                             value:
@@ -762,7 +782,7 @@ steps:
                                         name: AllForService2
                                         params:
                                           - type: query
-                                            value: >
+                                            value: >-
                                               SELECT * from get_risk_data
 
                                               WHERE exists (
@@ -787,7 +807,8 @@ steps:
                                               and risk_type IN
                                               ({{ui.slct_Type_Filter.value}})
 
-                                              order by created_at desc
+                                              order by service_name asc, risk_rating
+                                              desc
                                             valueType: interpolatedValue
                                             interpolationType: string
                                           - type: datasourceId
@@ -795,8 +816,9 @@ steps:
                                             valueType: custom
                                             mustSelectFirst: true
                                           - type: preparedQuery
-                                            value: |
+                                            value: >-
                                               SELECT * from get_risk_data
+
                                               WHERE exists (
                                                 select
                                                   1
@@ -806,11 +828,17 @@ steps:
                                                   service_id = get_risk_data.fk_service_id
                                                   and account_id = ?
                                               )
+
                                               and (fk_service_id = ?)
+
                                               and risk_status like ?
+
                                               and area like ?
+
                                               and risk_type IN (?)
-                                              order by created_at desc
+
+                                              order by service_name asc, risk_rating
+                                              desc
                                             valueType: interpolatedValue
                                           - type: preparedQueryParams
                                             value:

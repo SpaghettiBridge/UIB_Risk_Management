@@ -29,7 +29,7 @@ properties:
     withData: true
   value: '{{ui.tbl_Risks.selectedRow.data.title}}'
   labelWidth: 13
-  required: true
+  required: false
   regexpPatternErrorMessage: ''
   regexpPattern: ''
   length:

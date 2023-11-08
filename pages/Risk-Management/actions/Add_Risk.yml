@@ -232,6 +232,17 @@ steps:
     level: 0
     fallthroughError: false
     isChanged: true
+  - id: '16994438808050.8200451980656023'
+    type: customAsyncCode
+    name: code2
+    params:
+      - type: asyncCode
+        value: '{{ui.tb_Risks.selectTab(0)}}'
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
 singleStep: false
 mode: manual
 modeConfigured: false
