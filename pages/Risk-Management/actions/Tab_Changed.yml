@@ -8,11 +8,11 @@ steps:
     params:
       - type: asyncCode
         value: |
-          if ({{state.Selected_Risk_ID}} == undefined){
-            {{ui.tb_Risks.selectTab(0)}}
-          }
-            
-          else if ({{ui.tbl_Risks.selectedRow.data != null}}){
+          //if ({{state.Selected_Risk_ID}} == undefined){
+          //  {{ui.tb_Risks.selectTab(0)}}
+          //}
+          //  
+          if ({{ui.tbl_Risks.selectedRow.data != null}}){
             {{state.Selected_Risk_ID = ui.tbl_Risks.selectedRow.data.pk_risk_id}}   
           }
         valueType: interpolatedValue
@@ -42,5 +42,6 @@ config:
   preserveStateOnPageChange: false
 assigned: true
 selected: true
-configured: false
-index: 23
+
+configured: true
+index: 22

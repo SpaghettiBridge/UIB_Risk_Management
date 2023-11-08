@@ -30,6 +30,11 @@ properties:
   value: '{{ui.tbl_Risks.selectedRow.data.title}}'
   labelWidth: 13
   required: true
+  regexpPatternErrorMessage: ''
+  regexpPattern: ''
+  length:
+    min: null
+    max: 50
 actions: {}
 index: 12
 slots: []

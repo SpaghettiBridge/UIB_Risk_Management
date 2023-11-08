@@ -213,6 +213,11 @@ slots:
             dataValue: equal
             withData: false
           __UIBAKERY__SHOW__CONDITION__CODE__: '{{!ui.tog_Hide_Closed.value}}'
+          appearance:
+            value: filled
+            dataValue: outline
+            withData: false
+            themeDefaultOverridePropertyKey: atomicSelectAppearance
         index: 9
         slots: []
       - id: '16968555036750.9921617133318832'
