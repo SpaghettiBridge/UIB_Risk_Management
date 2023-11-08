@@ -97,10 +97,6 @@ appSettings:
       - action: '16969414290030.04303545867456271'
         paramCode: ''
         index: 0
-      - action: '16968561249850.020773528203544833'
-        paramCode: ''
-        blockPageLoad: false
-        index: 1
     appData: []
   gridVersion: 2
 internalType: project
