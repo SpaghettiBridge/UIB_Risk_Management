@@ -78,7 +78,7 @@ properties:
     value: primary
     dataValue: basic
     withData: false
-  __UIBAKERY__SHOW__CONDITION__CODE__: '{{state.RiskDisabled}}'
+  __UIBAKERY__SHOW__CONDITION__CODE__: '{{state.RiskDisabled && ui.tb_Risks.selectedIndex == 1}}'
   disabled:
     value: false
     dataValue: ''
