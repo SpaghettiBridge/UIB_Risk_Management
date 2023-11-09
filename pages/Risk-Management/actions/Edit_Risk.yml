@@ -278,48 +278,48 @@ steps:
                       if ({{data.Rating}}){  
                         From = {{ui.tbl_Risks.selectedRow.data.risk_rating}}
                         To = {{ui.inpRating.value}}
-                        {{actions.Add_Note.trigger({Type: 'Note', Description: 'Rating has been changed from ' + From + ' to ' + To})}}   
+                        {{actions.Add_Note.trigger({Type: 'Note', Description: 'Rating has been changed from ' + From + '  **to**  ' + To})}}   
                       }
 
                       if ({{data.Area}}){
                         From = {{ui.tbl_Risks.selectedRow.data.area}}
                         To = {{ui.inpArea.value}}
-                        {{actions.Add_Note.trigger({Type: 'Note', Description: 'Area has been changed from ' + From + ' to ' + To}) }}
+                        {{actions.Add_Note.trigger({Type: 'Note', Description: 'Area has been changed  from ' + From + '  **to**  ' + To}) }}
                       }
 
                       if ({{data.Type}}){
                         From = {{ui.tbl_Risks.selectedRow.data.risk_type}}
                         To = {{ui.inpType.value}}  
-                        {{actions.Add_Note.trigger({Type: 'Note', Description: 'Type has been changed from ' + From + ' to ' + To}) }}
+                        {{actions.Add_Note.trigger({Type: 'Note', Description: 'Type has been changed  from ' + From + '  **to**  ' + To}) }}
                       }
 
                       if ({{data.Control}}){
                         From = {{ui.tbl_Risks.selectedRow.data.control_measure}}
                         To = {{ui.inpControl.value}}
-                        {{actions.Add_Note.trigger({Type: 'Note', Description: 'Control measure has been changed from ' + From + ' to ' + To}) }}
+                        {{actions.Add_Note.trigger({Type: 'Note', Description: 'Control measure has been changed  from ' + From + '  **to**  ' + To}) }}
                       }
 
                       if ({{data.Assigned}}){
                         From = {{ui.tbl_Risks.selectedRow.data.risk_owner_name}}
                         To = await {{actions.Get_Account_Name.trigger(ui.inpOwner.value)}};
                         console.log('from: ' + From + '  To: ' + To)
-                        {{actions.Add_Note.trigger({Type: 'Note', Description: 'Assignation has been changed from ' + From + ' to ' + To}) }}
+                        {{actions.Add_Note.trigger({Type: 'Note', Description: 'Assignation has been changed  from ' + From + '  **to**  ' + To}) }}
                       }
 
                       if ({{data.Status}}){
                         From = {{ui.tbl_Risks.selectedRow.data.risk_status}}
                         To = {{ui.inpStatus.value}}
-                        {{actions.Add_Note.trigger({Type: 'Note', Description: 'Status has been changed from ' + From + ' to ' + To}) }}
+                        {{actions.Add_Note.trigger({Type: 'Note', Description: 'Status has been changed  from ' + From + '  **to**  ' + To}) }}
                       }
                        if ({{data.Title}}){
                         From = {{ui.tbl_Risks.selectedRow.data.title}}
                         To = {{ui.inpTitle.value}}
-                        {{actions.Add_Note.trigger({Type: 'Note', Description: 'Title has been changed from ' + From + ' to ' + To}) }}
+                        {{actions.Add_Note.trigger({Type: 'Note', Description: 'Title has been changed from ' + From + '  **to**  ' + To}) }}
                        } 
                         if ({{data.Detail}}){
                         From = {{ui.tbl_Risks.selectedRow.data.description}}
                         To = {{ui.inpDetails.value}}
-                        {{actions.Add_Note.trigger({Type: 'Note', Description: 'Details has been changed from ' + From + ' to ' + To}) }}   
+                        {{actions.Add_Note.trigger({Type: 'Note', Description: '**Details has been changed from** <br>' + From + '<br>**to**<br>' + To}) }}   
                       }
 
                       if ({{data.Reviewing}}){

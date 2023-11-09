@@ -5,7 +5,7 @@ styles:
   xl:
     gridItem:
       x: 8
-      y: 26
+      y: 27
       w: 16
       h: 75
   xs:
@@ -192,6 +192,7 @@ slots:
           filter: true
           title: Description
           required: true
+          markdownSupport: true
         index: 2
         slots: []
       - id: '16968534100940.7692584859217231'

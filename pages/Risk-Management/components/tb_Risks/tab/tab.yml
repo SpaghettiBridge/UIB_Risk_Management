@@ -19,3 +19,4 @@ slots:
       - slct_Area_Filter.yml
       - slct_Type_Filter.yml
       - slct_Rating_Filter.yml
+      - slct_reviewDate.yml

@@ -7,11 +7,12 @@ steps:
     name: condition
     params:
       - type: code
-        value: |-
-          if ({{state.Selected_Risk_ID}} != ''){
+        value: >-
+          if ({{state.Selected_Risk_ID}} != '' && {{state.Selected_Risk_ID}} !=
+          undefined){
             return true}
           else {
-            return false}
+            return false} 
         valueType: interpolatedValue
         interpolationType: code
       - type: steps

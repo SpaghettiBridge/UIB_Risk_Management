@@ -1,0 +1,79 @@
+id: '16995273353990.9623707008637328'
+definitionId: selectWithAtomics
+parentSlotId: '16968520326600.9060417850556657'
+styles:
+  xl:
+    gridItem:
+      x: 13
+      y: 7
+      w: 6
+      h: 10
+  xs:
+    gridItem:
+      x: 0
+      y: 126
+      w: 24
+      h: 10
+properties:
+  options:
+    value:
+      - value: '{{moment()}}'
+        title: 1 Week
+        __UIBAKERY__SYSTEM_ID__: '1'
+      - value: ''
+        title: 2 Weeks
+        __UIBAKERY__SYSTEM_ID__: '2'
+      - title: A month
+        value: ''
+        __UIBAKERY__SYSTEM_ID__: '16995273927260.7305114403072104'
+    dataValue: |-
+      [
+        {
+          "value": {{moment().startOf('day')}},
+          "title": "All"
+        },
+        {
+          "value": {{moment().startOf('day').subtract(7, 'days')}},
+          "title": "1 Week"
+        },
+        {
+          "value":{{moment().startOf('day').subtract(14, 'days')}},
+          "title": "2 Weeks"
+        },
+        {
+          "value": {{moment().startOf('day').subtract(1, 'month')}},
+          "title": "Month"
+        }
+      ]
+    withData: true
+  name: slct_reviewDate
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  optionValueKey: value
+  labelConfig:
+    text: Reviewed
+    position: horizontal
+    align: left
+  value: '{{moment().startOf(''day'')}}'
+actions: {}
+index: 6
+slots:
+  - id: '16995273353990.6235652378335432'
+    name: optionViewTypes
+    children:
+      - id: '16995273354600.7522640334768347'
+        definitionId: atomicString
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicString26
+          prop: title
+          primaryKey: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+        parentSlotId: '16995273353990.6235652378335432'
+        index: 1
+        slots: []
