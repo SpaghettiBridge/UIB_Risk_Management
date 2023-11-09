@@ -121,23 +121,6 @@ slots:
           filter: true
         index: 1
         slots: []
-      - id: '16974402547400.03998388571972167'
-        definitionId: atomicString
-        parentSlotId: '16974395982820.8307521957145838'
-        styles:
-          xl:
-            visible: false
-        properties:
-          name: atomicString26
-          prop: created_at
-          primaryKey: false
-          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
-            - xl
-            - xs
-          width: '60'
-          filter: true
-        index: 2
-        slots: []
       - id: '16974402547400.2645095139770963'
         definitionId: atomicText
         parentSlotId: '16974395982820.8307521957145838'
@@ -200,4 +183,26 @@ slots:
             withData: true
           title: Name
         index: 3
+        slots: []
+      - id: '16974402547400.03998388571972167'
+        definitionId: atomicDate
+        parentSlotId: '16974395982820.8307521957145838'
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicDate2
+          prop: created_at
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          title: Date
+          primaryKey: false
+          filter: true
+          width: '60'
+          dateFormat:
+            value: MMM dd, yyyy
+            dataValue: ' dd/MM/yyyy'
+            withData: true
+        index: 2
         slots: []

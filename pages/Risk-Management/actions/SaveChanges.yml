@@ -93,7 +93,7 @@ steps:
                             nameConfigured: true
                           - id: '16971147068150.3804298609646708'
                             type: executeAction
-                            name: execute2
+                            name: Select_Risk
                             params:
                               - type: action
                                 value: '16969400265810.7198078406620261'

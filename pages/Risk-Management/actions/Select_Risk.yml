@@ -11,7 +11,7 @@ steps:
         valueType: string
       - type: value
         value: |-
-          if({{params}}){
+          if({{params.id != undefined}}){
           return {{params.id}}
           }
           return {{ ui.tbl_Risks.selectedRow.data.pk_risk_id}}
@@ -24,6 +24,23 @@ steps:
     fallthroughError: false
     isChanged: true
     paused: false
+  - id: '16995258202220.02510790196699908'
+    type: customAsyncCode
+    name: code
+    params:
+      - type: asyncCode
+        value: |-
+          var index = ui.tbl_Risks.value.findIndex(function(risk) {
+            return risk.pk_risk_id == state.Selected_Risk_ID
+          });
+          console.log(index);
+
+          ui.tbl_Risks.selectRow(index)
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
   - id: '16970036406080.784323283417232'
     type: executeAction
     name: execute
