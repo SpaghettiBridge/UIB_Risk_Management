@@ -60,7 +60,7 @@ properties:
     dataValue: 'true'
     withData: false
   sortable:
-    value: true
+    value: false
     dataValue: 'true'
     withData: false
   putEmptyValuesAtTheEnd: false

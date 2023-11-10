@@ -27,17 +27,17 @@ styles:
 
 
 
-        if (dateDiff.asDays() > 10) {
+        if (dateDiff.asDays() > 14) {
           state.flag = 'Red'
           return '#d1431d'  
         }
 
-        else if (dateDiff.asDays() >= 5) {
+        else if (dateDiff.asDays() > 7) {
           state.flag = 'Orange'
           return '#e28743'  
         }
 
-        else if (dateDiff.asDays() < 5) {
+        else if (dateDiff.asDays() <= 7) {
           state.flag = 'Green'
           return '#76b5c5'
         }

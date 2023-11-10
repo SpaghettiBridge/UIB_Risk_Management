@@ -19,7 +19,7 @@ steps:
     level: 0
     fallthroughError: false
     isChanged: true
-    paused: false
+    paused: true
     nameConfigured: true
   - id: '16969250729430.7486366981648511'
     type: DELETE_ENTITY
@@ -63,8 +63,10 @@ modeConfigured: false
 parentPageId: '1'
 parentId: null
 config:
-  shouldConfirm: false
-  confirmMessage: Are you sure you'd like to proceed with "{{actions.Delete_Note.name}}"?
+  shouldConfirm: true
+  confirmMessage: >-
+    Are you sure you would like to delete this
+    {{ui.tbl_Progress_Notes.deletedRow.data.type}}?
   showSuccessToast: false
   successToast: Action "{{actions.Delete_Note.name}}" successfully executed
   successToastDuration: '3000'

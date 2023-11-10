@@ -101,8 +101,11 @@ steps:
 
                                               and risk_type like '%'
 
-                                              AND risk_rating IN
+                                              and risk_rating IN
                                               ({{steps.Get_Rating.data}})
+
+                                              and last_review_date <=
+                                              {{ui.slct_reviewDate.value}}
 
                                               order by risk_rating desc, created_at
                                               desc
@@ -127,7 +130,9 @@ steps:
 
                                               and risk_type like '%'
 
-                                              AND risk_rating IN (?)
+                                              and risk_rating IN (?)
+
+                                              and last_review_date <= ?
 
                                               order by risk_rating desc, created_at
                                               desc
@@ -142,6 +147,8 @@ steps:
                                                 __UI_BAKERY__FORMAT_IF_DATE__(ui.slct_Area_Filter.value)
                                               - >-
                                                 __UI_BAKERY__FORMAT_IF_DATE__(steps.Get_Rating.data)
+                                              - >-
+                                                __UI_BAKERY__FORMAT_IF_DATE__(ui.slct_reviewDate.value)
                                             valueType: custom
                                           - type: customDatabaseName
                                             value: ''
@@ -187,8 +194,11 @@ steps:
                                               and risk_type IN
                                               ({{ui.slct_Type_Filter.value}})
 
-                                              AND risk_rating IN
+                                              and risk_rating IN
                                               ({{steps.Get_Rating.data}})
+
+                                              and last_review_date <=
+                                              {{ui.slct_reviewDate.value}}
 
                                               order by risk_rating desc, created_at
                                               desc
@@ -213,7 +223,9 @@ steps:
 
                                               and risk_type IN (?)
 
-                                              AND risk_rating IN (?)
+                                              and risk_rating IN (?)
+
+                                              and last_review_date <= ?
 
                                               order by risk_rating desc, created_at
                                               desc
@@ -230,6 +242,8 @@ steps:
                                                 __UI_BAKERY__FORMAT_IF_DATE__(ui.slct_Type_Filter.value)
                                               - >-
                                                 __UI_BAKERY__FORMAT_IF_DATE__(steps.Get_Rating.data)
+                                              - >-
+                                                __UI_BAKERY__FORMAT_IF_DATE__(ui.slct_reviewDate.value)
                                             valueType: custom
                                           - type: customDatabaseName
                                             value: ''
@@ -294,6 +308,8 @@ steps:
 
                                               and risk_type like '%'
 
+                                              and last_review_date <=
+                                              {{ui.slct_reviewDate.value}}
 
                                               order by risk_rating desc, created_at
                                               desc
@@ -318,6 +334,7 @@ steps:
 
                                               and risk_type like '%'
 
+                                              and last_review_date <= ?
 
                                               order by risk_rating desc, created_at
                                               desc
@@ -330,6 +347,8 @@ steps:
                                                 __UI_BAKERY__FORMAT_IF_DATE__(steps.Get_Status.data)
                                               - >-
                                                 __UI_BAKERY__FORMAT_IF_DATE__(ui.slct_Area_Filter.value)
+                                              - >-
+                                                __UI_BAKERY__FORMAT_IF_DATE__(ui.slct_reviewDate.value)
                                             valueType: custom
                                           - type: customDatabaseName
                                             value: ''
@@ -375,6 +394,8 @@ steps:
                                               and risk_type IN
                                               ({{ui.slct_Type_Filter.value}})
 
+                                              and last_review_date <=
+                                              {{ui.slct_reviewDate.value}}
 
                                               order by risk_rating desc, created_at
                                               desc
@@ -399,6 +420,7 @@ steps:
 
                                               and risk_type IN (?)
 
+                                              and last_review_date <= ?
 
                                               order by risk_rating desc, created_at
                                               desc
@@ -413,6 +435,8 @@ steps:
                                                 __UI_BAKERY__FORMAT_IF_DATE__(ui.slct_Area_Filter.value)
                                               - >-
                                                 __UI_BAKERY__FORMAT_IF_DATE__(ui.slct_Type_Filter.value)
+                                              - >-
+                                                __UI_BAKERY__FORMAT_IF_DATE__(ui.slct_reviewDate.value)
                                             valueType: custom
                                           - type: customDatabaseName
                                             value: ''
@@ -501,8 +525,11 @@ steps:
 
                                               and risk_type like '%'
 
-                                              AND risk_rating IN
+                                              and risk_rating IN
                                               ({{steps.Get_Rating.data}})
+
+                                              and last_review_date <=
+                                              {{ui.slct_reviewDate.value}}
 
                                               order by risk_rating desc, created_at
                                               desc
@@ -529,7 +556,9 @@ steps:
 
                                               and risk_type like '%'
 
-                                              AND risk_rating IN (?)
+                                              and risk_rating IN (?)
+
+                                              and last_review_date <= ?
 
                                               order by risk_rating desc, created_at
                                               desc
@@ -546,6 +575,8 @@ steps:
                                                 __UI_BAKERY__FORMAT_IF_DATE__(ui.slct_Area_Filter.value)
                                               - >-
                                                 __UI_BAKERY__FORMAT_IF_DATE__(steps.Get_Rating.data)
+                                              - >-
+                                                __UI_BAKERY__FORMAT_IF_DATE__(ui.slct_reviewDate.value)
                                             valueType: custom
                                           - type: customDatabaseName
                                             value: ''
@@ -594,8 +625,11 @@ steps:
                                               and risk_type IN
                                               ({{ui.slct_Type_Filter.value}})
 
-                                              AND risk_rating IN
+                                              and risk_rating IN
                                               ({{steps.Get_Rating.data}})
+
+                                              and last_review_date <=
+                                              {{ui.slct_reviewDate.value}}
 
                                               order by risk_rating desc, created_at
                                               desc
@@ -622,7 +656,9 @@ steps:
 
                                               and risk_type IN (?)
 
-                                              AND risk_rating IN (?)
+                                              and risk_rating IN (?)
+
+                                              and last_review_date <= ?
 
                                               order by risk_rating desc, created_at
                                               desc
@@ -641,6 +677,8 @@ steps:
                                                 __UI_BAKERY__FORMAT_IF_DATE__(ui.slct_Type_Filter.value)
                                               - >-
                                                 __UI_BAKERY__FORMAT_IF_DATE__(steps.Get_Rating.data)
+                                              - >-
+                                                __UI_BAKERY__FORMAT_IF_DATE__(ui.slct_reviewDate.value)
                                             valueType: custom
                                           - type: customDatabaseName
                                             value: ''
@@ -814,6 +852,9 @@ steps:
                                               and risk_type IN
                                               ({{ui.slct_Type_Filter.value}})
 
+                                              and last_review_date <=
+                                              {{ui.slct_reviewDate.value}}
+
                                               order by risk_rating desc, created_at
                                               desc
                                             valueType: interpolatedValue
@@ -844,6 +885,8 @@ steps:
 
                                               and risk_type IN (?)
 
+                                              and last_review_date <= ?
+
                                               order by risk_rating desc, created_at
                                               desc
                                             valueType: interpolatedValue
@@ -859,6 +902,8 @@ steps:
                                                 __UI_BAKERY__FORMAT_IF_DATE__(ui.slct_Area_Filter.value)
                                               - >-
                                                 __UI_BAKERY__FORMAT_IF_DATE__(ui.slct_Type_Filter.value)
+                                              - >-
+                                                __UI_BAKERY__FORMAT_IF_DATE__(ui.slct_reviewDate.value)
                                             valueType: custom
                                           - type: customDatabaseName
                                             value: ''
