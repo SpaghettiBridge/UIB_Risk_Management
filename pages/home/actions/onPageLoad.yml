@@ -45,7 +45,6 @@ singleStep: true
 mode: manual
 modeConfigured: true
 parentPageId: '16969546669330.8087211708204785'
-folder: false
 config:
   shouldConfirm: false
   confirmMessage: Are you sure you'd like to proceed with "{{actions.onPageLoad.name}}"?
@@ -61,4 +60,5 @@ config:
   runWhenFirstReferenced: true
   preserveStateOnPageChange: false
 assigned: true
+kind: workflow
 index: 32

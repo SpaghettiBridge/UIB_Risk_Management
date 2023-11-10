@@ -898,7 +898,6 @@ singleStep: false
 mode: manual
 modeConfigured: false
 parentPageId: '1'
-folder: false
 config:
   shouldConfirm: false
   confirmMessage: Are you sure you'd like to proceed with "{{actions.Load_Risk_Data.name}}"?
@@ -916,4 +915,5 @@ config:
 assigned: true
 selected: true
 configured: false
+kind: workflow
 index: 9

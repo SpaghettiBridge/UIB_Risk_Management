@@ -108,7 +108,6 @@ singleStep: false
 mode: manual
 modeConfigured: false
 parentPageId: '1'
-folder: false
 parentId: null
 config:
   shouldConfirm: false
@@ -129,4 +128,5 @@ config:
 assigned: true
 selected: true
 configured: true
+kind: workflow
 index: 10

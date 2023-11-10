@@ -141,7 +141,6 @@ steps:
 singleStep: true
 mode: manual
 modeConfigured: true
-folder: false
 config:
   shouldConfirm: true
   confirmMessage: Are you sure you wish to cancel the changes to this risk?
@@ -160,4 +159,5 @@ assigned: true
 selected: true
 configured: true
 parentPageId: '1'
+kind: workflow
 index: 8

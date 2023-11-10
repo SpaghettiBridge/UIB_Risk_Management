@@ -211,7 +211,6 @@ steps:
 singleStep: true
 mode: manual
 modeConfigured: true
-folder: false
 config:
   shouldConfirm: false
   confirmMessage: Are you sure you'd like to proceed with "{{actions.SaveChanges.name}}"?
@@ -230,4 +229,5 @@ assigned: true
 selected: true
 configured: false
 parentPageId: '1'
+kind: workflow
 index: 7

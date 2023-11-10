@@ -17,7 +17,6 @@ singleStep: true
 mode: manual
 modeConfigured: true
 parentPageId: '1'
-folder: false
 config:
   shouldConfirm: false
   confirmMessage: Are you sure you'd like to proceed with "{{actions.Open_Help_Rating.name}}"?
@@ -35,4 +34,5 @@ config:
 assigned: true
 selected: true
 configured: true
+kind: workflow
 index: 21

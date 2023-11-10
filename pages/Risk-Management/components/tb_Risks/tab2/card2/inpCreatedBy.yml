@@ -44,7 +44,18 @@ properties:
     value: false
     dataValue: 'true'
     withData: true
-  required: false
+  required:
+    value: false
+    withData: false
+    dataValue: 'false'
+  allowSelectAll:
+    value: false
+    dataValue: 'false'
+    withData: false
+  allowResetValue:
+    value: false
+    dataValue: 'false'
+    withData: false
 actions: {}
 index: 8
 slots:

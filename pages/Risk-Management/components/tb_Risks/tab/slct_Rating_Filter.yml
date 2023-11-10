@@ -106,6 +106,14 @@ properties:
   placeholder: Any
   value: '0'
   multi: true
+  allowSelectAll:
+    value: false
+    dataValue: 'false'
+    withData: false
+  allowResetValue:
+    value: false
+    dataValue: 'false'
+    withData: false
 actions:
   selectChange:
     - action: '16968517651850.7367747537503266'

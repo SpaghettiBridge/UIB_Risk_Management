@@ -222,6 +222,10 @@ slots:
             dataValue: outline
             withData: false
             themeDefaultOverridePropertyKey: atomicSelectAppearance
+          allowResetValue:
+            value: false
+            dataValue: 'false'
+            withData: false
         index: 9
         actions: {}
         slots: []
@@ -442,6 +446,10 @@ slots:
             dataValue: outline
             withData: false
             themeDefaultOverridePropertyKey: atomicSelectAppearance
+          allowResetValue:
+            value: false
+            dataValue: 'false'
+            withData: false
         index: 5
         actions: {}
         slots: []
@@ -505,6 +513,10 @@ slots:
             dataValue: outline
             withData: false
             themeDefaultOverridePropertyKey: atomicSelectAppearance
+          allowResetValue:
+            value: false
+            dataValue: 'false'
+            withData: false
         index: 7
         actions: {}
         slots: []
@@ -623,6 +635,10 @@ slots:
             dataValue: outline
             withData: false
             themeDefaultOverridePropertyKey: atomicSelectAppearance
+          allowResetValue:
+            value: false
+            dataValue: 'false'
+            withData: false
         index: 1
         actions: {}
         slots: []
@@ -687,6 +703,10 @@ slots:
             dataValue: outline
             withData: false
             themeDefaultOverridePropertyKey: atomicSelectAppearance
+          allowResetValue:
+            value: false
+            dataValue: 'false'
+            withData: false
         index: 8
         actions: {}
         slots: []

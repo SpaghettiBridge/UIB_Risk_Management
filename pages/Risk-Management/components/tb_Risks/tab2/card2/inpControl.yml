@@ -46,7 +46,18 @@ properties:
     value: false
     dataValue: '{{state.RiskDisabled}}'
     withData: true
-  required: true
+  required:
+    value: true
+    withData: false
+    dataValue: 'false'
+  allowSelectAll:
+    value: false
+    dataValue: 'false'
+    withData: false
+  allowResetValue:
+    value: false
+    dataValue: 'false'
+    withData: false
 actions: {}
 index: 11
 slots:
