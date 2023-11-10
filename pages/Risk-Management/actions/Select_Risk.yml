@@ -121,7 +121,6 @@ singleStep: true
 mode: manual
 modeConfigured: true
 parentPageId: '1'
-folder: false
 config:
   shouldConfirm: false
   confirmMessage: Are you sure you'd like to proceed with "{{actions.Select_Risk.name}}"?
@@ -139,4 +138,5 @@ config:
 assigned: true
 selected: true
 configured: true
+kind: workflow
 index: 22

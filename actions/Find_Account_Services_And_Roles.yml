@@ -221,7 +221,6 @@ steps:
 singleStep: false
 mode: manual
 modeConfigured: false
-folder: false
 parentId: null
 config:
   shouldConfirm: false
@@ -251,4 +250,5 @@ actions:
       blockPageLoad: false
       index: 0
   error: []
+kind: workflow
 index: 0

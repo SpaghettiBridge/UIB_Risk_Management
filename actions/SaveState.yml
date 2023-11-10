@@ -23,7 +23,6 @@ steps:
 singleStep: true
 mode: manual
 modeConfigured: true
-folder: false
 config:
   shouldConfirm: false
   confirmMessage: Are you sure you'd like to proceed with "{{actions.SaveState.name}}"?
@@ -41,4 +40,5 @@ config:
 assigned: true
 selected: true
 configured: false
+kind: workflow
 index: 2

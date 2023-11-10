@@ -191,7 +191,10 @@ slots:
           width: '300'
           filter: true
           title: Description
-          required: true
+          required:
+            value: true
+            withData: false
+            dataValue: 'false'
           markdownSupport: true
         index: 2
         slots: []
@@ -292,6 +295,10 @@ slots:
             - xs
           width: 120
           filter: true
+          allowResetValue:
+            value: false
+            dataValue: 'false'
+            withData: false
         index: 12
         slots: []
       - id: '16968534100940.31254558889987716'
@@ -322,7 +329,14 @@ slots:
             dataValue: '[]'
             withData: false
           title: ''
-          required: true
+          required:
+            value: true
+            withData: false
+            dataValue: 'false'
+          allowResetValue:
+            value: false
+            dataValue: 'false'
+            withData: false
         index: 0
         slots: []
       - id: '16968534100950.15511189138313952'
@@ -359,10 +373,17 @@ slots:
 
               return output}}
             withData: true
-          required: true
+          required:
+            value: true
+            withData: false
+            dataValue: 'false'
           filterVariation:
             value: equal
             dataValue: equal
+            withData: false
+          allowResetValue:
+            value: false
+            dataValue: 'false'
             withData: false
         index: 3
         slots: []

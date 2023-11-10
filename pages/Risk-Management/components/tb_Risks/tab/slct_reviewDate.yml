@@ -56,6 +56,14 @@ properties:
     position: horizontal
     align: left
   value: '{{moment().startOf(''day'')}}'
+  allowSelectAll:
+    value: false
+    dataValue: 'false'
+    withData: false
+  allowResetValue:
+    value: false
+    dataValue: 'false'
+    withData: false
 actions: {}
 index: 6
 slots:

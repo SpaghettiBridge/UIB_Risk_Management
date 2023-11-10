@@ -19,7 +19,6 @@ steps:
 singleStep: false
 mode: manual
 modeConfigured: false
-folder: false
 config:
   shouldConfirm: false
   confirmMessage: Are you sure you'd like to proceed with "{{actions.SetEditFalse.name}}"?
@@ -37,4 +36,5 @@ config:
 assigned: true
 selected: true
 configured: false
+kind: workflow
 index: 5

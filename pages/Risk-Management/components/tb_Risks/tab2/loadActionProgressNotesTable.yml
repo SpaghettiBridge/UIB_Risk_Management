@@ -182,6 +182,10 @@ slots:
               return output}}
             withData: true
           title: Name
+          allowResetValue:
+            value: false
+            dataValue: 'false'
+            withData: false
         index: 3
         slots: []
       - id: '16974402547400.03998388571972167'

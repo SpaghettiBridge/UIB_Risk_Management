@@ -40,7 +40,6 @@ actions:
   error: []
 mode: manual
 modeConfigured: false
-folder: false
 config:
   shouldConfirm: false
   confirmMessage: Are you sure you'd like to proceed with "{{actions.appInit.name}}"?
@@ -58,4 +57,5 @@ config:
 assigned: false
 selected: true
 configured: true
+kind: workflow
 index: 4

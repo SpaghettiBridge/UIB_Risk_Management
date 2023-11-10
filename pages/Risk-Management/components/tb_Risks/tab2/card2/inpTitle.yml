@@ -29,12 +29,18 @@ properties:
     withData: true
   value: '{{ui.tbl_Risks.selectedRow.data.title}}'
   labelWidth: 13
-  required: false
+  required:
+    value: false
+    withData: false
+    dataValue: 'false'
   regexpPatternErrorMessage: ''
   regexpPattern: ''
   length:
-    min: null
-    max: 50
+    value:
+      min: null
+      max: 50
+    withData: false
+    dataValue: '[0, 10]'
 actions: {}
 index: 12
 slots: []
