@@ -26,7 +26,7 @@ properties:
       - title: A month
         value: ''
         __UIBAKERY__SYSTEM_ID__: '16995273927260.7305114403072104'
-    dataValue: |-
+    dataValue: |
       [
         {
           "value": {{moment().startOf('day')}},
@@ -34,15 +34,18 @@ properties:
         },
         {
           "value": {{moment().startOf('day').subtract(7, 'days')}},
-          "title": "1 Week"
+          "title": "1 Week",
+          color:   '#76b5c5'
         },
         {
           "value":{{moment().startOf('day').subtract(14, 'days')}},
-          "title": "2 Weeks"
+          "title": "2 Weeks",
+        color: '#e28743'  
         },
         {
-          "value": {{moment().startOf('day').subtract(1, 'month')}},
-          "title": "Month"
+          "value": {{moment().startOf('day').subtract(15, 'days')}},
+          "title": "Older",
+        color:  '#d1431d'  
         }
       ]
     withData: true
@@ -64,7 +67,15 @@ properties:
     value: false
     dataValue: 'false'
     withData: false
-actions: {}
+actions:
+  selectChange:
+    - action: '16968517651850.7367747537503266'
+      paramCode: ''
+      blockPageLoad: false
+      index: 0
+  init: []
+  focusEvent: []
+  blurEvent: []
 index: 6
 slots:
   - id: '16995273353990.6235652378335432'
