@@ -138,6 +138,19 @@ steps:
     fallthroughError: false
     isChanged: true
     nameConfigured: true
+  - id: '16999641531430.3409905946588754'
+    type: customAsyncCode
+    name: Return_To_Register
+    params:
+      - type: asyncCode
+        value: |
+          {{ui.tb_Risks.selectTab(0)}}
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
 singleStep: true
 mode: manual
 modeConfigured: true
@@ -160,4 +173,4 @@ selected: true
 configured: true
 parentPageId: '1'
 kind: workflow
-index: 8
+index: 10

@@ -47,6 +47,18 @@ steps:
                 isChanged: true
                 nameConfigured: true
                 paused: false
+              - id: '16999641016230.43237753097809595'
+                type: customAsyncCode
+                name: Allow_Details_Tab
+                params:
+                  - type: asyncCode
+                    value: '{{state.allow_Risk_Details = true}}'
+                    valueType: interpolatedValue
+                    interpolationType: code
+                level: 1
+                fallthroughError: false
+                isChanged: true
+                nameConfigured: true
               - id: '16969397913070.5496035348108363'
                 type: condition
                 name: condition2
@@ -320,4 +332,4 @@ assigned: true
 selected: true
 configured: false
 kind: workflow
-index: 19
+index: 21

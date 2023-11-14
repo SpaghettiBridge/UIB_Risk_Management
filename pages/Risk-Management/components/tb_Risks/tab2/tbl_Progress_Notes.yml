@@ -122,7 +122,7 @@ slots:
             - xs
           width: 120
           filter: true
-        index: 4
+        index: 5
         slots: []
       - id: '16968534100940.4624128148132405'
         definitionId: atomicString
@@ -139,7 +139,7 @@ slots:
             - xs
           width: 120
           filter: true
-        index: 5
+        index: 6
         slots: []
       - id: '16968534100940.6221066676223301'
         definitionId: atomicString
@@ -156,7 +156,7 @@ slots:
             - xs
           width: 120
           filter: true
-        index: 6
+        index: 7
         slots: []
       - id: '16968534100940.29309918266953217'
         definitionId: atomicString
@@ -173,7 +173,7 @@ slots:
             - xs
           width: 120
           filter: true
-        index: 7
+        index: 8
         slots: []
       - id: '16968534100940.8728604039528884'
         definitionId: atomicString
@@ -213,7 +213,7 @@ slots:
             - xs
           width: 120
           filter: true
-        index: 8
+        index: 9
         slots: []
       - id: '16968534100950.39679887808017367'
         definitionId: atomicString
@@ -230,7 +230,7 @@ slots:
             - xs
           width: 120
           filter: true
-        index: 9
+        index: 10
         slots: []
       - id: '16968534100950.2037189702318627'
         definitionId: atomicString
@@ -247,7 +247,7 @@ slots:
             - xs
           width: 120
           filter: true
-        index: 10
+        index: 11
         slots: []
       - id: '16968534100950.8248303544720308'
         definitionId: atomicString
@@ -265,7 +265,7 @@ slots:
             - xs
           width: 120
           filter: true
-        index: 11
+        index: 12
         slots: []
       - id: '16968534100950.366256735648111'
         definitionId: atomicSelect
@@ -299,7 +299,7 @@ slots:
             value: false
             dataValue: 'false'
             withData: false
-        index: 12
+        index: 13
         slots: []
       - id: '16968534100940.31254558889987716'
         definitionId: atomicSelect
@@ -337,7 +337,7 @@ slots:
             value: false
             dataValue: 'false'
             withData: false
-        index: 0
+        index: 1
         slots: []
       - id: '16968534100950.15511189138313952'
         definitionId: atomicSelect
@@ -408,9 +408,27 @@ slots:
             value: MMM dd, yyyy
             dataValue: dd/MM/yyyy
             withData: true
-          title: Date
+          title: Due Date
           primaryKey: false
           filter: true
           width: '80'
-        index: 1
+        index: 4
+        slots: []
+      - id: '16999646679520.7437454616524737'
+        definitionId: atomicDate
+        parentSlotId: '16968532737040.037852872871457555'
+        styles: {}
+        properties:
+          name: atomicDate3
+          prop: created_at
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          title: Created
+          width: '80'
+          dateFormat:
+            value: MMM dd, yyyy
+            dataValue: dd/MM/yyyy
+            withData: true
+        index: 0
         slots: []

@@ -118,6 +118,46 @@ steps:
                             isChanged: true
                             paused: false
                             nameConfigured: true
+                          - id: '16999613447030.3432435847058586'
+                            type: customAsyncCode
+                            name: Return_to_Register
+                            params:
+                              - type: asyncCode
+                                value: |+
+                                  {{ui.tb_Risks.selectTab(0)}}
+
+                                valueType: interpolatedValue
+                                interpolationType: code
+                            level: 2
+                            fallthroughError: false
+                            isChanged: true
+                            nameConfigured: true
+                          - id: '16999640201850.9326696127601584'
+                            type: executeAction
+                            name: Refresh_Risks
+                            params:
+                              - type: action
+                                value: '16968517651850.7367747537503266'
+                                valueType: string
+                              - type: isActionsLibraryCall
+                                value: false
+                                valueType: string
+                              - type: customParams
+                                value: return {{data}};
+                                valueType: string
+                              - type: successMapper
+                                value: ''
+                                valueType: interpolatedValue
+                              - type: failureMapper
+                                value: ''
+                                valueType: interpolatedValue
+                              - type: mapperEnabled
+                                value: false
+                                valueType: custom
+                            level: 2
+                            fallthroughError: false
+                            isChanged: true
+                            nameConfigured: true
                       - condition: false
                         steps:
                           - id: '16968637863210.4279319598042468'
@@ -230,4 +270,4 @@ selected: true
 configured: false
 parentPageId: '1'
 kind: workflow
-index: 7
+index: 9

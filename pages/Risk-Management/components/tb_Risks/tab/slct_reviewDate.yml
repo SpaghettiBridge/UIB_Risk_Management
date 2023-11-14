@@ -29,22 +29,22 @@ properties:
     dataValue: |
       [
         {
-          "value": {{moment().startOf('day')}},
+          "value": '2999-12-31T01:00:00',
           "title": "All"
         },
         {
           "value": {{moment().startOf('day').subtract(7, 'days')}},
-          "title": "1 Week",
+          "title": "Last Week",
           color:   '#76b5c5'
         },
         {
           "value":{{moment().startOf('day').subtract(14, 'days')}},
-          "title": "2 Weeks",
+          "title": "Last 2 Weeks",
         color: '#e28743'  
         },
         {
           "value": {{moment().startOf('day').subtract(15, 'days')}},
-          "title": "Older",
+          "title": "Over 2 weeks",
         color:  '#d1431d'  
         }
       ]

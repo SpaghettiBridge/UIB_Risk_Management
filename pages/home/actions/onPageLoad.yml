@@ -61,4 +61,4 @@ config:
   preserveStateOnPageChange: false
 assigned: true
 kind: workflow
-index: 32
+index: 31
