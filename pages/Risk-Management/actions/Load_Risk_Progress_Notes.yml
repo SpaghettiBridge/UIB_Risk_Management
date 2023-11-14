@@ -98,6 +98,7 @@ steps:
                 level: 0
                 fallthroughError: false
                 isChanged: true
+                paused: false
           - condition: false
             steps: []
         valueType: custom
@@ -129,4 +130,4 @@ assigned: true
 selected: true
 configured: true
 kind: workflow
-index: 10
+index: 12

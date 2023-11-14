@@ -44,7 +44,7 @@ properties:
   value: '0'
   disabled:
     value: false
-    dataValue: '!{{state.RiskDisabled}}'
+    dataValue: '!{{ui.tb_Risks.selectedIndex == 0}}'
     withData: true
   allowSelectAll:
     value: false
@@ -54,6 +54,7 @@ properties:
     value: false
     dataValue: 'false'
     withData: false
+  __UIBAKERY__SHOW__CONDITION__CODE__: ''
 actions:
   selectChange:
     - action: '16968564093060.47677390951301524'

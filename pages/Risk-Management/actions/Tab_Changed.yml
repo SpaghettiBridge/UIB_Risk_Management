@@ -12,9 +12,12 @@ steps:
           //  {{ui.tb_Risks.selectTab(0)}}
           //}
           //  
+
           if ({{ui.tbl_Risks.selectedRow.data != null}}){
-            {{state.Selected_Risk_ID = ui.tbl_Risks.selectedRow.data.pk_risk_id}}   
+            {{state.Selected_Risk_ID = ui.tbl_Risks.selectedRow.data.pk_risk_id}}  
           }
+            
+          {{state.allow_Risk_Details}}= {{ui.tb_Risks.selectedIndex == 1}}  
         valueType: interpolatedValue
         interpolationType: code
     level: 0
@@ -43,4 +46,4 @@ assigned: true
 selected: true
 configured: true
 kind: workflow
-index: 23
+index: 8

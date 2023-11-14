@@ -820,6 +820,7 @@ steps:
                                         fallthroughError: false
                                         isChanged: true
                                         nameConfigured: true
+                                        paused: false
                                   - condition: false
                                     steps:
                                       - id: '16971137088290.681886193783352'
@@ -961,4 +962,4 @@ assigned: true
 selected: true
 configured: false
 kind: workflow
-index: 9
+index: 11

@@ -5,7 +5,7 @@ styles:
   xl:
     gridItem:
       x: 0
-      y: 19
+      y: 24
       w: 24
       h: 133
   xs:
@@ -67,6 +67,14 @@ properties:
   showFilter: false
   showClearSelection:
     value: false
+    dataValue: 'true'
+    withData: false
+  sortColumn:
+    value: ''
+    dataValue: ''
+    withData: false
+  sortable:
+    value: true
     dataValue: 'true'
     withData: false
 actions:

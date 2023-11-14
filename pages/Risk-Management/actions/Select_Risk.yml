@@ -2,6 +2,18 @@ id: '16969400265810.7198078406620261'
 name: Select_Risk
 nameConfigured: true
 steps:
+  - id: '16999638410390.6478496178481907'
+    type: customAsyncCode
+    name: allow_Details_Tab
+    params:
+      - type: asyncCode
+        value: '{{state.allow_Risk_Details = true}}'
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
   - id: '16969400300820.3350522649199217'
     type: putInStore
     name: save
@@ -10,11 +22,12 @@ steps:
         value: '16969400102590.5245147857840291'
         valueType: string
       - type: value
-        value: |-
-          if({{params.id != undefined}}){
-          return {{params.id}}
+        value: |
+          if ({{params.id != undefined}}) {
+            return {{params.id}};
           }
-          return {{ ui.tbl_Risks.selectedRow.data.pk_risk_id}}
+
+          return {{ ui.tbl_Risks.selectedRow.data.pk_risk_id}};
         valueType: interpolatedValue
         interpolationType: code
       - type: producible
@@ -24,26 +37,28 @@ steps:
     fallthroughError: false
     isChanged: true
     paused: false
-  - id: '16995258202220.02510790196699908'
+  - id: '16998803874490.03570169387737132'
     type: customAsyncCode
-    name: code
+    name: select_Correct_Service
     params:
       - type: asyncCode
-        value: |-
-          var index = ui.tbl_Risks.value.findIndex(function(risk) {
-            return risk.pk_risk_id == state.Selected_Risk_ID
-          });
-          console.log(index);
+        value: >-
+          {{ui.slctService.setValue(ui.tbl_Risks.selectedRow.data.fk_service_id)}}
 
-          ui.tbl_Risks.selectRow(index)
+          // this needs to actually set the correct serviceID in here as
+          otherwise the save fails
+
+          {{state.SelectedServiceID =
+          ui.tbl_Risks.selectedRow.data.fk_service_id}}
         valueType: interpolatedValue
         interpolationType: code
     level: 0
     fallthroughError: false
     isChanged: true
+    nameConfigured: true
   - id: '16970036406080.784323283417232'
     type: executeAction
-    name: execute
+    name: Load_Risk_Notes
     params:
       - type: action
         value: '16968520159240.7357300507703233'
@@ -67,9 +82,10 @@ steps:
     fallthroughError: false
     isChanged: true
     paused: false
+    nameConfigured: true
   - id: '16994326732030.5062318682060343'
     type: executeAction
-    name: execute3
+    name: Load_Actions_Notes
     params:
       - type: action
         value: '16974398500990.18214830527474213'
@@ -92,31 +108,19 @@ steps:
     level: 0
     fallthroughError: false
     isChanged: true
-  - id: '16970036507590.4125156792875735'
-    type: executeAction
-    name: execute2
+    nameConfigured: true
+  - id: '16999638285890.9658904762700398'
+    type: customAsyncCode
+    name: Show_Tab
     params:
-      - type: action
-        value: '16968625536150.6089216859452218'
-        valueType: string
-      - type: isActionsLibraryCall
-        value: false
-        valueType: string
-      - type: customParams
-        value: return {{data}};
-        valueType: string
-      - type: successMapper
-        value: ''
+      - type: asyncCode
+        value: '{{ui.tb_Risks.selectTab(1)}}'
         valueType: interpolatedValue
-      - type: failureMapper
-        value: ''
-        valueType: interpolatedValue
-      - type: mapperEnabled
-        value: false
-        valueType: custom
+        interpolationType: code
     level: 0
     fallthroughError: false
     isChanged: true
+    nameConfigured: true
 singleStep: true
 mode: manual
 modeConfigured: true
@@ -139,4 +143,4 @@ assigned: true
 selected: true
 configured: true
 kind: workflow
-index: 22
+index: 7
