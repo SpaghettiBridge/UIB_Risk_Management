@@ -1,40 +1,39 @@
-id: '16971010231480.4059535274318804'
-name: Close_Control_Help
+id: '17000509718670.6318690875993966'
+kind: workflow
+name: Add_Open_Filter
 nameConfigured: true
 steps:
-  - id: '16971010350540.9431501842648531'
+  - id: '17000509858420.23056957901785813'
     type: customAsyncCode
     name: code
     params:
       - type: asyncCode
-        value: '{{ui.mdl_Help_Control.close()}}'
+        value: |-
+          {{
+            ui.tbl_Risks.setFilters({risk_status:'Open'}) 
+          }}
         valueType: interpolatedValue
         interpolationType: code
     level: 0
     fallthroughError: false
     isChanged: true
-singleStep: true
 mode: manual
 modeConfigured: true
-parentPageId: '1'
 config:
   shouldConfirm: false
-  confirmMessage: >-
-    Are you sure you'd like to proceed with
-    "{{actions.Close_Control_Help.name}}"?
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.Add_Open_Filter.name}}"?
   showSuccessToast: false
-  successToast: Action "{{actions.Close_Control_Help.name}}" successfully executed
+  successToast: Action "{{actions.Add_Open_Filter.name}}" successfully executed
   successToastDuration: '3000'
   successToastHideByClick: false
   showErrorToast: true
-  errorToast: Action "{{actions.Close_Control_Help.name}}" has failed
+  errorToast: Action "{{actions.Add_Open_Filter.name}}" has failed
   errorToastDuration: '3000'
   errorToastHideByClick: false
   delay: '0'
   runWhenFirstReferenced: true
   preserveStateOnPageChange: false
-assigned: true
 selected: true
-configured: false
-kind: workflow
-index: 27
+configured: true
+parentPageId: '1'
+index: 6

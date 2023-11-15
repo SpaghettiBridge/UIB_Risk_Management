@@ -7,7 +7,7 @@ styles:
       x: 8
       y: 2
       w: 4
-      h: 6
+      h: 8
   xs:
     gridItem:
       x: 0

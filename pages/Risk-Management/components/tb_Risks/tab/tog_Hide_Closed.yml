@@ -20,6 +20,7 @@ properties:
     - xl
     - xs
   label: Hide Closed Risks
+  __UIBAKERY__SHOW__CONDITION__CODE__: 'false'
 actions:
   valueChange:
     - action: '16970383083400.40049417313186253'

@@ -1,18 +1,20 @@
 id: '16969397054350.9895286590126264'
 definitionId: contextMenuButton
-parentSlotId: '2'
+parentSlotId: '16968520326600.6317433755868269'
 styles:
   xl:
     gridItem:
+      id: '16969397054350.9895286590126264'
       x: 23
-      y: 2
+      y: 8
       w: 1
       h: 10
     iconPlacement: center
   xs:
     gridItem:
+      id: '16969397054350.9895286590126264'
       x: 23
-      y: 313
+      y: 785
       w: 1
       h: 10
 properties:
