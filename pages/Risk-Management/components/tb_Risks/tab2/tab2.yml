@@ -17,6 +17,7 @@ slots:
   - id: '16968520326600.6317433755868269'
     name: content
     children:
+      - cst_Risks.yml
       - text17.yml
       - tbl_Progress_Notes.yml
       - card2/card2.yml

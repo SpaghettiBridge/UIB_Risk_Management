@@ -242,7 +242,7 @@ config:
   preserveStateOnPageChange: true
 assigned: false
 selected: true
-configured: false
+configured: true
 actions:
   success:
     - action: '16968563252360.552228579969027'

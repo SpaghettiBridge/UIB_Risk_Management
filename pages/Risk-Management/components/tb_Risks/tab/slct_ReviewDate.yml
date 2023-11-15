@@ -26,30 +26,31 @@ properties:
       - title: A month
         value: ''
         __UIBAKERY__SYSTEM_ID__: '16995273927260.7305114403072104'
-    dataValue: |
+    dataValue: |+
       [
         {
-          "value": '2999-12-31T01:00:00',
+          "value": 0, //['2999-12-31T01:00:00'],
           "title": "All"
         },
         {
-          "value": {{moment().startOf('day').subtract(7, 'days')}},
-          "title": "Last Week",
+          "value": 1, //{{moment().startOf('day').subtract(6, 'days')}},
+          "title": "Last week",
           color:   '#76b5c5'
         },
         {
-          "value":{{moment().startOf('day').subtract(14, 'days')}},
-          "title": "Last 2 Weeks",
+          "value": 2,//{{moment().startOf('day').subtract(14, 'days')}},
+          "title": "Last 2 weeks",
         color: '#e28743'  
         },
         {
-          "value": {{moment().startOf('day').subtract(15, 'days')}},
-          "title": "Over 2 weeks",
+          "value": 3,//{{moment().startOf('day').subtract(31, 'days')}}],
+          "title": "Last month",
         color:  '#d1431d'  
         }
       ]
+
     withData: true
-  name: slct_reviewDate
+  name: slct_ReviewDate
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
     - xl
     - xs
@@ -67,11 +68,11 @@ properties:
     value: false
     dataValue: 'false'
     withData: false
+  __UIBAKERY__SHOW__CONDITION__CODE__: 'false'
 actions:
   selectChange:
-    - action: '16968517651850.7367747537503266'
+    - action: '16999773857630.5942278758091513'
       paramCode: ''
-      blockPageLoad: false
       index: 0
   init: []
   focusEvent: []

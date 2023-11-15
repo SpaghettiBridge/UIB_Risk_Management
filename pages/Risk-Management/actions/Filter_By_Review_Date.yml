@@ -1,19 +1,24 @@
-id: '16971010231480.4059535274318804'
-name: Close_Control_Help
+id: '16999773857630.5942278758091513'
+kind: workflow
+name: Filter_By_Review_Date
 nameConfigured: true
 steps:
-  - id: '16971010350540.9431501842648531'
+  - id: '16999774043590.3107914669255536'
     type: customAsyncCode
     name: code
     params:
       - type: asyncCode
-        value: '{{ui.mdl_Help_Control.close()}}'
+        value: |-
+          const startDate = moment().startOf('month');
+          const endDate = moment().endOf('month');
+          const filters = {last_review_date: startDate, endDate};
+          {{ui.tbl_Risks.setFilters(filters)}};
+          {{ui.tbl_Risks.filters}}
         valueType: interpolatedValue
         interpolationType: code
     level: 0
     fallthroughError: false
     isChanged: true
-singleStep: true
 mode: manual
 modeConfigured: true
 parentPageId: '1'
@@ -21,20 +26,18 @@ config:
   shouldConfirm: false
   confirmMessage: >-
     Are you sure you'd like to proceed with
-    "{{actions.Close_Control_Help.name}}"?
+    "{{actions.Filter_By_Review_Date.name}}"?
   showSuccessToast: false
-  successToast: Action "{{actions.Close_Control_Help.name}}" successfully executed
+  successToast: Action "{{actions.Filter_By_Review_Date.name}}" successfully executed
   successToastDuration: '3000'
   successToastHideByClick: false
   showErrorToast: true
-  errorToast: Action "{{actions.Close_Control_Help.name}}" has failed
+  errorToast: Action "{{actions.Filter_By_Review_Date.name}}" has failed
   errorToastDuration: '3000'
   errorToastHideByClick: false
   delay: '0'
   runWhenFirstReferenced: true
   preserveStateOnPageChange: false
-assigned: true
 selected: true
 configured: false
-kind: workflow
-index: 27
+index: 32

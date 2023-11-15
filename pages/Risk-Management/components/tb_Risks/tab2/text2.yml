@@ -4,9 +4,9 @@ parentSlotId: '16968520326600.6317433755868269'
 styles:
   xl:
     gridItem:
-      x: 17
+      x: 16
       y: 0
-      w: 6
+      w: 5
       h: 6
     color:
       value: warning
@@ -70,7 +70,7 @@ properties:
 
     if (returnDate == 'Invalid Date') {returnDate = ''};
 
-    return 'Last reviewed: ' +  returnDate
+    return 'Reviewed: ' +  returnDate
 
 
 
